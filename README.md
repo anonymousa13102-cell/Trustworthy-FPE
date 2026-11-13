@@ -155,7 +155,7 @@ Full experimental setup — LLM model/API, hardware, software versions, pipeline
 | Formal solver | Z3 via the Python `z3-solver` package |
 | Unit of evaluation | One COBOL source program per run |
 | Parsing and verification | Local execution |
-| Retry policy | One retry with the validation error as feedback; if the retry also fails, the artifact is kept unchanged |
+| Refinement policy | `MaxIterations = 3` and user can edit it; verification result as context given. If the refinement also fails, the artifact is kept unchanged |
 
 ---
 
