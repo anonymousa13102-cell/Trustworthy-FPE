@@ -1,0 +1,8 @@
+assert((!(((LK-NUM-OLD == 0))) || ((LK-FIB-NEW == LK-ANT-OLD))));
+assert((!((!((LK-NUM-OLD == 0))) && ((LK-NUM-OLD == 1))) || ((LK-FIB-NEW == LK-ATU-OLD))));
+assert((!((!((LK-NUM-OLD == 0))) && (!((LK-NUM-OLD == 1))) && ((LK-NUM-OLD == 2))) || ((LS-PRX-NEW == LK-ANT-OLD + LK-ATU-OLD))));
+assert((!((!((LK-NUM-OLD == 0))) && (!((LK-NUM-OLD == 1))) && ((LK-NUM-OLD == 2))) || ((LK-FIB-NEW == LS-PRX-OLD))));
+assert((!((!((LK-NUM-OLD == 0))) && (!((LK-NUM-OLD == 1))) && (!((LK-NUM-OLD == 2)))) || ((LS-ATU-NEW == LK-ATU-OLD))));
+assert((!((!((LK-NUM-OLD == 0))) && (!((LK-NUM-OLD == 1))) && (!((LK-NUM-OLD == 2)))) || ((LS-NUM-NEW == LK-NUM-OLD - 1))));
+assert((!((!(LK-NUM-OLD == 0) && !(LK-NUM-OLD == 1) && !(LK-NUM-OLD == 2))) || ((LS-PRX-NEW == LK-ANT-OLD + LK-ATU-OLD))));
+assert((!((!((LK-NUM-OLD == 0))) && (!((LK-NUM-OLD == 1))) && (!((LK-NUM-OLD == 2)))) || ((LK-FIB-NEW == NUMVAL ( FIBBASE ( LS-NUM-OLD , LS-ATU-OLD , LS-PRX-OLD ) )))));

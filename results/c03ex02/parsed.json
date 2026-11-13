@@ -1,0 +1,136 @@
+{
+  "programs": [
+    {
+      "name": "C03EX02",
+      "data_division": {
+        "sections": {
+          "Working Storage Section": {
+            "variables": [
+              {
+                "level": "77",
+                "name": "WS-A",
+                "declaration": "77 WS-A PIC 9 ( 3).",
+                "usage": "DISPLAY",
+                "picture": "9(3)",
+                "type": "numeric",
+                "signed": false,
+                "digits": 3,
+                "integer_digits": 3,
+                "decimal_digits": 0
+              },
+              {
+                "level": "77",
+                "name": "WS-B",
+                "declaration": "77 WS-B PIC 9 ( 3).",
+                "usage": "DISPLAY",
+                "picture": "9(3)",
+                "type": "numeric",
+                "signed": false,
+                "digits": 3,
+                "integer_digits": 3,
+                "decimal_digits": 0
+              },
+              {
+                "level": "77",
+                "name": "WS-R",
+                "declaration": "77 WS-R PIC 9 ( 4).",
+                "usage": "DISPLAY",
+                "picture": "9(4)",
+                "type": "numeric",
+                "signed": false,
+                "digits": 4,
+                "integer_digits": 4,
+                "decimal_digits": 0
+              },
+              {
+                "level": "77",
+                "name": "WS-DSP-R",
+                "declaration": "77 WS-DSP-R PIC ZZZZ.",
+                "usage": "DISPLAY",
+                "picture": "ZZZZ",
+                "type": "numeric-edited",
+                "signed": false,
+                "digits": 4,
+                "integer_digits": 4,
+                "decimal_digits": 0
+              },
+              {
+                "level": "77",
+                "name": "WS-ENTER",
+                "declaration": "77 WS-ENTER PIC X.",
+                "usage": "DISPLAY",
+                "picture": "X",
+                "type": "alphanumeric",
+                "characters": 1
+              }
+            ]
+          }
+        }
+      },
+      "procedure_division": {
+        "functions": {
+          "PROG-PRINCIPAL-PARA": {
+            "kind": "paragraph",
+            "blocks": [
+              {
+                "Display": "\"Entre valor <A>: \""
+              },
+              {
+                "Accept": "WS-A"
+              },
+              {
+                "Display": "\"Entre valor <B>: \""
+              },
+              {
+                "Accept": "WS-B"
+              },
+              {
+                "Compute Statement": "COMPUTE WS-R = WS-A + WS-B"
+              },
+              {
+                "If-block": {
+                  "condition": "WS-R >= 10",
+                  "then": [
+                    {
+                      "Add Statement": "ADD 5 TO WS-R"
+                    },
+                    {
+                      "Move Statement": "MOVE WS-R TO WS-DSP-R"
+                    },
+                    {
+                      "Display": "\"Resultado = \" WS-DSP-R"
+                    }
+                  ],
+                  "else": [
+                    {
+                      "Subtract Statement": "SUBTRACT 7 FROM WS-R"
+                    },
+                    {
+                      "Move Statement": "MOVE WS-R TO WS-DSP-R"
+                    },
+                    {
+                      "Display": "\"Resultado = \" WS-DSP-R"
+                    }
+                  ]
+                }
+              },
+              {
+                "Display": "X \"0D\""
+              },
+              {
+                "Display": "\"Tecle <ENTER> para encerrar... \""
+              },
+              {
+                "Accept": "WS-ENTER"
+              },
+              {
+                "Stop Statement": "STOP RUN"
+              }
+            ]
+          }
+        },
+        "blocks": []
+      }
+    }
+  ]
+}

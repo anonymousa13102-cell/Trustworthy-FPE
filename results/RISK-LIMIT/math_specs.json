@@ -1,0 +1,23 @@
+{
+  "program_name": "RISK-LIMIT",
+  "math_specs": [
+    {
+      "id": "MS1",
+      "source_br_ids": [
+        "BR1"
+      ],
+      "kind": "transition",
+      "description": "Set LIMIT-AMT to 500000 when RISK-CD is between 1 and 3 inclusive.",
+      "expression": "((RISK-CD-OLD >= 1 AND RISK-CD-OLD <= 3) IMPLIES (LIMIT-AMT-NEW = 500000))"
+    },
+    {
+      "id": "MS2",
+      "source_br_ids": [
+        "BR2"
+      ],
+      "kind": "transition",
+      "description": "Set LIMIT-AMT to 50000 when RISK-CD is not between 1 and 3 inclusive and is either 5 or between 7 and 9 inclusive.",
+      "expression": "((NOT (RISK-CD-OLD >= 1 AND RISK-CD-OLD <= 3)) AND ((RISK-CD-OLD = 5) OR (RISK-CD-OLD >= 7 AND RISK-CD-OLD <= 9)) IMPLIES (LIMIT-AMT-NEW = 50000))"
+    }
+  ]
+}

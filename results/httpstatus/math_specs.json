@@ -1,0 +1,374 @@
+{
+  "program_name": "httpstatus",
+  "math_specs": [
+    {
+      "id": "MS1",
+      "source_br_ids": [
+        "BR1"
+      ],
+      "kind": "transition",
+      "description": "Set status-message to 'Continue' when status-code is '100'.",
+      "expression": "((status-code-OLD = '100')) IMPLIES (status-message-NEW = 'Continue')"
+    },
+    {
+      "id": "MS2",
+      "source_br_ids": [
+        "BR2"
+      ],
+      "kind": "transition",
+      "description": "Set status-message to 'Switching Protocols' when the specified condition holds.",
+      "expression": "(NOT ((status-code-OLD = '100'))) AND ((status-code-OLD = '101')) IMPLIES (status-message-NEW = 'Switching Protocols')"
+    },
+    {
+      "id": "MS3",
+      "source_br_ids": [
+        "BR3"
+      ],
+      "kind": "transition",
+      "description": "Set status-message to 'OK' when the specified condition holds.",
+      "expression": "(NOT ((status-code-OLD = '100'))) AND (NOT ((status-code-OLD = '101'))) AND ((status-code-OLD = '200')) IMPLIES (status-message-NEW = 'OK')"
+    },
+    {
+      "id": "MS4",
+      "source_br_ids": [
+        "BR4"
+      ],
+      "kind": "transition",
+      "description": "Set status-message to 'Created' when the specified condition holds.",
+      "expression": "(NOT ((status-code-OLD = '100'))) AND (NOT ((status-code-OLD = '101'))) AND (NOT ((status-code-OLD = '200'))) AND ((status-code-OLD = '201')) IMPLIES (status-message-NEW = 'Created')"
+    },
+    {
+      "id": "MS5",
+      "source_br_ids": [
+        "BR5"
+      ],
+      "kind": "transition",
+      "description": "Set status-message to 'Accepted' when the specified condition holds.",
+      "expression": "(NOT ((status-code-OLD = '100'))) AND (NOT ((status-code-OLD = '101'))) AND (NOT ((status-code-OLD = '200'))) AND (NOT ((status-code-OLD = '201'))) AND ((status-code-OLD = '202')) IMPLIES (status-message-NEW = 'Accepted')"
+    },
+    {
+      "id": "MS6",
+      "source_br_ids": [
+        "BR6"
+      ],
+      "kind": "transition",
+      "description": "Set status-message to 'Non-Authoritative Information' when the specified condition holds.",
+      "expression": "(NOT ((status-code-OLD = '100'))) AND (NOT ((status-code-OLD = '101'))) AND (NOT ((status-code-OLD = '200'))) AND (NOT ((status-code-OLD = '201'))) AND (NOT ((status-code-OLD = '202'))) AND ((status-code-OLD = '203')) IMPLIES (status-message-NEW = 'Non-Authoritative Information')"
+    },
+    {
+      "id": "MS7",
+      "source_br_ids": [
+        "BR7"
+      ],
+      "kind": "transition",
+      "description": "Set status-message to 'No Content' when the specified condition holds.",
+      "expression": "(NOT ((status-code-OLD = '100'))) AND (NOT ((status-code-OLD = '101'))) AND (NOT ((status-code-OLD = '200'))) AND (NOT ((status-code-OLD = '201'))) AND (NOT ((status-code-OLD = '202'))) AND (NOT ((status-code-OLD = '203'))) AND ((status-code-OLD = '204')) IMPLIES (status-message-NEW = 'No Content')"
+    },
+    {
+      "id": "MS8",
+      "source_br_ids": [
+        "BR8"
+      ],
+      "kind": "transition",
+      "description": "Set status-message to 'Reset Content' when the specified condition holds.",
+      "expression": "(NOT ((status-code-OLD = '100'))) AND (NOT ((status-code-OLD = '101'))) AND (NOT ((status-code-OLD = '200'))) AND (NOT ((status-code-OLD = '201'))) AND (NOT ((status-code-OLD = '202'))) AND (NOT ((status-code-OLD = '203'))) AND (NOT ((status-code-OLD = '204'))) AND ((status-code-OLD = '205')) IMPLIES (status-message-NEW = 'Reset Content')"
+    },
+    {
+      "id": "MS9",
+      "source_br_ids": [
+        "BR9"
+      ],
+      "kind": "transition",
+      "description": "Set status-message to 'Partial Content' when the specified condition holds.",
+      "expression": "(NOT ((status-code-OLD = '100'))) AND (NOT ((status-code-OLD = '101'))) AND (NOT ((status-code-OLD = '200'))) AND (NOT ((status-code-OLD = '201'))) AND (NOT ((status-code-OLD = '202'))) AND (NOT ((status-code-OLD = '203'))) AND (NOT ((status-code-OLD = '204'))) AND (NOT ((status-code-OLD = '205'))) AND ((status-code-OLD = '206')) IMPLIES (status-message-NEW = 'Partial Content')"
+    },
+    {
+      "id": "MS10",
+      "source_br_ids": [
+        "BR10"
+      ],
+      "kind": "transition",
+      "description": "Set status-message to 'Multiple Choices' when the specified condition holds.",
+      "expression": "(NOT ((status-code-OLD = '100'))) AND (NOT ((status-code-OLD = '101'))) AND (NOT ((status-code-OLD = '200'))) AND (NOT ((status-code-OLD = '201'))) AND (NOT ((status-code-OLD = '202'))) AND (NOT ((status-code-OLD = '203'))) AND (NOT ((status-code-OLD = '204'))) AND (NOT ((status-code-OLD = '205'))) AND (NOT ((status-code-OLD = '206'))) AND ((status-code-OLD = '300')) IMPLIES (status-message-NEW = 'Multiple Choices')"
+    },
+    {
+      "id": "MS11",
+      "source_br_ids": [
+        "BR11"
+      ],
+      "kind": "transition",
+      "description": "Set status-message to 'Moved Permanently' when the specified condition holds.",
+      "expression": "(NOT ((status-code-OLD = '100'))) AND (NOT ((status-code-OLD = '101'))) AND (NOT ((status-code-OLD = '200'))) AND (NOT ((status-code-OLD = '201'))) AND (NOT ((status-code-OLD = '202'))) AND (NOT ((status-code-OLD = '203'))) AND (NOT ((status-code-OLD = '204'))) AND (NOT ((status-code-OLD = '205'))) AND (NOT ((status-code-OLD = '206'))) AND (NOT ((status-code-OLD = '300'))) AND ((status-code-OLD = '301')) IMPLIES (status-message-NEW = 'Moved Permanently')"
+    },
+    {
+      "id": "MS12",
+      "source_br_ids": [
+        "BR12"
+      ],
+      "kind": "transition",
+      "description": "Set status-message to 'Found' when the specified condition holds.",
+      "expression": "(NOT ((status-code-OLD = '100'))) AND (NOT ((status-code-OLD = '101'))) AND (NOT ((status-code-OLD = '200'))) AND (NOT ((status-code-OLD = '201'))) AND (NOT ((status-code-OLD = '202'))) AND (NOT ((status-code-OLD = '203'))) AND (NOT ((status-code-OLD = '204'))) AND (NOT ((status-code-OLD = '205'))) AND (NOT ((status-code-OLD = '206'))) AND (NOT ((status-code-OLD = '300'))) AND (NOT ((status-code-OLD = '301'))) AND ((status-code-OLD = '302')) IMPLIES (status-message-NEW = 'Found')"
+    },
+    {
+      "id": "MS13",
+      "source_br_ids": [
+        "BR13"
+      ],
+      "kind": "transition",
+      "description": "Set status-message to 'See Other' when the specified condition holds.",
+      "expression": "(NOT ((status-code-OLD = '100'))) AND (NOT ((status-code-OLD = '101'))) AND (NOT ((status-code-OLD = '200'))) AND (NOT ((status-code-OLD = '201'))) AND (NOT ((status-code-OLD = '202'))) AND (NOT ((status-code-OLD = '203'))) AND (NOT ((status-code-OLD = '204'))) AND (NOT ((status-code-OLD = '205'))) AND (NOT ((status-code-OLD = '206'))) AND (NOT ((status-code-OLD = '300'))) AND (NOT ((status-code-OLD = '301'))) AND (NOT ((status-code-OLD = '302'))) AND ((status-code-OLD = '303')) IMPLIES (status-message-NEW = 'See Other')"
+    },
+    {
+      "id": "MS14",
+      "source_br_ids": [
+        "BR14"
+      ],
+      "kind": "transition",
+      "description": "Set status-message to 'Not Modified' when the specified condition holds.",
+      "expression": "(NOT ((status-code-OLD = '100'))) AND (NOT ((status-code-OLD = '101'))) AND (NOT ((status-code-OLD = '200'))) AND (NOT ((status-code-OLD = '201'))) AND (NOT ((status-code-OLD = '202'))) AND (NOT ((status-code-OLD = '203'))) AND (NOT ((status-code-OLD = '204'))) AND (NOT ((status-code-OLD = '205'))) AND (NOT ((status-code-OLD = '206'))) AND (NOT ((status-code-OLD = '300'))) AND (NOT ((status-code-OLD = '301'))) AND (NOT ((status-code-OLD = '302'))) AND (NOT ((status-code-OLD = '303'))) AND ((status-code-OLD = '304')) IMPLIES (status-message-NEW = 'Not Modified')"
+    },
+    {
+      "id": "MS15",
+      "source_br_ids": [
+        "BR15"
+      ],
+      "kind": "transition",
+      "description": "Set status-message to 'Use Proxy' when the specified condition holds.",
+      "expression": "(NOT ((status-code-OLD = '100'))) AND (NOT ((status-code-OLD = '101'))) AND (NOT ((status-code-OLD = '200'))) AND (NOT ((status-code-OLD = '201'))) AND (NOT ((status-code-OLD = '202'))) AND (NOT ((status-code-OLD = '203'))) AND (NOT ((status-code-OLD = '204'))) AND (NOT ((status-code-OLD = '205'))) AND (NOT ((status-code-OLD = '206'))) AND (NOT ((status-code-OLD = '300'))) AND (NOT ((status-code-OLD = '301'))) AND (NOT ((status-code-OLD = '302'))) AND (NOT ((status-code-OLD = '303'))) AND (NOT ((status-code-OLD = '304'))) AND ((status-code-OLD = '305')) IMPLIES (status-message-NEW = 'Use Proxy')"
+    },
+    {
+      "id": "MS16",
+      "source_br_ids": [
+        "BR16"
+      ],
+      "kind": "transition",
+      "description": "Set status-message to '(Unused)' when the specified condition holds.",
+      "expression": "(NOT ((status-code-OLD = '100'))) AND (NOT ((status-code-OLD = '101'))) AND (NOT ((status-code-OLD = '200'))) AND (NOT ((status-code-OLD = '201'))) AND (NOT ((status-code-OLD = '202'))) AND (NOT ((status-code-OLD = '203'))) AND (NOT ((status-code-OLD = '204'))) AND (NOT ((status-code-OLD = '205'))) AND (NOT ((status-code-OLD = '206'))) AND (NOT ((status-code-OLD = '300'))) AND (NOT ((status-code-OLD = '301'))) AND (NOT ((status-code-OLD = '302'))) AND (NOT ((status-code-OLD = '303'))) AND (NOT ((status-code-OLD = '304'))) AND (NOT ((status-code-OLD = '305'))) AND ((status-code-OLD = '306')) IMPLIES (status-message-NEW = '(Unused)')"
+    },
+    {
+      "id": "MS17",
+      "source_br_ids": [
+        "BR17"
+      ],
+      "kind": "transition",
+      "description": "Set status-message to 'Bad Request' when the specified condition holds.",
+      "expression": "(NOT ((status-code-OLD = '100'))) AND (NOT ((status-code-OLD = '101'))) AND (NOT ((status-code-OLD = '200'))) AND (NOT ((status-code-OLD = '201'))) AND (NOT ((status-code-OLD = '202'))) AND (NOT ((status-code-OLD = '203'))) AND (NOT ((status-code-OLD = '204'))) AND (NOT ((status-code-OLD = '205'))) AND (NOT ((status-code-OLD = '206'))) AND (NOT ((status-code-OLD = '300'))) AND (NOT ((status-code-OLD = '301'))) AND (NOT ((status-code-OLD = '302'))) AND (NOT ((status-code-OLD = '303'))) AND (NOT ((status-code-OLD = '304'))) AND (NOT ((status-code-OLD = '305'))) AND (NOT ((status-code-OLD = '306'))) AND ((status-code-OLD = '400')) IMPLIES (status-message-NEW = 'Bad Request')"
+    },
+    {
+      "id": "MS18",
+      "source_br_ids": [
+        "BR18"
+      ],
+      "kind": "transition",
+      "description": "Set status-message to 'Unauthorized' when the specified condition holds.",
+      "expression": "(NOT ((status-code-OLD = '100'))) AND (NOT ((status-code-OLD = '101'))) AND (NOT ((status-code-OLD = '200'))) AND (NOT ((status-code-OLD = '201'))) AND (NOT ((status-code-OLD = '202'))) AND (NOT ((status-code-OLD = '203'))) AND (NOT ((status-code-OLD = '204'))) AND (NOT ((status-code-OLD = '205'))) AND (NOT ((status-code-OLD = '206'))) AND (NOT ((status-code-OLD = '300'))) AND (NOT ((status-code-OLD = '301'))) AND (NOT ((status-code-OLD = '302'))) AND (NOT ((status-code-OLD = '303'))) AND (NOT ((status-code-OLD = '304'))) AND (NOT ((status-code-OLD = '305'))) AND (NOT ((status-code-OLD = '306'))) AND (NOT ((status-code-OLD = '400'))) AND ((status-code-OLD = '401')) IMPLIES (status-message-NEW = 'Unauthorized')"
+    },
+    {
+      "id": "MS19",
+      "source_br_ids": [
+        "BR19"
+      ],
+      "kind": "transition",
+      "description": "Set status-message to 'Payment Required' when the specified condition holds.",
+      "expression": "(NOT ((status-code-OLD = '100'))) AND (NOT ((status-code-OLD = '101'))) AND (NOT ((status-code-OLD = '200'))) AND (NOT ((status-code-OLD = '201'))) AND (NOT ((status-code-OLD = '202'))) AND (NOT ((status-code-OLD = '203'))) AND (NOT ((status-code-OLD = '204'))) AND (NOT ((status-code-OLD = '205'))) AND (NOT ((status-code-OLD = '206'))) AND (NOT ((status-code-OLD = '300'))) AND (NOT ((status-code-OLD = '301'))) AND (NOT ((status-code-OLD = '302'))) AND (NOT ((status-code-OLD = '303'))) AND (NOT ((status-code-OLD = '304'))) AND (NOT ((status-code-OLD = '305'))) AND (NOT ((status-code-OLD = '306'))) AND (NOT ((status-code-OLD = '400'))) AND (NOT ((status-code-OLD = '401'))) AND ((status-code-OLD = '402')) IMPLIES (status-message-NEW = 'Payment Required')"
+    },
+    {
+      "id": "MS20",
+      "source_br_ids": [
+        "BR20"
+      ],
+      "kind": "transition",
+      "description": "Set status-message to 'Forbidden' when the specified condition holds.",
+      "expression": "(NOT ((status-code-OLD = '100'))) AND (NOT ((status-code-OLD = '101'))) AND (NOT ((status-code-OLD = '200'))) AND (NOT ((status-code-OLD = '201'))) AND (NOT ((status-code-OLD = '202'))) AND (NOT ((status-code-OLD = '203'))) AND (NOT ((status-code-OLD = '204'))) AND (NOT ((status-code-OLD = '205'))) AND (NOT ((status-code-OLD = '206'))) AND (NOT ((status-code-OLD = '300'))) AND (NOT ((status-code-OLD = '301'))) AND (NOT ((status-code-OLD = '302'))) AND (NOT ((status-code-OLD = '303'))) AND (NOT ((status-code-OLD = '304'))) AND (NOT ((status-code-OLD = '305'))) AND (NOT ((status-code-OLD = '306'))) AND (NOT ((status-code-OLD = '400'))) AND (NOT ((status-code-OLD = '401'))) AND (NOT ((status-code-OLD = '402'))) AND ((status-code-OLD = '403')) IMPLIES (status-message-NEW = 'Forbidden')"
+    },
+    {
+      "id": "MS21",
+      "source_br_ids": [
+        "BR21"
+      ],
+      "kind": "transition",
+      "description": "Set status-message to 'Not Found' when the specified condition holds.",
+      "expression": "(NOT ((status-code-OLD = '100'))) AND (NOT ((status-code-OLD = '101'))) AND (NOT ((status-code-OLD = '200'))) AND (NOT ((status-code-OLD = '201'))) AND (NOT ((status-code-OLD = '202'))) AND (NOT ((status-code-OLD = '203'))) AND (NOT ((status-code-OLD = '204'))) AND (NOT ((status-code-OLD = '205'))) AND (NOT ((status-code-OLD = '206'))) AND (NOT ((status-code-OLD = '300'))) AND (NOT ((status-code-OLD = '301'))) AND (NOT ((status-code-OLD = '302'))) AND (NOT ((status-code-OLD = '303'))) AND (NOT ((status-code-OLD = '304'))) AND (NOT ((status-code-OLD = '305'))) AND (NOT ((status-code-OLD = '306'))) AND (NOT ((status-code-OLD = '400'))) AND (NOT ((status-code-OLD = '401'))) AND (NOT ((status-code-OLD = '402'))) AND (NOT ((status-code-OLD = '403'))) AND ((status-code-OLD = '404')) IMPLIES (status-message-NEW = 'Not Found')"
+    },
+    {
+      "id": "MS22",
+      "source_br_ids": [
+        "BR22"
+      ],
+      "kind": "transition",
+      "description": "Set status-message to 'Method Not Allowed' when the specified condition holds.",
+      "expression": "(NOT ((status-code-OLD = '100'))) AND (NOT ((status-code-OLD = '101'))) AND (NOT ((status-code-OLD = '200'))) AND (NOT ((status-code-OLD = '201'))) AND (NOT ((status-code-OLD = '202'))) AND (NOT ((status-code-OLD = '203'))) AND (NOT ((status-code-OLD = '204'))) AND (NOT ((status-code-OLD = '205'))) AND (NOT ((status-code-OLD = '206'))) AND (NOT ((status-code-OLD = '300'))) AND (NOT ((status-code-OLD = '301'))) AND (NOT ((status-code-OLD = '302'))) AND (NOT ((status-code-OLD = '303'))) AND (NOT ((status-code-OLD = '304'))) AND (NOT ((status-code-OLD = '305'))) AND (NOT ((status-code-OLD = '306'))) AND (NOT ((status-code-OLD = '400'))) AND (NOT ((status-code-OLD = '401'))) AND (NOT ((status-code-OLD = '402'))) AND (NOT ((status-code-OLD = '403'))) AND (NOT ((status-code-OLD = '404'))) AND ((status-code-OLD = '405')) IMPLIES (status-message-NEW = 'Method Not Allowed')"
+    },
+    {
+      "id": "MS23",
+      "source_br_ids": [
+        "BR23"
+      ],
+      "kind": "transition",
+      "description": "Set status-message to 'Not Acceptable' when the specified condition holds.",
+      "expression": "(NOT ((status-code-OLD = '100'))) AND (NOT ((status-code-OLD = '101'))) AND (NOT ((status-code-OLD = '200'))) AND (NOT ((status-code-OLD = '201'))) AND (NOT ((status-code-OLD = '202'))) AND (NOT ((status-code-OLD = '203'))) AND (NOT ((status-code-OLD = '204'))) AND (NOT ((status-code-OLD = '205'))) AND (NOT ((status-code-OLD = '206'))) AND (NOT ((status-code-OLD = '300'))) AND (NOT ((status-code-OLD = '301'))) AND (NOT ((status-code-OLD = '302'))) AND (NOT ((status-code-OLD = '303'))) AND (NOT ((status-code-OLD = '304'))) AND (NOT ((status-code-OLD = '305'))) AND (NOT ((status-code-OLD = '306'))) AND (NOT ((status-code-OLD = '400'))) AND (NOT ((status-code-OLD = '401'))) AND (NOT ((status-code-OLD = '402'))) AND (NOT ((status-code-OLD = '403'))) AND (NOT ((status-code-OLD = '404'))) AND (NOT ((status-code-OLD = '405'))) AND ((status-code-OLD = '406')) IMPLIES (status-message-NEW = 'Not Acceptable')"
+    },
+    {
+      "id": "MS24",
+      "source_br_ids": [
+        "BR24"
+      ],
+      "kind": "transition",
+      "description": "Set status-message to 'Proxy Authentication Required' when the specified condition holds.",
+      "expression": "(NOT ((status-code-OLD = '100'))) AND (NOT ((status-code-OLD = '101'))) AND (NOT ((status-code-OLD = '200'))) AND (NOT ((status-code-OLD = '201'))) AND (NOT ((status-code-OLD = '202'))) AND (NOT ((status-code-OLD = '203'))) AND (NOT ((status-code-OLD = '204'))) AND (NOT ((status-code-OLD = '205'))) AND (NOT ((status-code-OLD = '206'))) AND (NOT ((status-code-OLD = '300'))) AND (NOT ((status-code-OLD = '301'))) AND (NOT ((status-code-OLD = '302'))) AND (NOT ((status-code-OLD = '303'))) AND (NOT ((status-code-OLD = '304'))) AND (NOT ((status-code-OLD = '305'))) AND (NOT ((status-code-OLD = '306'))) AND (NOT ((status-code-OLD = '400'))) AND (NOT ((status-code-OLD = '401'))) AND (NOT ((status-code-OLD = '402'))) AND (NOT ((status-code-OLD = '403'))) AND (NOT ((status-code-OLD = '404'))) AND (NOT ((status-code-OLD = '405'))) AND (NOT ((status-code-OLD = '406'))) AND ((status-code-OLD = '407')) IMPLIES (status-message-NEW = 'Proxy Authentication Required')"
+    },
+    {
+      "id": "MS25",
+      "source_br_ids": [
+        "BR25"
+      ],
+      "kind": "transition",
+      "description": "Set status-message to 'Request Timeout' when the specified condition holds.",
+      "expression": "(NOT ((status-code-OLD = '100'))) AND (NOT ((status-code-OLD = '101'))) AND (NOT ((status-code-OLD = '200'))) AND (NOT ((status-code-OLD = '201'))) AND (NOT ((status-code-OLD = '202'))) AND (NOT ((status-code-OLD = '203'))) AND (NOT ((status-code-OLD = '204'))) AND (NOT ((status-code-OLD = '205'))) AND (NOT ((status-code-OLD = '206'))) AND (NOT ((status-code-OLD = '300'))) AND (NOT ((status-code-OLD = '301'))) AND (NOT ((status-code-OLD = '302'))) AND (NOT ((status-code-OLD = '303'))) AND (NOT ((status-code-OLD = '304'))) AND (NOT ((status-code-OLD = '305'))) AND (NOT ((status-code-OLD = '306'))) AND (NOT ((status-code-OLD = '400'))) AND (NOT ((status-code-OLD = '401'))) AND (NOT ((status-code-OLD = '402'))) AND (NOT ((status-code-OLD = '403'))) AND (NOT ((status-code-OLD = '404'))) AND (NOT ((status-code-OLD = '405'))) AND (NOT ((status-code-OLD = '406'))) AND (NOT ((status-code-OLD = '407'))) AND ((status-code-OLD = '408')) IMPLIES (status-message-NEW = 'Request Timeout')"
+    },
+    {
+      "id": "MS26",
+      "source_br_ids": [
+        "BR26"
+      ],
+      "kind": "transition",
+      "description": "Set status-message to 'Conflict' when the specified condition holds.",
+      "expression": "(NOT ((status-code-OLD = '100'))) AND (NOT ((status-code-OLD = '101'))) AND (NOT ((status-code-OLD = '200'))) AND (NOT ((status-code-OLD = '201'))) AND (NOT ((status-code-OLD = '202'))) AND (NOT ((status-code-OLD = '203'))) AND (NOT ((status-code-OLD = '204'))) AND (NOT ((status-code-OLD = '205'))) AND (NOT ((status-code-OLD = '206'))) AND (NOT ((status-code-OLD = '300'))) AND (NOT ((status-code-OLD = '301'))) AND (NOT ((status-code-OLD = '302'))) AND (NOT ((status-code-OLD = '303'))) AND (NOT ((status-code-OLD = '304'))) AND (NOT ((status-code-OLD = '305'))) AND (NOT ((status-code-OLD = '306'))) AND (NOT ((status-code-OLD = '400'))) AND (NOT ((status-code-OLD = '401'))) AND (NOT ((status-code-OLD = '402'))) AND (NOT ((status-code-OLD = '403'))) AND (NOT ((status-code-OLD = '404'))) AND (NOT ((status-code-OLD = '405'))) AND (NOT ((status-code-OLD = '406'))) AND (NOT ((status-code-OLD = '407'))) AND (NOT ((status-code-OLD = '408'))) AND ((status-code-OLD = '409')) IMPLIES (status-message-NEW = 'Conflict')"
+    },
+    {
+      "id": "MS27",
+      "source_br_ids": [
+        "BR27"
+      ],
+      "kind": "transition",
+      "description": "Set status-message to 'Gone' when the specified condition holds.",
+      "expression": "(NOT ((status-code-OLD = '100'))) AND (NOT ((status-code-OLD = '101'))) AND (NOT ((status-code-OLD = '200'))) AND (NOT ((status-code-OLD = '201'))) AND (NOT ((status-code-OLD = '202'))) AND (NOT ((status-code-OLD = '203'))) AND (NOT ((status-code-OLD = '204'))) AND (NOT ((status-code-OLD = '205'))) AND (NOT ((status-code-OLD = '206'))) AND (NOT ((status-code-OLD = '300'))) AND (NOT ((status-code-OLD = '301'))) AND (NOT ((status-code-OLD = '302'))) AND (NOT ((status-code-OLD = '303'))) AND (NOT ((status-code-OLD = '304'))) AND (NOT ((status-code-OLD = '305'))) AND (NOT ((status-code-OLD = '306'))) AND (NOT ((status-code-OLD = '400'))) AND (NOT ((status-code-OLD = '401'))) AND (NOT ((status-code-OLD = '402'))) AND (NOT ((status-code-OLD = '403'))) AND (NOT ((status-code-OLD = '404'))) AND (NOT ((status-code-OLD = '405'))) AND (NOT ((status-code-OLD = '406'))) AND (NOT ((status-code-OLD = '407'))) AND (NOT ((status-code-OLD = '408'))) AND (NOT ((status-code-OLD = '409'))) AND ((status-code-OLD = '410')) IMPLIES (status-message-NEW = 'Gone')"
+    },
+    {
+      "id": "MS28",
+      "source_br_ids": [
+        "BR28"
+      ],
+      "kind": "transition",
+      "description": "Set status-message to 'Length Required' when the specified condition holds.",
+      "expression": "(NOT ((status-code-OLD = '100'))) AND (NOT ((status-code-OLD = '101'))) AND (NOT ((status-code-OLD = '200'))) AND (NOT ((status-code-OLD = '201'))) AND (NOT ((status-code-OLD = '202'))) AND (NOT ((status-code-OLD = '203'))) AND (NOT ((status-code-OLD = '204'))) AND (NOT ((status-code-OLD = '205'))) AND (NOT ((status-code-OLD = '206'))) AND (NOT ((status-code-OLD = '300'))) AND (NOT ((status-code-OLD = '301'))) AND (NOT ((status-code-OLD = '302'))) AND (NOT ((status-code-OLD = '303'))) AND (NOT ((status-code-OLD = '304'))) AND (NOT ((status-code-OLD = '305'))) AND (NOT ((status-code-OLD = '306'))) AND (NOT ((status-code-OLD = '400'))) AND (NOT ((status-code-OLD = '401'))) AND (NOT ((status-code-OLD = '402'))) AND (NOT ((status-code-OLD = '403'))) AND (NOT ((status-code-OLD = '404'))) AND (NOT ((status-code-OLD = '405'))) AND (NOT ((status-code-OLD = '406'))) AND (NOT ((status-code-OLD = '407'))) AND (NOT ((status-code-OLD = '408'))) AND (NOT ((status-code-OLD = '409'))) AND (NOT ((status-code-OLD = '410'))) AND ((status-code-OLD = '411')) IMPLIES (status-message-NEW = 'Length Required')"
+    },
+    {
+      "id": "MS29",
+      "source_br_ids": [
+        "BR29"
+      ],
+      "kind": "transition",
+      "description": "Set status-message to 'Precondition Failed' when the specified condition holds.",
+      "expression": "(NOT ((status-code-OLD = '100'))) AND (NOT ((status-code-OLD = '101'))) AND (NOT ((status-code-OLD = '200'))) AND (NOT ((status-code-OLD = '201'))) AND (NOT ((status-code-OLD = '202'))) AND (NOT ((status-code-OLD = '203'))) AND (NOT ((status-code-OLD = '204'))) AND (NOT ((status-code-OLD = '205'))) AND (NOT ((status-code-OLD = '206'))) AND (NOT ((status-code-OLD = '300'))) AND (NOT ((status-code-OLD = '301'))) AND (NOT ((status-code-OLD = '302'))) AND (NOT ((status-code-OLD = '303'))) AND (NOT ((status-code-OLD = '304'))) AND (NOT ((status-code-OLD = '305'))) AND (NOT ((status-code-OLD = '306'))) AND (NOT ((status-code-OLD = '400'))) AND (NOT ((status-code-OLD = '401'))) AND (NOT ((status-code-OLD = '402'))) AND (NOT ((status-code-OLD = '403'))) AND (NOT ((status-code-OLD = '404'))) AND (NOT ((status-code-OLD = '405'))) AND (NOT ((status-code-OLD = '406'))) AND (NOT ((status-code-OLD = '407'))) AND (NOT ((status-code-OLD = '408'))) AND (NOT ((status-code-OLD = '409'))) AND (NOT ((status-code-OLD = '410'))) AND (NOT ((status-code-OLD = '411'))) AND ((status-code-OLD = '412')) IMPLIES (status-message-NEW = 'Precondition Failed')"
+    },
+    {
+      "id": "MS30",
+      "source_br_ids": [
+        "BR30"
+      ],
+      "kind": "transition",
+      "description": "Set status-message to 'Request Entity Too Large' when the specified condition holds.",
+      "expression": "(NOT ((status-code-OLD = '100'))) AND (NOT ((status-code-OLD = '101'))) AND (NOT ((status-code-OLD = '200'))) AND (NOT ((status-code-OLD = '201'))) AND (NOT ((status-code-OLD = '202'))) AND (NOT ((status-code-OLD = '203'))) AND (NOT ((status-code-OLD = '204'))) AND (NOT ((status-code-OLD = '205'))) AND (NOT ((status-code-OLD = '206'))) AND (NOT ((status-code-OLD = '300'))) AND (NOT ((status-code-OLD = '301'))) AND (NOT ((status-code-OLD = '302'))) AND (NOT ((status-code-OLD = '303'))) AND (NOT ((status-code-OLD = '304'))) AND (NOT ((status-code-OLD = '305'))) AND (NOT ((status-code-OLD = '306'))) AND (NOT ((status-code-OLD = '400'))) AND (NOT ((status-code-OLD = '401'))) AND (NOT ((status-code-OLD = '402'))) AND (NOT ((status-code-OLD = '403'))) AND (NOT ((status-code-OLD = '404'))) AND (NOT ((status-code-OLD = '405'))) AND (NOT ((status-code-OLD = '406'))) AND (NOT ((status-code-OLD = '407'))) AND (NOT ((status-code-OLD = '408'))) AND (NOT ((status-code-OLD = '409'))) AND (NOT ((status-code-OLD = '410'))) AND (NOT ((status-code-OLD = '411'))) AND (NOT ((status-code-OLD = '412'))) AND ((status-code-OLD = '413')) IMPLIES (status-message-NEW = 'Request Entity Too Large')"
+    },
+    {
+      "id": "MS31",
+      "source_br_ids": [
+        "BR31"
+      ],
+      "kind": "transition",
+      "description": "Set status-message to 'Request-URI Too Long' when the specified condition holds.",
+      "expression": "(NOT ((status-code-OLD = '100'))) AND (NOT ((status-code-OLD = '101'))) AND (NOT ((status-code-OLD = '200'))) AND (NOT ((status-code-OLD = '201'))) AND (NOT ((status-code-OLD = '202'))) AND (NOT ((status-code-OLD = '203'))) AND (NOT ((status-code-OLD = '204'))) AND (NOT ((status-code-OLD = '205'))) AND (NOT ((status-code-OLD = '206'))) AND (NOT ((status-code-OLD = '300'))) AND (NOT ((status-code-OLD = '301'))) AND (NOT ((status-code-OLD = '302'))) AND (NOT ((status-code-OLD = '303'))) AND (NOT ((status-code-OLD = '304'))) AND (NOT ((status-code-OLD = '305'))) AND (NOT ((status-code-OLD = '306'))) AND (NOT ((status-code-OLD = '400'))) AND (NOT ((status-code-OLD = '401'))) AND (NOT ((status-code-OLD = '402'))) AND (NOT ((status-code-OLD = '403'))) AND (NOT ((status-code-OLD = '404'))) AND (NOT ((status-code-OLD = '405'))) AND (NOT ((status-code-OLD = '406'))) AND (NOT ((status-code-OLD = '407'))) AND (NOT ((status-code-OLD = '408'))) AND (NOT ((status-code-OLD = '409'))) AND (NOT ((status-code-OLD = '410'))) AND (NOT ((status-code-OLD = '411'))) AND (NOT ((status-code-OLD = '412'))) AND (NOT ((status-code-OLD = '413'))) AND ((status-code-OLD = '414')) IMPLIES (status-message-NEW = 'Request-URI Too Long')"
+    },
+    {
+      "id": "MS32",
+      "source_br_ids": [
+        "BR32"
+      ],
+      "kind": "transition",
+      "description": "Set status-message to 'Unsupported Media Type' when the specified condition holds.",
+      "expression": "(NOT ((status-code-OLD = '100'))) AND (NOT ((status-code-OLD = '101'))) AND (NOT ((status-code-OLD = '200'))) AND (NOT ((status-code-OLD = '201'))) AND (NOT ((status-code-OLD = '202'))) AND (NOT ((status-code-OLD = '203'))) AND (NOT ((status-code-OLD = '204'))) AND (NOT ((status-code-OLD = '205'))) AND (NOT ((status-code-OLD = '206'))) AND (NOT ((status-code-OLD = '300'))) AND (NOT ((status-code-OLD = '301'))) AND (NOT ((status-code-OLD = '302'))) AND (NOT ((status-code-OLD = '303'))) AND (NOT ((status-code-OLD = '304'))) AND (NOT ((status-code-OLD = '305'))) AND (NOT ((status-code-OLD = '306'))) AND (NOT ((status-code-OLD = '400'))) AND (NOT ((status-code-OLD = '401'))) AND (NOT ((status-code-OLD = '402'))) AND (NOT ((status-code-OLD = '403'))) AND (NOT ((status-code-OLD = '404'))) AND (NOT ((status-code-OLD = '405'))) AND (NOT ((status-code-OLD = '406'))) AND (NOT ((status-code-OLD = '407'))) AND (NOT ((status-code-OLD = '408'))) AND (NOT ((status-code-OLD = '409'))) AND (NOT ((status-code-OLD = '410'))) AND (NOT ((status-code-OLD = '411'))) AND (NOT ((status-code-OLD = '412'))) AND (NOT ((status-code-OLD = '413'))) AND (NOT ((status-code-OLD = '414'))) AND ((status-code-OLD = '415')) IMPLIES (status-message-NEW = 'Unsupported Media Type')"
+    },
+    {
+      "id": "MS33",
+      "source_br_ids": [
+        "BR33"
+      ],
+      "kind": "transition",
+      "description": "Set status-message to 'Requested Range Not Satisfiable' when the specified condition holds.",
+      "expression": "(NOT ((status-code-OLD = '100'))) AND (NOT ((status-code-OLD = '101'))) AND (NOT ((status-code-OLD = '200'))) AND (NOT ((status-code-OLD = '201'))) AND (NOT ((status-code-OLD = '202'))) AND (NOT ((status-code-OLD = '203'))) AND (NOT ((status-code-OLD = '204'))) AND (NOT ((status-code-OLD = '205'))) AND (NOT ((status-code-OLD = '206'))) AND (NOT ((status-code-OLD = '300'))) AND (NOT ((status-code-OLD = '301'))) AND (NOT ((status-code-OLD = '302'))) AND (NOT ((status-code-OLD = '303'))) AND (NOT ((status-code-OLD = '304'))) AND (NOT ((status-code-OLD = '305'))) AND (NOT ((status-code-OLD = '306'))) AND (NOT ((status-code-OLD = '400'))) AND (NOT ((status-code-OLD = '401'))) AND (NOT ((status-code-OLD = '402'))) AND (NOT ((status-code-OLD = '403'))) AND (NOT ((status-code-OLD = '404'))) AND (NOT ((status-code-OLD = '405'))) AND (NOT ((status-code-OLD = '406'))) AND (NOT ((status-code-OLD = '407'))) AND (NOT ((status-code-OLD = '408'))) AND (NOT ((status-code-OLD = '409'))) AND (NOT ((status-code-OLD = '410'))) AND (NOT ((status-code-OLD = '411'))) AND (NOT ((status-code-OLD = '412'))) AND (NOT ((status-code-OLD = '413'))) AND (NOT ((status-code-OLD = '414'))) AND (NOT ((status-code-OLD = '415'))) AND ((status-code-OLD = '416')) IMPLIES (status-message-NEW = 'Requested Range Not Satisfiable')"
+    },
+    {
+      "id": "MS34",
+      "source_br_ids": [
+        "BR34"
+      ],
+      "kind": "transition",
+      "description": "Set status-message to 'Expectation Failed' when the specified condition holds.",
+      "expression": "(NOT ((status-code-OLD = '100'))) AND (NOT ((status-code-OLD = '101'))) AND (NOT ((status-code-OLD = '200'))) AND (NOT ((status-code-OLD = '201'))) AND (NOT ((status-code-OLD = '202'))) AND (NOT ((status-code-OLD = '203'))) AND (NOT ((status-code-OLD = '204'))) AND (NOT ((status-code-OLD = '205'))) AND (NOT ((status-code-OLD = '206'))) AND (NOT ((status-code-OLD = '300'))) AND (NOT ((status-code-OLD = '301'))) AND (NOT ((status-code-OLD = '302'))) AND (NOT ((status-code-OLD = '303'))) AND (NOT ((status-code-OLD = '304'))) AND (NOT ((status-code-OLD = '305'))) AND (NOT ((status-code-OLD = '306'))) AND (NOT ((status-code-OLD = '400'))) AND (NOT ((status-code-OLD = '401'))) AND (NOT ((status-code-OLD = '402'))) AND (NOT ((status-code-OLD = '403'))) AND (NOT ((status-code-OLD = '404'))) AND (NOT ((status-code-OLD = '405'))) AND (NOT ((status-code-OLD = '406'))) AND (NOT ((status-code-OLD = '407'))) AND (NOT ((status-code-OLD = '408'))) AND (NOT ((status-code-OLD = '409'))) AND (NOT ((status-code-OLD = '410'))) AND (NOT ((status-code-OLD = '411'))) AND (NOT ((status-code-OLD = '412'))) AND (NOT ((status-code-OLD = '413'))) AND (NOT ((status-code-OLD = '414'))) AND (NOT ((status-code-OLD = '415'))) AND (NOT ((status-code-OLD = '416'))) AND ((status-code-OLD = '417')) IMPLIES (status-message-NEW = 'Expectation Failed')"
+    },
+    {
+      "id": "MS35",
+      "source_br_ids": [
+        "BR35"
+      ],
+      "kind": "transition",
+      "description": "Set status-message to 'Internal Server Error' when the specified condition holds.",
+      "expression": "(NOT ((status-code-OLD = '100'))) AND (NOT ((status-code-OLD = '101'))) AND (NOT ((status-code-OLD = '200'))) AND (NOT ((status-code-OLD = '201'))) AND (NOT ((status-code-OLD = '202'))) AND (NOT ((status-code-OLD = '203'))) AND (NOT ((status-code-OLD = '204'))) AND (NOT ((status-code-OLD = '205'))) AND (NOT ((status-code-OLD = '206'))) AND (NOT ((status-code-OLD = '300'))) AND (NOT ((status-code-OLD = '301'))) AND (NOT ((status-code-OLD = '302'))) AND (NOT ((status-code-OLD = '303'))) AND (NOT ((status-code-OLD = '304'))) AND (NOT ((status-code-OLD = '305'))) AND (NOT ((status-code-OLD = '306'))) AND (NOT ((status-code-OLD = '400'))) AND (NOT ((status-code-OLD = '401'))) AND (NOT ((status-code-OLD = '402'))) AND (NOT ((status-code-OLD = '403'))) AND (NOT ((status-code-OLD = '404'))) AND (NOT ((status-code-OLD = '405'))) AND (NOT ((status-code-OLD = '406'))) AND (NOT ((status-code-OLD = '407'))) AND (NOT ((status-code-OLD = '408'))) AND (NOT ((status-code-OLD = '409'))) AND (NOT ((status-code-OLD = '410'))) AND (NOT ((status-code-OLD = '411'))) AND (NOT ((status-code-OLD = '412'))) AND (NOT ((status-code-OLD = '413'))) AND (NOT ((status-code-OLD = '414'))) AND (NOT ((status-code-OLD = '415'))) AND (NOT ((status-code-OLD = '416'))) AND (NOT ((status-code-OLD = '417'))) AND ((status-code-OLD = '500')) IMPLIES (status-message-NEW = 'Internal Server Error')"
+    },
+    {
+      "id": "MS36",
+      "source_br_ids": [
+        "BR36"
+      ],
+      "kind": "transition",
+      "description": "Set status-message to 'Not Implemented' when the specified condition holds.",
+      "expression": "(NOT ((status-code-OLD = '100'))) AND (NOT ((status-code-OLD = '101'))) AND (NOT ((status-code-OLD = '200'))) AND (NOT ((status-code-OLD = '201'))) AND (NOT ((status-code-OLD = '202'))) AND (NOT ((status-code-OLD = '203'))) AND (NOT ((status-code-OLD = '204'))) AND (NOT ((status-code-OLD = '205'))) AND (NOT ((status-code-OLD = '206'))) AND (NOT ((status-code-OLD = '300'))) AND (NOT ((status-code-OLD = '301'))) AND (NOT ((status-code-OLD = '302'))) AND (NOT ((status-code-OLD = '303'))) AND (NOT ((status-code-OLD = '304'))) AND (NOT ((status-code-OLD = '305'))) AND (NOT ((status-code-OLD = '306'))) AND (NOT ((status-code-OLD = '400'))) AND (NOT ((status-code-OLD = '401'))) AND (NOT ((status-code-OLD = '402'))) AND (NOT ((status-code-OLD = '403'))) AND (NOT ((status-code-OLD = '404'))) AND (NOT ((status-code-OLD = '405'))) AND (NOT ((status-code-OLD = '406'))) AND (NOT ((status-code-OLD = '407'))) AND (NOT ((status-code-OLD = '408'))) AND (NOT ((status-code-OLD = '409'))) AND (NOT ((status-code-OLD = '410'))) AND (NOT ((status-code-OLD = '411'))) AND (NOT ((status-code-OLD = '412'))) AND (NOT ((status-code-OLD = '413'))) AND (NOT ((status-code-OLD = '414'))) AND (NOT ((status-code-OLD = '415'))) AND (NOT ((status-code-OLD = '416'))) AND (NOT ((status-code-OLD = '417'))) AND (NOT ((status-code-OLD = '500'))) AND ((status-code-OLD = '501')) IMPLIES (status-message-NEW = 'Not Implemented')"
+    },
+    {
+      "id": "MS37",
+      "source_br_ids": [
+        "BR37"
+      ],
+      "kind": "transition",
+      "description": "Set status-message to 'Bad Gateway' when the specified condition holds.",
+      "expression": "(NOT ((status-code-OLD = '100'))) AND (NOT ((status-code-OLD = '101'))) AND (NOT ((status-code-OLD = '200'))) AND (NOT ((status-code-OLD = '201'))) AND (NOT ((status-code-OLD = '202'))) AND (NOT ((status-code-OLD = '203'))) AND (NOT ((status-code-OLD = '204'))) AND (NOT ((status-code-OLD = '205'))) AND (NOT ((status-code-OLD = '206'))) AND (NOT ((status-code-OLD = '300'))) AND (NOT ((status-code-OLD = '301'))) AND (NOT ((status-code-OLD = '302'))) AND (NOT ((status-code-OLD = '303'))) AND (NOT ((status-code-OLD = '304'))) AND (NOT ((status-code-OLD = '305'))) AND (NOT ((status-code-OLD = '306'))) AND (NOT ((status-code-OLD = '400'))) AND (NOT ((status-code-OLD = '401'))) AND (NOT ((status-code-OLD = '402'))) AND (NOT ((status-code-OLD = '403'))) AND (NOT ((status-code-OLD = '404'))) AND (NOT ((status-code-OLD = '405'))) AND (NOT ((status-code-OLD = '406'))) AND (NOT ((status-code-OLD = '407'))) AND (NOT ((status-code-OLD = '408'))) AND (NOT ((status-code-OLD = '409'))) AND (NOT ((status-code-OLD = '410'))) AND (NOT ((status-code-OLD = '411'))) AND (NOT ((status-code-OLD = '412'))) AND (NOT ((status-code-OLD = '413'))) AND (NOT ((status-code-OLD = '414'))) AND (NOT ((status-code-OLD = '415'))) AND (NOT ((status-code-OLD = '416'))) AND (NOT ((status-code-OLD = '417'))) AND (NOT ((status-code-OLD = '500'))) AND (NOT ((status-code-OLD = '501'))) AND ((status-code-OLD = '502')) IMPLIES (status-message-NEW = 'Bad Gateway')"
+    },
+    {
+      "id": "MS38",
+      "source_br_ids": [
+        "BR38"
+      ],
+      "kind": "transition",
+      "description": "Set status-message to 'Service Unavailable' when the specified condition holds.",
+      "expression": "(NOT ((status-code-OLD = '100'))) AND (NOT ((status-code-OLD = '101'))) AND (NOT ((status-code-OLD = '200'))) AND (NOT ((status-code-OLD = '201'))) AND (NOT ((status-code-OLD = '202'))) AND (NOT ((status-code-OLD = '203'))) AND (NOT ((status-code-OLD = '204'))) AND (NOT ((status-code-OLD = '205'))) AND (NOT ((status-code-OLD = '206'))) AND (NOT ((status-code-OLD = '300'))) AND (NOT ((status-code-OLD = '301'))) AND (NOT ((status-code-OLD = '302'))) AND (NOT ((status-code-OLD = '303'))) AND (NOT ((status-code-OLD = '304'))) AND (NOT ((status-code-OLD = '305'))) AND (NOT ((status-code-OLD = '306'))) AND (NOT ((status-code-OLD = '400'))) AND (NOT ((status-code-OLD = '401'))) AND (NOT ((status-code-OLD = '402'))) AND (NOT ((status-code-OLD = '403'))) AND (NOT ((status-code-OLD = '404'))) AND (NOT ((status-code-OLD = '405'))) AND (NOT ((status-code-OLD = '406'))) AND (NOT ((status-code-OLD = '407'))) AND (NOT ((status-code-OLD = '408'))) AND (NOT ((status-code-OLD = '409'))) AND (NOT ((status-code-OLD = '410'))) AND (NOT ((status-code-OLD = '411'))) AND (NOT ((status-code-OLD = '412'))) AND (NOT ((status-code-OLD = '413'))) AND (NOT ((status-code-OLD = '414'))) AND (NOT ((status-code-OLD = '415'))) AND (NOT ((status-code-OLD = '416'))) AND (NOT ((status-code-OLD = '417'))) AND (NOT ((status-code-OLD = '500'))) AND (NOT ((status-code-OLD = '501'))) AND (NOT ((status-code-OLD = '502'))) AND ((status-code-OLD = '503')) IMPLIES (status-message-NEW = 'Service Unavailable')"
+    },
+    {
+      "id": "MS39",
+      "source_br_ids": [
+        "BR39"
+      ],
+      "kind": "transition",
+      "description": "Set status-message to 'Gateway Timeout' when the specified condition holds.",
+      "expression": "(NOT ((status-code-OLD = '100'))) AND (NOT ((status-code-OLD = '101'))) AND (NOT ((status-code-OLD = '200'))) AND (NOT ((status-code-OLD = '201'))) AND (NOT ((status-code-OLD = '202'))) AND (NOT ((status-code-OLD = '203'))) AND (NOT ((status-code-OLD = '204'))) AND (NOT ((status-code-OLD = '205'))) AND (NOT ((status-code-OLD = '206'))) AND (NOT ((status-code-OLD = '300'))) AND (NOT ((status-code-OLD = '301'))) AND (NOT ((status-code-OLD = '302'))) AND (NOT ((status-code-OLD = '303'))) AND (NOT ((status-code-OLD = '304'))) AND (NOT ((status-code-OLD = '305'))) AND (NOT ((status-code-OLD = '306'))) AND (NOT ((status-code-OLD = '400'))) AND (NOT ((status-code-OLD = '401'))) AND (NOT ((status-code-OLD = '402'))) AND (NOT ((status-code-OLD = '403'))) AND (NOT ((status-code-OLD = '404'))) AND (NOT ((status-code-OLD = '405'))) AND (NOT ((status-code-OLD = '406'))) AND (NOT ((status-code-OLD = '407'))) AND (NOT ((status-code-OLD = '408'))) AND (NOT ((status-code-OLD = '409'))) AND (NOT ((status-code-OLD = '410'))) AND (NOT ((status-code-OLD = '411'))) AND (NOT ((status-code-OLD = '412'))) AND (NOT ((status-code-OLD = '413'))) AND (NOT ((status-code-OLD = '414'))) AND (NOT ((status-code-OLD = '415'))) AND (NOT ((status-code-OLD = '416'))) AND (NOT ((status-code-OLD = '417'))) AND (NOT ((status-code-OLD = '500'))) AND (NOT ((status-code-OLD = '501'))) AND (NOT ((status-code-OLD = '502'))) AND (NOT ((status-code-OLD = '503'))) AND ((status-code-OLD = '504')) IMPLIES (status-message-NEW = 'Gateway Timeout')"
+    },
+    {
+      "id": "MS40",
+      "source_br_ids": [
+        "BR40"
+      ],
+      "kind": "transition",
+      "description": "Set status-message to 'HTTP Version Not Supported' when the specified condition holds.",
+      "expression": "(NOT ((status-code-OLD = '100'))) AND (NOT ((status-code-OLD = '101'))) AND (NOT ((status-code-OLD = '200'))) AND (NOT ((status-code-OLD = '201'))) AND (NOT ((status-code-OLD = '202'))) AND (NOT ((status-code-OLD = '203'))) AND (NOT ((status-code-OLD = '204'))) AND (NOT ((status-code-OLD = '205'))) AND (NOT ((status-code-OLD = '206'))) AND (NOT ((status-code-OLD = '300'))) AND (NOT ((status-code-OLD = '301'))) AND (NOT ((status-code-OLD = '302'))) AND (NOT ((status-code-OLD = '303'))) AND (NOT ((status-code-OLD = '304'))) AND (NOT ((status-code-OLD = '305'))) AND (NOT ((status-code-OLD = '306'))) AND (NOT ((status-code-OLD = '400'))) AND (NOT ((status-code-OLD = '401'))) AND (NOT ((status-code-OLD = '402'))) AND (NOT ((status-code-OLD = '403'))) AND (NOT ((status-code-OLD = '404'))) AND (NOT ((status-code-OLD = '405'))) AND (NOT ((status-code-OLD = '406'))) AND (NOT ((status-code-OLD = '407'))) AND (NOT ((status-code-OLD = '408'))) AND (NOT ((status-code-OLD = '409'))) AND (NOT ((status-code-OLD = '410'))) AND (NOT ((status-code-OLD = '411'))) AND (NOT ((status-code-OLD = '412'))) AND (NOT ((status-code-OLD = '413'))) AND (NOT ((status-code-OLD = '414'))) AND (NOT ((status-code-OLD = '415'))) AND (NOT ((status-code-OLD = '416'))) AND (NOT ((status-code-OLD = '417'))) AND (NOT ((status-code-OLD = '500'))) AND (NOT ((status-code-OLD = '501'))) AND (NOT ((status-code-OLD = '502'))) AND (NOT ((status-code-OLD = '503'))) AND (NOT ((status-code-OLD = '504'))) AND ((status-code-OLD = '505')) IMPLIES (status-message-NEW = 'HTTP Version Not Supported')"
+    },
+    {
+      "id": "MS41",
+      "source_br_ids": [
+        "BR41"
+      ],
+      "kind": "transition",
+      "description": "Set status-message to 'unknown status' when the specified condition holds (EVALUATE WHEN OTHER equivalent guard as expressed in the business rule).",
+      "expression": "(NOT ((status-code-OLD = '100'))) AND (NOT ((status-code-OLD = '101'))) AND (NOT ((status-code-OLD = '200'))) AND (NOT ((status-code-OLD = '201'))) AND (NOT ((status-code-OLD = '202'))) AND (NOT ((status-code-OLD = '203'))) AND (NOT ((status-code-OLD = '204'))) AND (NOT ((status-code-OLD = '205'))) AND (NOT ((status-code-OLD = '206'))) AND (NOT ((status-code-OLD = '300'))) AND (NOT ((status-code-OLD = '301'))) AND (NOT ((status-code-OLD = '302'))) AND (NOT ((status-code-OLD = '303'))) AND (NOT ((status-code-OLD = '304'))) AND (NOT ((status-code-OLD = '305'))) AND (NOT ((status-code-OLD = '306'))) AND (NOT ((status-code-OLD = '400'))) AND (NOT ((status-code-OLD = '401'))) AND (NOT ((status-code-OLD = '402'))) AND (NOT ((status-code-OLD = '403'))) AND (NOT ((status-code-OLD = '404'))) AND (NOT ((status-code-OLD = '405'))) AND (NOT ((status-code-OLD = '406'))) AND (NOT ((status-code-OLD = '407'))) AND (NOT ((status-code-OLD = '408'))) AND (NOT ((status-code-OLD = '409'))) AND (NOT ((status-code-OLD = '410'))) AND (NOT ((status-code-OLD = '411'))) AND (NOT ((status-code-OLD = '412'))) AND (NOT ((status-code-OLD = '413'))) AND (NOT ((status-code-OLD = '414'))) AND (NOT ((status-code-OLD = '415'))) AND (NOT ((status-code-OLD = '416'))) AND (NOT ((status-code-OLD = '417'))) AND (NOT ((status-code-OLD = '500'))) AND (NOT ((status-code-OLD = '501'))) AND (NOT ((status-code-OLD = '502'))) AND (NOT ((status-code-OLD = '503'))) AND (NOT ((status-code-OLD = '504'))) AND (NOT ((status-code-OLD = '505'))) IMPLIES (status-message-NEW = 'unknown status')"
+    }
+  ]
+}

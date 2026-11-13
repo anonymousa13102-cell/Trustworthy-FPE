@@ -1,0 +1,149 @@
+{
+  "program_name": "EMPPAY",
+  "variable_roles": {
+    "REC-COUNTER": "BUSINESS_ENTITY",
+    "EMP-RECORD": "BUSINESS_ENTITY",
+    "EMP-NAME": "BUSINESS_ENTITY",
+    "EMP-FNAME": "BUSINESS_ENTITY",
+    "EMP-LNAME": "BUSINESS_ENTITY",
+    "EMP-HOURLY-RATE": "BUSINESS_ENTITY",
+    "EMP-OT-RATE": "BUSINESS_ENTITY",
+    "EMP-REWARD": "BUSINESS_ENTITY",
+    "EMP-HOURS": "BUSINESS_ENTITY",
+    "EMP-PAY-WEEK": "BUSINESS_ENTITY",
+    "EMP-PAY-MONTH": "BUSINESS_ENTITY"
+  },
+  "business_rules": [
+    {
+      "id": "BR1",
+      "sbvr_class": "OBLIGATION",
+      "verb_concept": "set employee first name",
+      "rule": "It is obligatory that EMP-FNAME is set to \"Millard\".",
+      "natural_language_rule": "The employee first name (EMP-FNAME) is set to \"Millard\".",
+      "source_variables": [
+        "EMP-FNAME"
+      ],
+      "source_block": "INITIALIZATION"
+    },
+    {
+      "id": "BR2",
+      "sbvr_class": "OBLIGATION",
+      "verb_concept": "set employee last name",
+      "rule": "It is obligatory that EMP-LNAME is set to \"Fillmore\".",
+      "natural_language_rule": "The employee last name (EMP-LNAME) is set to \"Fillmore\".",
+      "source_variables": [
+        "EMP-LNAME"
+      ],
+      "source_block": "INITIALIZATION"
+    },
+    {
+      "id": "BR3",
+      "sbvr_class": "OBLIGATION",
+      "verb_concept": "set employee hours",
+      "rule": "It is obligatory that EMP-HOURS is set to 19.",
+      "natural_language_rule": "The employee hours (EMP-HOURS) is set to 19.",
+      "source_variables": [
+        "EMP-HOURS"
+      ],
+      "source_block": "INITIALIZATION"
+    },
+    {
+      "id": "BR4",
+      "sbvr_class": "OBLIGATION",
+      "verb_concept": "set employee hourly rate",
+      "rule": "It is obligatory that EMP-HOURLY-RATE is set to 23.50.",
+      "natural_language_rule": "The employee hourly rate (EMP-HOURLY-RATE) is set to 23.50.",
+      "source_variables": [
+        "EMP-HOURLY-RATE"
+      ],
+      "source_block": "INITIALIZATION"
+    },
+    {
+      "id": "BR5",
+      "sbvr_class": "OBLIGATION",
+      "verb_concept": "set employee overtime rate",
+      "rule": "If (EMP-HOURS >= 40), then it is obligatory that EMP-OT-RATE is set to .25.",
+      "natural_language_rule": "If (the emp hours (EMP-HOURS) is at least 40), then it is obligatory that the emp ot rate (EMP-OT-RATE) is set to .25.",
+      "source_variables": [
+        "EMP-HOURS",
+        "EMP-OT-RATE"
+      ],
+      "source_block": "PAYMENT-WEEKLY"
+    },
+    {
+      "id": "BR6",
+      "sbvr_class": "OBLIGATION",
+      "verb_concept": "set employee overtime rate",
+      "rule": "If (NOT (EMP-HOURS >= 40)) AND (EMP-HOURS >= 50), then it is obligatory that EMP-OT-RATE is set to .50.",
+      "natural_language_rule": "If not (the employee hours (EMP-HOURS) is at least 40) and the employee hours is at least 50, then the employee overtime rate (EMP-OT-RATE) is set to 0.50.",
+      "source_variables": [
+        "EMP-HOURS",
+        "EMP-OT-RATE"
+      ],
+      "source_block": "PAYMENT-WEEKLY"
+    },
+    {
+      "id": "BR7",
+      "sbvr_class": "OBLIGATION",
+      "verb_concept": "set employee overtime rate",
+      "rule": "If (NOT (EMP-HOURS >= 40)) AND (NOT (EMP-HOURS >= 50)), then it is obligatory that EMP-OT-RATE is set to ZERO.",
+      "natural_language_rule": "If not (the employee hours (EMP-HOURS) is at least 40) and not (the employee hours is at least 50), then the employee overtime rate (EMP-OT-RATE) is set to 0.",
+      "source_variables": [
+        "EMP-HOURS",
+        "EMP-OT-RATE"
+      ],
+      "source_block": "PAYMENT-WEEKLY"
+    },
+    {
+      "id": "BR8",
+      "sbvr_class": "NECESSITY",
+      "verb_concept": "calculate employee weekly pay",
+      "rule": "It is necessary that EMP-PAY-WEEK is calculated as ( EMP-HOURS * EMP-HOURLY-RATE ) * ( 1 + EMP-OT-RATE ).",
+      "natural_language_rule": "The employee pay week (EMP-PAY-WEEK) is calculated as (the employee hours (EMP-HOURS) multiplied by the employee hourly rate (EMP-HOURLY-RATE)) multiplied by (1 plus the employee overtime rate (EMP-OT-RATE)).",
+      "source_variables": [
+        "EMP-HOURS",
+        "EMP-HOURLY-RATE",
+        "EMP-OT-RATE",
+        "EMP-PAY-WEEK"
+      ],
+      "source_block": "PAYMENT-WEEKLY"
+    },
+    {
+      "id": "BR9",
+      "sbvr_class": "OBLIGATION",
+      "verb_concept": "set employee reward",
+      "rule": "If (EMP-HOURS > 150), then it is obligatory that EMP-REWARD is set to .50.",
+      "natural_language_rule": "If (the emp hours (EMP-HOURS) is greater than 150), then it is obligatory that the emp reward (EMP-REWARD) is set to .50.",
+      "source_variables": [
+        "EMP-HOURS",
+        "EMP-REWARD"
+      ],
+      "source_block": "PAYMENT-MONTHLY"
+    },
+    {
+      "id": "BR10",
+      "sbvr_class": "OBLIGATION",
+      "verb_concept": "set employee reward",
+      "rule": "If (NOT (EMP-HOURS > 150)), then it is obligatory that EMP-REWARD is set to ZERO.",
+      "natural_language_rule": "If not (the employee hours (EMP-HOURS) is greater than 150), then the employee reward (EMP-REWARD) is set to 0.",
+      "source_variables": [
+        "EMP-HOURS",
+        "EMP-REWARD"
+      ],
+      "source_block": "PAYMENT-MONTHLY"
+    },
+    {
+      "id": "BR11",
+      "sbvr_class": "NECESSITY",
+      "verb_concept": "calculate employee monthly pay",
+      "rule": "It is necessary that EMP-PAY-MONTH is calculated as ( EMP-PAY-WEEK * 4 ) * ( 1 + EMP-REWARD ).",
+      "natural_language_rule": "The employee pay month (EMP-PAY-MONTH) is calculated as (the employee pay week (EMP-PAY-WEEK) multiplied by 4) multiplied by (1 plus the employee reward (EMP-REWARD)).",
+      "source_variables": [
+        "EMP-PAY-WEEK",
+        "EMP-REWARD",
+        "EMP-PAY-MONTH"
+      ],
+      "source_block": "PAYMENT-MONTHLY"
+    }
+  ]
+}

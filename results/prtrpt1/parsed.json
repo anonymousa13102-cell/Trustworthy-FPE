@@ -1,0 +1,564 @@
+{
+  "programs": [
+    {
+      "name": "PRTRPT1",
+      "data_division": {
+        "sections": {
+          "File Section": {
+            "variables": [
+              {
+                "level": "01",
+                "name": "PrintLine",
+                "declaration": "01 PrintLine PIC X ( 44).",
+                "usage": "DISPLAY",
+                "picture": "X(44)",
+                "type": "alphanumeric",
+                "characters": 44
+              },
+              {
+                "level": "01",
+                "name": "MemberRec",
+                "declaration": "01 MemberRec.",
+                "usage": "DISPLAY",
+                "type": "group"
+              },
+              {
+                "level": "02",
+                "name": "MemberId",
+                "declaration": "02 MemberId PIC X ( 5).",
+                "usage": "DISPLAY",
+                "picture": "X(5)",
+                "type": "alphanumeric",
+                "characters": 5
+              },
+              {
+                "level": "02",
+                "name": "MemberName",
+                "declaration": "02 MemberName PIC X ( 20).",
+                "usage": "DISPLAY",
+                "picture": "X(20)",
+                "type": "alphanumeric",
+                "characters": 20
+              },
+              {
+                "level": "02",
+                "name": "MemberType",
+                "declaration": "02 MemberType PIC 9.",
+                "usage": "DISPLAY",
+                "picture": "9",
+                "type": "numeric",
+                "signed": false,
+                "digits": 1,
+                "integer_digits": 1,
+                "decimal_digits": 0
+              },
+              {
+                "level": "02",
+                "name": "MemberGender",
+                "declaration": "02 MemberGender PIC X.",
+                "usage": "DISPLAY",
+                "picture": "X",
+                "type": "alphanumeric",
+                "characters": 1
+              }
+            ]
+          },
+          "Working Storage Section": {
+            "variables": [
+              {
+                "level": "01",
+                "name": "WS-File-Status",
+                "declaration": "01 WS-File-Status.",
+                "usage": "DISPLAY",
+                "type": "group"
+              },
+              {
+                "level": "01",
+                "name": "PageHeading",
+                "declaration": "01 PageHeading.",
+                "usage": "DISPLAY",
+                "type": "group"
+              },
+              {
+                "level": "02",
+                "name": "FILLER",
+                "declaration": "02 FILLER PIC X ( 44) VALUE \"Rolling Greens Golf Club - Membership Report\".",
+                "usage": "DISPLAY",
+                "picture": "X(44)",
+                "type": "alphanumeric",
+                "characters": 44
+              },
+              {
+                "level": "01",
+                "name": "PageFooting",
+                "declaration": "01 PageFooting.",
+                "usage": "DISPLAY",
+                "type": "group"
+              },
+              {
+                "level": "02",
+                "name": "FILLER",
+                "declaration": "02 FILLER PIC X ( 15) VALUE SPACES.",
+                "usage": "DISPLAY",
+                "picture": "X(15)",
+                "type": "alphanumeric",
+                "characters": 15
+              },
+              {
+                "level": "02",
+                "name": "FILLER",
+                "declaration": "02 FILLER PIC X ( 7) VALUE \"Page: \".",
+                "usage": "DISPLAY",
+                "picture": "X(7)",
+                "type": "alphanumeric",
+                "characters": 7
+              },
+              {
+                "level": "02",
+                "name": "PrnPageNum",
+                "declaration": "02 PrnPageNum PIC Z 9.",
+                "usage": "DISPLAY",
+                "picture": "Z9",
+                "type": "numeric-edited",
+                "signed": false,
+                "digits": 2,
+                "integer_digits": 2,
+                "decimal_digits": 0
+              },
+              {
+                "level": "01",
+                "name": "ColumnHeadings",
+                "declaration": "01 ColumnHeadings PIC X ( 41) VALUE \"MemberID Member Name Type Gender\".",
+                "usage": "DISPLAY",
+                "picture": "X(41)",
+                "type": "alphanumeric",
+                "characters": 41
+              },
+              {
+                "level": "01",
+                "name": "MemberDetailLine",
+                "declaration": "01 MemberDetailLine.",
+                "usage": "DISPLAY",
+                "type": "group"
+              },
+              {
+                "level": "02",
+                "name": "FILLER",
+                "declaration": "02 FILLER PIC X VALUE SPACES.",
+                "usage": "DISPLAY",
+                "picture": "X",
+                "type": "alphanumeric",
+                "characters": 1
+              },
+              {
+                "level": "02",
+                "name": "PrnMemberId",
+                "declaration": "02 PrnMemberId PIC X ( 5).",
+                "usage": "DISPLAY",
+                "picture": "X(5)",
+                "type": "alphanumeric",
+                "characters": 5
+              },
+              {
+                "level": "02",
+                "name": "FILLER",
+                "declaration": "02 FILLER PIC X ( 4) VALUE SPACES.",
+                "usage": "DISPLAY",
+                "picture": "X(4)",
+                "type": "alphanumeric",
+                "characters": 4
+              },
+              {
+                "level": "02",
+                "name": "PrnMemberName",
+                "declaration": "02 PrnMemberName PIC X ( 20).",
+                "usage": "DISPLAY",
+                "picture": "X(20)",
+                "type": "alphanumeric",
+                "characters": 20
+              },
+              {
+                "level": "02",
+                "name": "FILLER",
+                "declaration": "02 FILLER PIC XX VALUE SPACES.",
+                "usage": "DISPLAY",
+                "picture": "XX",
+                "type": "alphanumeric",
+                "characters": 2
+              },
+              {
+                "level": "02",
+                "name": "PrnMemberType",
+                "declaration": "02 PrnMemberType PIC X.",
+                "usage": "DISPLAY",
+                "picture": "X",
+                "type": "alphanumeric",
+                "characters": 1
+              },
+              {
+                "level": "02",
+                "name": "FILLER",
+                "declaration": "02 FILLER PIC X ( 4) VALUE SPACES.",
+                "usage": "DISPLAY",
+                "picture": "X(4)",
+                "type": "alphanumeric",
+                "characters": 4
+              },
+              {
+                "level": "02",
+                "name": "PrnMemberGender",
+                "declaration": "02 PrnMemberGender PIC X.",
+                "usage": "DISPLAY",
+                "picture": "X",
+                "type": "alphanumeric",
+                "characters": 1
+              },
+              {
+                "level": "01",
+                "name": "ReportFooting",
+                "declaration": "01 ReportFooting PIC X ( 44) VALUE \"**** End - Rolling Greens Member Report ****\".",
+                "usage": "DISPLAY",
+                "picture": "X(44)",
+                "type": "alphanumeric",
+                "characters": 44
+              },
+              {
+                "level": "01",
+                "name": "Abnormal-Line",
+                "declaration": "01 Abnormal-Line.",
+                "usage": "DISPLAY",
+                "type": "group"
+              },
+              {
+                "level": "12",
+                "name": "FILLER",
+                "declaration": "12 FILLER PIC X ( 9) VALUE \"**ERROR: \".",
+                "usage": "DISPLAY",
+                "picture": "X(9)",
+                "type": "alphanumeric",
+                "characters": 9
+              },
+              {
+                "level": "12",
+                "name": "Abn-Paragraph",
+                "declaration": "12 Abn-Paragraph PIC X ( 4).",
+                "usage": "DISPLAY",
+                "picture": "X(4)",
+                "type": "alphanumeric",
+                "characters": 4
+              },
+              {
+                "level": "12",
+                "name": "FILLER",
+                "declaration": "12 FILLER PIC X ( 21) VALUE \"File Status Code is: \".",
+                "usage": "DISPLAY",
+                "picture": "X(21)",
+                "type": "alphanumeric",
+                "characters": 21
+              },
+              {
+                "level": "12",
+                "name": "Abn-Code",
+                "declaration": "12 Abn-Code PIC X ( 02).",
+                "usage": "DISPLAY",
+                "picture": "X(02)",
+                "type": "alphanumeric",
+                "characters": 2
+              },
+              {
+                "level": "01",
+                "name": "LineCount",
+                "declaration": "01 LineCount PIC 99 VALUE ZEROS.",
+                "usage": "DISPLAY",
+                "picture": "99",
+                "type": "numeric",
+                "signed": false,
+                "digits": 2,
+                "integer_digits": 2,
+                "decimal_digits": 0
+              },
+              {
+                "level": "88",
+                "name": "NewPageRequired",
+                "declaration": "88 NewPageRequired VALUE 40 THRU 99.",
+                "usage": "DISPLAY",
+                "type": "condition-name",
+                "parent_name": "LineCount",
+                "parent_level": "01"
+              },
+              {
+                "level": "01",
+                "name": "PageCount",
+                "declaration": "01 PageCount PIC 99 VALUE ZEROS.",
+                "usage": "DISPLAY",
+                "picture": "99",
+                "type": "numeric",
+                "signed": false,
+                "digits": 2,
+                "integer_digits": 2,
+                "decimal_digits": 0
+              }
+            ]
+          }
+        }
+      },
+      "procedure_division": {
+        "functions": {
+          "0000-Mainline": {
+            "kind": "paragraph",
+            "blocks": [
+              {
+                "Perform": "1000-Begin-Job"
+              },
+              {
+                "Perform": "2000-Process"
+              },
+              {
+                "Perform": "3000-End-Job"
+              },
+              {
+                "Stop Statement": "STOP RUN"
+              }
+            ]
+          },
+          "1000-Begin-Job": {
+            "kind": "paragraph",
+            "blocks": [
+              {
+                "Perform": "1010-Open-Report"
+              },
+              {
+                "Perform": "1020-Open-Member-File"
+              },
+              {
+                "Perform": "6100-Print-Page-Headings"
+              },
+              {
+                "Perform": "5000-Read-Member-File"
+              }
+            ]
+          },
+          "1010-Open-Report": {
+            "kind": "paragraph",
+            "blocks": [
+              {
+                "Open Statement": "OPEN OUTPUT MembershipReport"
+              },
+              {
+                "Evaluate-block": {
+                  "subjects": [
+                    "TRUE"
+                  ],
+                  "branches": [
+                    {
+                      "kind": "when",
+                      "statements": [
+                        {
+                          "Continue Statement": "CONTINUE"
+                        }
+                      ],
+                      "objects": [
+                        "WS-Report-Good"
+                      ]
+                    },
+                    {
+                      "kind": "when-other",
+                      "statements": [
+                        {
+                          "Move Statement": "MOVE \"1010\" TO Abn-Paragraph"
+                        },
+                        {
+                          "Move Statement": "MOVE WS-Report-Status TO Abn-Code"
+                        },
+                        {
+                          "Perform": "9000-Abnormal-End"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "1020-Open-Member-File": {
+            "kind": "paragraph",
+            "blocks": [
+              {
+                "Open Statement": "OPEN INPUT MemberFile"
+              },
+              {
+                "Evaluate-block": {
+                  "subjects": [
+                    "TRUE"
+                  ],
+                  "branches": [
+                    {
+                      "kind": "when",
+                      "statements": [
+                        {
+                          "Continue Statement": "CONTINUE"
+                        }
+                      ],
+                      "objects": [
+                        "WS-Member-Good"
+                      ]
+                    },
+                    {
+                      "kind": "when-other",
+                      "statements": [
+                        {
+                          "Move Statement": "MOVE \"1020\" TO Abn-Paragraph"
+                        },
+                        {
+                          "Move Statement": "MOVE WS-Member-Status TO Abn-Code"
+                        },
+                        {
+                          "Perform": "9000-Abnormal-End"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "2000-Process": {
+            "kind": "paragraph",
+            "blocks": [
+              {
+                "Perform-Unsupported": "PERFORM 6200-Print-Report-Body UNTIL WS-Member-EOF"
+              }
+            ]
+          },
+          "3000-End-Job": {
+            "kind": "paragraph",
+            "blocks": [
+              {
+                "Write Statement": "WRITE PrintLine FROM ReportFooting AFTER ADVANCING 5 LINES"
+              },
+              {
+                "Close Statement": "CLOSE MemberFile MembershipReport"
+              }
+            ]
+          },
+          "5000-Read-Member-File": {
+            "kind": "paragraph",
+            "blocks": [
+              {
+                "Read Statement": "READ MemberFile AT END SET WS-Member-EOF TO TRUE END-READ"
+              },
+              {
+                "Evaluate-block": {
+                  "subjects": [
+                    "TRUE"
+                  ],
+                  "branches": [
+                    {
+                      "kind": "when",
+                      "statements": [
+                        {
+                          "Continue Statement": "CONTINUE"
+                        }
+                      ],
+                      "objects": [
+                        "WS-Member-Okay"
+                      ]
+                    },
+                    {
+                      "kind": "when-other",
+                      "statements": [
+                        {
+                          "Move Statement": "MOVE \"5000\" TO Abn-Paragraph"
+                        },
+                        {
+                          "Move Statement": "MOVE WS-Member-Status TO Abn-Code"
+                        },
+                        {
+                          "Perform": "9000-Abnormal-End"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "6100-Print-Page-Headings": {
+            "kind": "paragraph",
+            "blocks": [
+              {
+                "Write Statement": "WRITE PrintLine FROM PageHeading AFTER ADVANCING PAGE"
+              },
+              {
+                "Write Statement": "WRITE PrintLine FROM ColumnHeadings AFTER ADVANCING 2 LINES"
+              },
+              {
+                "Move Statement": "MOVE 3 TO LineCount"
+              },
+              {
+                "Add Statement": "ADD 1 TO PageCount"
+              }
+            ]
+          },
+          "6200-Print-Report-Body": {
+            "kind": "paragraph",
+            "blocks": [
+              {
+                "If-block": {
+                  "condition": "NewPageRequired",
+                  "then": [
+                    {
+                      "Move Statement": "MOVE PageCount TO PrnPageNum"
+                    },
+                    {
+                      "Write Statement": "WRITE PrintLine FROM PageFooting AFTER ADVANCING 5 LINES"
+                    },
+                    {
+                      "Perform": "6100-Print-Page-Headings"
+                    }
+                  ]
+                }
+              },
+              {
+                "Move Statement": "MOVE MemberId TO PrnMemberId"
+              },
+              {
+                "Move Statement": "MOVE MemberName TO PrnMemberName"
+              },
+              {
+                "Move Statement": "MOVE MemberType TO PrnMemberType"
+              },
+              {
+                "Move Statement": "MOVE MemberGender TO PrnMemberGender"
+              },
+              {
+                "Write Statement": "WRITE PrintLine FROM MemberDetailLine AFTER ADVANCING 1 LINE"
+              },
+              {
+                "Add Statement": "ADD 1 TO LineCount"
+              },
+              {
+                "Perform": "5000-Read-Member-File"
+              }
+            ]
+          },
+          "9000-Abnormal-End": {
+            "kind": "paragraph",
+            "blocks": [
+              {
+                "Write Statement": "WRITE PrintLine FROM Abnormal-Line AFTER ADVANCING PAGE"
+              },
+              {
+                "Close Statement": "CLOSE MemberFile MembershipReport"
+              },
+              {
+                "Stop Statement": "STOP RUN"
+              }
+            ]
+          }
+        },
+        "blocks": []
+      }
+    }
+  ]
+}

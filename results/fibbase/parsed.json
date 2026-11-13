@@ -1,0 +1,178 @@
+{
+  "programs": [
+    {
+      "name": "FIBBASE",
+      "data_division": {
+        "sections": {
+          "Local Storage Section": {
+            "variables": [
+              {
+                "level": "77",
+                "name": "LS-NUM",
+                "declaration": "77 LS-NUM PIC 9 ( 38).",
+                "usage": "DISPLAY",
+                "picture": "9(38)",
+                "type": "numeric",
+                "signed": false,
+                "digits": 38,
+                "integer_digits": 38,
+                "decimal_digits": 0
+              },
+              {
+                "level": "77",
+                "name": "LS-ATU",
+                "declaration": "77 LS-ATU PIC 9 ( 38).",
+                "usage": "DISPLAY",
+                "picture": "9(38)",
+                "type": "numeric",
+                "signed": false,
+                "digits": 38,
+                "integer_digits": 38,
+                "decimal_digits": 0
+              },
+              {
+                "level": "77",
+                "name": "LS-PRX",
+                "declaration": "77 LS-PRX PIC 9 ( 38).",
+                "usage": "DISPLAY",
+                "picture": "9(38)",
+                "type": "numeric",
+                "signed": false,
+                "digits": 38,
+                "integer_digits": 38,
+                "decimal_digits": 0
+              }
+            ]
+          },
+          "Linkage Section": {
+            "variables": [
+              {
+                "level": "77",
+                "name": "LK-NUM",
+                "declaration": "77 LK-NUM PIC 9 ( 38).",
+                "usage": "DISPLAY",
+                "picture": "9(38)",
+                "type": "numeric",
+                "signed": false,
+                "digits": 38,
+                "integer_digits": 38,
+                "decimal_digits": 0
+              },
+              {
+                "level": "77",
+                "name": "LK-ANT",
+                "declaration": "77 LK-ANT PIC 9 ( 38).",
+                "usage": "DISPLAY",
+                "picture": "9(38)",
+                "type": "numeric",
+                "signed": false,
+                "digits": 38,
+                "integer_digits": 38,
+                "decimal_digits": 0
+              },
+              {
+                "level": "77",
+                "name": "LK-ATU",
+                "declaration": "77 LK-ATU PIC 9 ( 38).",
+                "usage": "DISPLAY",
+                "picture": "9(38)",
+                "type": "numeric",
+                "signed": false,
+                "digits": 38,
+                "integer_digits": 38,
+                "decimal_digits": 0
+              },
+              {
+                "level": "77",
+                "name": "LK-FIB",
+                "declaration": "77 LK-FIB PIC 9 ( 38).",
+                "usage": "DISPLAY",
+                "picture": "9(38)",
+                "type": "numeric",
+                "signed": false,
+                "digits": 38,
+                "integer_digits": 38,
+                "decimal_digits": 0
+              }
+            ]
+          }
+        }
+      },
+      "procedure_division": {
+        "functions": {
+          "PROG-PRINCIPAL-PARA": {
+            "kind": "paragraph",
+            "blocks": [
+              {
+                "Evaluate-block": {
+                  "subjects": [
+                    "LK-NUM"
+                  ],
+                  "branches": [
+                    {
+                      "kind": "when",
+                      "statements": [
+                        {
+                          "Compute Statement": "COMPUTE LK-FIB = LK-ANT"
+                        }
+                      ],
+                      "objects": [
+                        "0"
+                      ]
+                    },
+                    {
+                      "kind": "when",
+                      "statements": [
+                        {
+                          "Compute Statement": "COMPUTE LK-FIB = LK-ATU"
+                        }
+                      ],
+                      "objects": [
+                        "1"
+                      ]
+                    },
+                    {
+                      "kind": "when",
+                      "statements": [
+                        {
+                          "Compute Statement": "COMPUTE LS-PRX = LK-ANT + LK-ATU"
+                        },
+                        {
+                          "Compute Statement": "COMPUTE LK-FIB = LS-PRX"
+                        }
+                      ],
+                      "objects": [
+                        "2"
+                      ]
+                    },
+                    {
+                      "kind": "when-other",
+                      "statements": [
+                        {
+                          "Move Statement": "MOVE LK-ATU TO LS-ATU"
+                        },
+                        {
+                          "Compute Statement": "COMPUTE LS-NUM = LK-NUM - 1"
+                        },
+                        {
+                          "Compute Statement": "COMPUTE LS-PRX = LK-ANT + LK-ATU"
+                        },
+                        {
+                          "Compute Statement": "COMPUTE LK-FIB = NUMVAL ( FIBBASE ( LS-NUM , LS-ATU , LS-PRX ) )"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              {
+                "Goback Statement": "GOBACK"
+              }
+            ]
+          }
+        },
+        "blocks": []
+      }
+    }
+  ]
+}

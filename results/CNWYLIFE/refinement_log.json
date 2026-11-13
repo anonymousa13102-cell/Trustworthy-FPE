@@ -1,0 +1,211 @@
+{
+  "program": "CNWYLIFE",
+  "status": "verified",
+  "verification_status": "verified",
+  "iterations": 1,
+  "repairs": [
+    {
+      "iteration": 1,
+      "layer": "BR",
+      "id": "BR8",
+      "action": "UPDATE",
+      "old": "If (TRUE), then it is obligatory that ng-column ( row-counter , column-counter ) is set to dead-cell.",
+      "new": "If (NOT ((neighbor-counter = 3))), then it is obligatory that ng-column ( row-counter , column-counter ) is set to dead-cell.",
+      "reason": "The authoritative parsed control flow places this operation in the WHEN OTHER branch of EVALUATE TRUE after the preceding condition neighbor-counter = 3. Therefore, the operation executes only when neighbor-counter is not equal to 3. The unconditional TRUE guard incorrectly overlaps with BR7 and requires the same cell to become both living-cell and dead-cell when neighbor-counter equals 3.",
+      "accepted": true
+    },
+    {
+      "iteration": 1,
+      "layer": "MS",
+      "id": "MS8",
+      "action": "UPDATE",
+      "old": "ng-column-NEW(row-counter-OLD, column-counter-OLD) = dead-cell-OLD",
+      "new": "(NOT (neighbor-counter-OLD = 3)) IMPLIES (ng-column-NEW(row-counter-OLD, column-counter-OLD) = dead-cell-OLD)",
+      "reason": "Targeted regeneration after BR8 restored the missing WHEN OTHER fallback guard while preserving the indexed ng-column transition.",
+      "accepted": true
+    },
+    {
+      "iteration": 1,
+      "layer": "ASSERTION",
+      "index": 7,
+      "action": "UPDATE",
+      "old": "ng-column-NEW(row-counter-OLD, column-counter-OLD) == dead-cell-OLD",
+      "new": "(!(!(neighbor-counter-OLD == 3))) || (ng-column-NEW(row-counter-OLD, column-counter-OLD) == dead-cell-OLD)",
+      "reason": "MS8 requires NOT(neighbor-counter-OLD = 3) to imply that the selected ng-column element becomes dead-cell. Using A IMPLIES B as NOT(A) OR B produces neighbor-counter-OLD = 3 OR the dead-cell postcondition.",
+      "accepted": true
+    }
+  ],
+  "accepted_repairs": [
+    {
+      "iteration": 1,
+      "layer": "BR",
+      "id": "BR8",
+      "action": "UPDATE",
+      "old": "If (TRUE), then it is obligatory that ng-column ( row-counter , column-counter ) is set to dead-cell.",
+      "new": "If (NOT ((neighbor-counter = 3))), then it is obligatory that ng-column ( row-counter , column-counter ) is set to dead-cell.",
+      "reason": "The authoritative parsed control flow places this operation in the WHEN OTHER branch of EVALUATE TRUE after the preceding condition neighbor-counter = 3. Therefore, the operation executes only when neighbor-counter is not equal to 3. The unconditional TRUE guard incorrectly overlaps with BR7 and requires the same cell to become both living-cell and dead-cell when neighbor-counter equals 3.",
+      "accepted": true
+    },
+    {
+      "iteration": 1,
+      "layer": "MS",
+      "id": "MS8",
+      "action": "UPDATE",
+      "old": "ng-column-NEW(row-counter-OLD, column-counter-OLD) = dead-cell-OLD",
+      "new": "(NOT (neighbor-counter-OLD = 3)) IMPLIES (ng-column-NEW(row-counter-OLD, column-counter-OLD) = dead-cell-OLD)",
+      "reason": "Targeted regeneration after BR8 restored the missing WHEN OTHER fallback guard while preserving the indexed ng-column transition.",
+      "accepted": true
+    },
+    {
+      "iteration": 1,
+      "layer": "ASSERTION",
+      "index": 7,
+      "action": "UPDATE",
+      "old": "ng-column-NEW(row-counter-OLD, column-counter-OLD) == dead-cell-OLD",
+      "new": "(!(!(neighbor-counter-OLD == 3))) || (ng-column-NEW(row-counter-OLD, column-counter-OLD) == dead-cell-OLD)",
+      "reason": "MS8 requires NOT(neighbor-counter-OLD = 3) to imply that the selected ng-column element becomes dead-cell. Using A IMPLIES B as NOT(A) OR B produces neighbor-counter-OLD = 3 OR the dead-cell postcondition.",
+      "accepted": true
+    }
+  ],
+  "rejected_repairs": [],
+  "attempt_history": [
+    {
+      "iteration": 1,
+      "candidates": [
+        {
+          "br_ids": [
+            "BR8"
+          ],
+          "ms_id": "MS8",
+          "assertion_index": 7,
+          "checks": [
+            "postcondition",
+            "guard_mismatch"
+          ]
+        }
+      ],
+      "candidate_count": 1,
+      "strategy": "repair_when_other_fallback_guard",
+      "proposed_repairs": [
+        {
+          "iteration": 1,
+          "layer": "BR",
+          "id": "BR8",
+          "action": "UPDATE",
+          "old": "If (TRUE), then it is obligatory that ng-column ( row-counter , column-counter ) is set to dead-cell.",
+          "new": "If (NOT ((neighbor-counter = 3))), then it is obligatory that ng-column ( row-counter , column-counter ) is set to dead-cell.",
+          "reason": "The authoritative parsed control flow places this operation in the WHEN OTHER branch of EVALUATE TRUE after neighbor-counter = 3.",
+          "accepted": true
+        },
+        {
+          "iteration": 1,
+          "layer": "MS",
+          "id": "MS8",
+          "action": "UPDATE",
+          "old": "ng-column-NEW(row-counter-OLD, column-counter-OLD) = dead-cell-OLD",
+          "new": "(NOT (neighbor-counter-OLD = 3)) IMPLIES (ng-column-NEW(row-counter-OLD, column-counter-OLD) = dead-cell-OLD)",
+          "reason": "Targeted regeneration after BR8.",
+          "accepted": true
+        },
+        {
+          "iteration": 1,
+          "layer": "ASSERTION",
+          "index": 7,
+          "action": "UPDATE",
+          "old": "ng-column-NEW(row-counter-OLD, column-counter-OLD) == dead-cell-OLD",
+          "new": "(!(!(neighbor-counter-OLD == 3))) || (ng-column-NEW(row-counter-OLD, column-counter-OLD) == dead-cell-OLD)",
+          "reason": "Targeted regeneration after MS8.",
+          "accepted": true
+        }
+      ],
+      "result": {
+        "status": "verified",
+        "failed_assertion_indices": [],
+        "failed_checks": {}
+      }
+    }
+  ],
+  "counterexample_history": [
+    {
+      "round": 1,
+      "iteration": 1,
+      "phase": "initial_verification",
+      "verification_status": "failed",
+      "counterexample": {
+        "variables": {
+          "NEIGHBOR_COUNTER_0": 3,
+          "ROW_COUNTER_0": 2,
+          "COLUMN_COUNTER_0": 2,
+          "LIVING_CELL_0": "*",
+          "DEAD_CELL_0": " ",
+          "COND_1": true,
+          "COND_2": false,
+          "NG_COLUMN_OLD_AT_2_2": " ",
+          "NG_COLUMN_NEW_AT_2_2": "*"
+        },
+        "control_variables": {
+          "COND_1": true,
+          "COND_2": false
+        },
+        "raw": "[Z3 Runtime] Initializing symbolic verification matrix...\n[Z3 Runtime] 1/3 Starting assertion consistency check...\n[Z3 Runtime] 1/3 Assertion consistency finished: sat (0.00s)\n[Z3 Runtime] 2/3 Starting 4 reachability check(s)...\n[Z3 Runtime] 2/3 Reachability assertion 7: sat (0.00s)\n[Z3 Runtime] 3/3 Starting final verification...\n[Z3 Runtime] 3/3 Final verification finished: sat (0.00s)\nCOUNTEREXAMPLE: ASSERTION VIOLATION DETECTED:\n[NEIGHBOR_COUNTER_0 = 3,\n ROW_COUNTER_0 = 2,\n COLUMN_COUNTER_0 = 2,\n LIVING_CELL_0 = \"*\",\n DEAD_CELL_0 = \" \",\n COND_1 = True,\n COND_2 = False,\n NG_COLUMN_0 = K(Int, \" \"),\n NG_COLUMN_1 = Store(K(Int, \" \"), 81, \"*\")]\nFAILED_CHECK: assertion 7 postcondition\nFAILED_CHECK: assertion 7 guard_mismatch\nFAILED_ASSERTION_INDICES: [7]",
+        "verification_status": "failed",
+        "failed_assertion_indices": [
+          7
+        ],
+        "failed_checks": {
+          "7": [
+            "postcondition",
+            "guard_mismatch"
+          ]
+        },
+        "contradictory_assertion_indices": [],
+        "reachability_by_assertion": {
+          "4": "sat",
+          "5": "sat",
+          "6": "sat",
+          "7": "sat"
+        },
+        "vacuous_assertion_indices": [],
+        "model_fingerprint": "8246acccabea55b04bbd8a61c29a46089f07e03e405e96bd6efa491ace87d90b",
+        "failure_fingerprint": "30e3da1ebc96380de783459569511079133edf27823ff1154fb6e400853ede01"
+      },
+      "failed_assertion_indices": [
+        7
+      ],
+      "failed_checks": {
+        "7": [
+          "postcondition",
+          "guard_mismatch"
+        ]
+      }
+    }
+  ],
+  "candidates": [
+    {
+      "br_ids": [
+        "BR8"
+      ],
+      "ms_id": "MS8",
+      "assertion_index": 7,
+      "checks": [
+        "postcondition",
+        "guard_mismatch"
+      ]
+    }
+  ],
+  "candidate_count": 1,
+  "baseline_policy": "immutable_state0_with_growing_diagnostic_memory",
+  "verification_history": [
+    {
+      "round": 2,
+      "iteration": 1,
+      "phase": "post_repair_verification",
+      "status": "verified",
+      "return_code": 0,
+      "contradictory_assertion_indices": [],
+      "failed_assertion_indices": [],
+      "failed_checks": {},
+      "z3_output": "[Z3 Runtime] Initializing symbolic verification matrix...\n[Z3 Runtime] 1/3 Starting assertion consistency check...\n[Z3 Runtime] 1/3 Assertion consistency finished: sat (0.00s)\n[Z3 Runtime] 2/3 Starting 4 reachability check(s)...\n[Z3 Runtime] 2/3 Reachability assertion 4: sat (0.00s)\n[Z3 Runtime] 2/3 Reachability assertion 5: sat (0.00s)\n[Z3 Runtime] 2/3 Reachability assertion 6: sat (0.00s)\n[Z3 Runtime] 2/3 Reachability assertion 7: sat (0.00s)\n[Z3 Runtime] 3/3 Starting final verification...\n[Z3 Runtime] 3/3 Final verification finished: unsat (0.00s)\nVERIFIED: The program satisfies the assertion."
+    }
+  ]
+}

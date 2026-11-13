@@ -1,0 +1,50 @@
+{
+  "program_name": "C03EX02",
+  "math_specs": [
+    {
+      "id": "MS1",
+      "source_br_ids": [
+        "BR1"
+      ],
+      "kind": "transition",
+      "description": "Compute WS-R as the sum of WS-A and WS-B.",
+      "expression": "WS-R-NEW = WS-A-OLD + WS-B-OLD"
+    },
+    {
+      "id": "MS2",
+      "source_br_ids": [
+        "BR2"
+      ],
+      "kind": "transition",
+      "description": "When WS-R is at least 10, add 5 to WS-R.",
+      "expression": "(WS-R-OLD >= 10) IMPLIES (WS-R-NEW = WS-R-OLD + 5)"
+    },
+    {
+      "id": "MS3",
+      "source_br_ids": [
+        "BR3"
+      ],
+      "kind": "transition",
+      "description": "When WS-R is at least 10, set WS-DSP-R to WS-R.",
+      "expression": "(WS-R-OLD >= 10) IMPLIES (WS-DSP-R-NEW = WS-R-OLD)"
+    },
+    {
+      "id": "MS4",
+      "source_br_ids": [
+        "BR4"
+      ],
+      "kind": "transition",
+      "description": "When NOT (WS-R is at least 10), subtract 7 from WS-R.",
+      "expression": "(NOT (WS-R-OLD >= 10)) IMPLIES (WS-R-NEW = WS-R-OLD - 7)"
+    },
+    {
+      "id": "MS5",
+      "source_br_ids": [
+        "BR5"
+      ],
+      "kind": "transition",
+      "description": "When NOT (WS-R is at least 10), set WS-DSP-R to WS-R.",
+      "expression": "(NOT (WS-R-OLD >= 10)) IMPLIES (WS-DSP-R-NEW = WS-R-OLD)"
+    }
+  ]
+}

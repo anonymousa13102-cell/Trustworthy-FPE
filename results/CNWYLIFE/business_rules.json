@@ -1,0 +1,137 @@
+{
+  "program_name": "CNWYLIFE",
+  "variable_roles": {
+    "initial-condx-record": "BUSINESS_ENTITY",
+    "max-rows": "BUSINESS_ENTITY",
+    "max-columns": "BUSINESS_ENTITY",
+    "max-gen": "BUSINESS_ENTITY",
+    "living-cell": "IO_BUFFER",
+    "dead-cell": "IO_BUFFER",
+    "boundary": "IO_BUFFER",
+    "previous-generation": "BUSINESS_ENTITY",
+    "pg-row": "BUSINESS_ENTITY",
+    "pg-column": "IO_BUFFER",
+    "next-generation": "BUSINESS_ENTITY",
+    "ng-row": "BUSINESS_ENTITY",
+    "ng-column": "IO_BUFFER",
+    "generation": "BUSINESS_ENTITY",
+    "row-counter": "BUSINESS_ENTITY",
+    "column-counter": "BUSINESS_ENTITY",
+    "neighbor-x": "BUSINESS_ENTITY",
+    "neighbor-y": "BUSINESS_ENTITY",
+    "x": "BUSINESS_ENTITY",
+    "y": "BUSINESS_ENTITY",
+    "neighbor-counter": "BUSINESS_ENTITY",
+    "end-of-file-flag": "CONTROL_FLAG"
+  },
+  "business_rules": [
+    {
+      "id": "BR1",
+      "sbvr_class": "OBLIGATION",
+      "verb_concept": "set end-of-file-flag",
+      "rule": "It is obligatory that end-of-file-flag is set to \"F\".",
+      "natural_language_rule": "The end of file flag (end-of-file-flag) is set to \"F\".",
+      "source_variables": [
+        "end-of-file-flag"
+      ],
+      "source_block": "100-MAIN"
+    },
+    {
+      "id": "BR2",
+      "sbvr_class": "OBLIGATION",
+      "verb_concept": "set pg-row",
+      "rule": "It is obligatory that pg-row ( row-counter ) is set to initial-condx-record.",
+      "natural_language_rule": "The pg row (pg-row) at the row counter (row-counter) is set to the initial condition record (initial-condx-record).",
+      "source_variables": [
+        "initial-condx-record",
+        "pg-row",
+        "row-counter"
+      ],
+      "source_block": "110-INITIALIZE"
+    },
+    {
+      "id": "BR3",
+      "sbvr_class": "OBLIGATION",
+      "verb_concept": "set next-generation",
+      "rule": "It is obligatory that next-generation is set to previous-generation.",
+      "natural_language_rule": "The next generation (next-generation) is set to the previous generation (previous-generation).",
+      "source_variables": [
+        "next-generation",
+        "previous-generation"
+      ],
+      "source_block": "130-CONWAY-ALG"
+    },
+    {
+      "id": "BR4",
+      "sbvr_class": "OBLIGATION",
+      "verb_concept": "set previous-generation",
+      "rule": "It is obligatory that previous-generation is set to next-generation.",
+      "natural_language_rule": "The previous generation (previous-generation) is set to the next generation (next-generation).",
+      "source_variables": [
+        "next-generation",
+        "previous-generation"
+      ],
+      "source_block": "130-CONWAY-ALG"
+    },
+    {
+      "id": "BR5",
+      "sbvr_class": "OBLIGATION",
+      "verb_concept": "set ng-column",
+      "rule": "If ((( neighbor-counter = 2 ) OR ( neighbor-counter = 3 ))), then it is obligatory that ng-column ( row-counter , column-counter ) is set to living-cell.",
+      "natural_language_rule": "If the neighbor counter (neighbor-counter) is 2 or the neighbor counter is 3, then the ng column (ng-column) at the row counter (row-counter) and the column counter (column-counter) is set to the living cell (living-cell).",
+      "source_variables": [
+        "neighbor-counter",
+        "row-counter",
+        "column-counter",
+        "ng-column",
+        "living-cell"
+      ],
+      "source_block": "210-LIVING-CELL-NEIGHBORS"
+    },
+    {
+      "id": "BR6",
+      "sbvr_class": "OBLIGATION",
+      "verb_concept": "set ng-column",
+      "rule": "If (NOT ((( neighbor-counter = 2 ) OR ( neighbor-counter = 3 )))), then it is obligatory that ng-column ( row-counter , column-counter ) is set to dead-cell.",
+      "natural_language_rule": "If not (the neighbor counter (neighbor-counter) is 2 or the neighbor counter is 3), then the ng column (ng-column) at the row counter (row-counter) and the column counter (column-counter) is set to the dead cell (dead-cell).",
+      "source_variables": [
+        "neighbor-counter",
+        "row-counter",
+        "column-counter",
+        "ng-column",
+        "dead-cell"
+      ],
+      "source_block": "210-LIVING-CELL-NEIGHBORS"
+    },
+    {
+      "id": "BR7",
+      "sbvr_class": "OBLIGATION",
+      "verb_concept": "set ng-column",
+      "rule": "If ((neighbor-counter = 3)), then it is obligatory that ng-column ( row-counter , column-counter ) is set to living-cell.",
+      "natural_language_rule": "If the neighbor counter (neighbor-counter) is 3, then the ng column (ng-column) at the row counter (row-counter) and the column counter (column-counter) is set to the living cell (living-cell).",
+      "source_variables": [
+        "neighbor-counter",
+        "row-counter",
+        "column-counter",
+        "ng-column",
+        "living-cell"
+      ],
+      "source_block": "220-DEAD-CELL-NEIGHBORS"
+    },
+    {
+      "id": "BR8",
+      "sbvr_class": "OBLIGATION",
+      "verb_concept": "set ng-column",
+      "rule": "If (TRUE), then it is obligatory that ng-column ( row-counter , column-counter ) is set to dead-cell.",
+      "natural_language_rule": "The ng column (ng-column) at the row counter (row-counter) and the column counter (column-counter) is always set to the dead cell (dead-cell).",
+      "source_variables": [
+        "neighbor-counter",
+        "row-counter",
+        "column-counter",
+        "ng-column",
+        "dead-cell"
+      ],
+      "source_block": "220-DEAD-CELL-NEIGHBORS"
+    }
+  ]
+}

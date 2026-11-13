@@ -1,0 +1,35 @@
+{
+  "program_name": "RISK-LIMIT",
+  "variable_roles": {
+    "RISK-CD": "CONTROL_FLAG",
+    "RISK-LOW": "CONTROL_FLAG",
+    "RISK-HIGH": "CONTROL_FLAG",
+    "LIMIT-AMT": "CONSTANT"
+  },
+  "business_rules": [
+    {
+      "id": "BR1",
+      "sbvr_class": "OBLIGATION",
+      "verb_concept": "set limit amount",
+      "rule": "If (RISK-CD >= 1 AND RISK-CD <= 3), then LIMIT-AMT is set to 500000.",
+      "natural_language_rule": "If the risk code (RISK-CD) is between 1 and 3 (inclusive), then the limit amount (LIMIT-AMT) is set to 500,000.",
+      "source_variables": [
+        "RISK-CD",
+        "LIMIT-AMT"
+      ],
+      "source_block": "MAIN-PROCEDURE"
+    },
+    {
+      "id": "BR2",
+      "sbvr_class": "OBLIGATION",
+      "verb_concept": "set limit amount",
+      "rule": "If (NOT (RISK-CD >= 1 AND RISK-CD <= 3)) AND ((RISK-CD = 5) OR (RISK-CD >= 7 AND RISK-CD <= 9)), then LIMIT-AMT is set to 50000.",
+      "natural_language_rule": "If not (the risk code (RISK-CD) is between 1 and 3 (inclusive)) and (the risk code is 5 or the risk code is between 7 and 9 (inclusive)), then the limit amount (LIMIT-AMT) is set to 50,000.",
+      "source_variables": [
+        "RISK-CD",
+        "LIMIT-AMT"
+      ],
+      "source_block": "MAIN-PROCEDURE"
+    }
+  ]
+}

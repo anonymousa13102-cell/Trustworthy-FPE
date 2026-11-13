@@ -1,0 +1,11 @@
+assert(EMP-FNAME-NEW == "Millard");
+assert(EMP-LNAME-NEW == "Fillmore");
+assert(EMP-HOURS-NEW == 19);
+assert(EMP-HOURLY-RATE-NEW == 23.50);
+assert((!(EMP-HOURS-OLD >= 40)) || (EMP-OT-RATE-NEW == .25));
+assert((!((!(EMP-HOURS-OLD >= 40)) && (EMP-HOURS-OLD >= 50))) || (EMP-OT-RATE-NEW == .50));
+assert((!((!(EMP-HOURS-OLD >= 40)) && (!(EMP-HOURS-OLD >= 50)))) || (EMP-OT-RATE-NEW == ZERO));
+assert(EMP-PAY-WEEK-NEW == ( EMP-HOURS-OLD * EMP-HOURLY-RATE-OLD ) * ( 1 + EMP-OT-RATE-OLD ));
+assert((!(EMP-HOURS-OLD > 150)) || (EMP-REWARD-NEW == .50));
+assert((!(!(EMP-HOURS-OLD > 150))) || (EMP-REWARD-NEW == ZERO));
+assert(EMP-PAY-MONTH-NEW == ( EMP-PAY-WEEK-OLD * 4 ) * ( 1 + EMP-REWARD-OLD ));

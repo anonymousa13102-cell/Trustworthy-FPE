@@ -1,0 +1,117 @@
+{
+  "program_name": "PRTRPT1",
+  "math_specs": [
+    {
+      "id": "MS1",
+      "source_br_ids": ["BR1"],
+      "kind": "transition",
+      "description": "When WS-Report-Good does not hold, Abn-Paragraph is set to \"1010\".",
+      "expression": "(NOT WS-Report-Good-OLD) IMPLIES (Abn-Paragraph-NEW = \"1010\")"
+    },
+    {
+      "id": "MS2",
+      "source_br_ids": ["BR2"],
+      "kind": "transition",
+      "description": "When WS-Report-Good does not hold, Abn-Code is set to WS-Report-Status.",
+      "expression": "(NOT WS-Report-Good-OLD) IMPLIES (Abn-Code-NEW = WS-Report-Status-OLD)"
+    },
+    {
+      "id": "MS3",
+      "source_br_ids": ["BR3"],
+      "kind": "transition",
+      "description": "When WS-Member-Good does not hold, Abn-Paragraph is set to \"1020\".",
+      "expression": "(NOT WS-Member-Good-OLD) IMPLIES (Abn-Paragraph-NEW = \"1020\")"
+    },
+    {
+      "id": "MS4",
+      "source_br_ids": ["BR4"],
+      "kind": "transition",
+      "description": "When WS-Member-Good does not hold, Abn-Code is set to WS-Member-Status.",
+      "expression": "(NOT WS-Member-Good-OLD) IMPLIES (Abn-Code-NEW = WS-Member-Status-OLD)"
+    },
+    {
+      "id": "MS5",
+      "source_br_ids": ["BR5"],
+      "kind": "transition",
+      "description": "LineCount is set to 3 when page headings are printed.",
+      "expression": "LineCount-NEW = 3"
+    },
+    {
+      "id": "MS6",
+      "source_br_ids": ["BR6"],
+      "kind": "transition",
+      "description": "PageCount is increased by 1 when page headings are printed.",
+      "expression": "PageCount-NEW = PageCount-OLD + 1"
+    },
+    {
+      "id": "MS7",
+      "source_br_ids": ["BR7"],
+      "kind": "transition",
+      "description": "Abn-Paragraph is unconditionally set to \"5000\"; this represents the intentionally missing WHEN OTHER guard.",
+      "expression": "Abn-Paragraph-NEW = \"5000\""
+    },
+    {
+      "id": "MS8",
+      "source_br_ids": ["BR8"],
+      "kind": "transition",
+      "description": "Abn-Code is unconditionally set to WS-Member-Status; this represents the intentionally missing WHEN OTHER guard.",
+      "expression": "Abn-Code-NEW = WS-Member-Status-OLD"
+    },
+    {
+      "id": "MS9",
+      "source_br_ids": ["BR9"],
+      "kind": "transition",
+      "description": "When LineCount is between 40 and 99 inclusive, PrnPageNum is set to PageCount.",
+      "expression": "((LineCount-OLD >= 40) AND (LineCount-OLD <= 99)) IMPLIES (PrnPageNum-NEW = PageCount-OLD)"
+    },
+    {
+      "id": "MS10",
+      "source_br_ids": ["BR10"],
+      "kind": "transition",
+      "description": "When LineCount is between 40 and 99 inclusive, LineCount is reset to 3.",
+      "expression": "((LineCount-OLD >= 40) AND (LineCount-OLD <= 99)) IMPLIES (LineCount-NEW = 3)"
+    },
+    {
+      "id": "MS11",
+      "source_br_ids": ["BR11"],
+      "kind": "transition",
+      "description": "When LineCount is between 40 and 99 inclusive, PageCount is increased by 1.",
+      "expression": "((LineCount-OLD >= 40) AND (LineCount-OLD <= 99)) IMPLIES (PageCount-NEW = PageCount-OLD + 1)"
+    },
+    {
+      "id": "MS12",
+      "source_br_ids": ["BR12"],
+      "kind": "transition",
+      "description": "PrnMemberId is set to MemberId.",
+      "expression": "PrnMemberId-NEW = MemberId-OLD"
+    },
+    {
+      "id": "MS13",
+      "source_br_ids": ["BR13"],
+      "kind": "transition",
+      "description": "PrnMemberName is set to MemberName.",
+      "expression": "PrnMemberName-NEW = MemberName-OLD"
+    },
+    {
+      "id": "MS14",
+      "source_br_ids": ["BR14"],
+      "kind": "transition",
+      "description": "PrnMemberType is set to MemberType.",
+      "expression": "PrnMemberType-NEW = MemberType-OLD"
+    },
+    {
+      "id": "MS15",
+      "source_br_ids": ["BR15"],
+      "kind": "transition",
+      "description": "PrnMemberGender is set to MemberGender.",
+      "expression": "PrnMemberGender-NEW = MemberGender-OLD"
+    },
+    {
+      "id": "MS16",
+      "source_br_ids": ["BR16"],
+      "kind": "transition",
+      "description": "LineCount is increased by 1 after a member detail line is printed.",
+      "expression": "LineCount-NEW = LineCount-OLD + 1"
+    }
+  ]
+}

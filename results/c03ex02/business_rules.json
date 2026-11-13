@@ -1,0 +1,71 @@
+{
+  "program_name": "C03EX02",
+  "variable_roles": {
+    "WS-A": "WORK_AREA",
+    "WS-B": "WORK_AREA",
+    "WS-R": "BUSINESS_ENTITY",
+    "WS-DSP-R": "BUSINESS_ENTITY",
+    "WS-ENTER": "IO_BUFFER"
+  },
+  "business_rules": [
+    {
+      "id": "BR1",
+      "sbvr_class": "NECESSITY",
+      "verb_concept": "calculate result",
+      "rule": "It is necessary that WS-R is calculated as WS-A + WS-B.",
+      "natural_language_rule": "The result (WS-R) is calculated as the a (WS-A) plus the b (WS-B).",
+      "source_variables": [
+        "WS-R",
+        "WS-A",
+        "WS-B"
+      ],
+      "source_block": "PROG-PRINCIPAL-PARA"
+    },
+    {
+      "id": "BR2",
+      "sbvr_class": "OBLIGATION",
+      "verb_concept": "add amount to result",
+      "rule": "If (WS-R >= 10), then 5 is added to WS-R.",
+      "natural_language_rule": "If the result (WS-R) is at least 10, then 5 is added to the result.",
+      "source_variables": [
+        "WS-R"
+      ],
+      "source_block": "PROG-PRINCIPAL-PARA"
+    },
+    {
+      "id": "BR3",
+      "sbvr_class": "OBLIGATION",
+      "verb_concept": "set displayed result from result",
+      "rule": "If (WS-R >= 10), then WS-DSP-R is set to WS-R.",
+      "natural_language_rule": "If the result (WS-R) is at least 10, then the displayed result (WS-DSP-R) is set to the result.",
+      "source_variables": [
+        "WS-R",
+        "WS-DSP-R"
+      ],
+      "source_block": "PROG-PRINCIPAL-PARA"
+    },
+    {
+      "id": "BR4",
+      "sbvr_class": "OBLIGATION",
+      "verb_concept": "subtract amount from result",
+      "rule": "If (NOT (WS-R >= 10)), then 7 is subtracted from WS-R.",
+      "natural_language_rule": "If not (the result (WS-R) is at least 10), then 7 is subtracted from the result.",
+      "source_variables": [
+        "WS-R"
+      ],
+      "source_block": "PROG-PRINCIPAL-PARA"
+    },
+    {
+      "id": "BR5",
+      "sbvr_class": "OBLIGATION",
+      "verb_concept": "set displayed result from result",
+      "rule": "If (NOT (WS-R >= 10)), then WS-DSP-R is set to WS-R.",
+      "natural_language_rule": "If not (the result (WS-R) is at least 10), then the displayed result (WS-DSP-R) is set to the result.",
+      "source_variables": [
+        "WS-R",
+        "WS-DSP-R"
+      ],
+      "source_block": "PROG-PRINCIPAL-PARA"
+    }
+  ]
+}

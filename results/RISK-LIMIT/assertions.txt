@@ -1,0 +1,2 @@
+assert((!((RISK-CD-OLD >= 1 && RISK-CD-OLD <= 3)) || (LIMIT-AMT-NEW == 500000)));
+assert((!((!(RISK-CD-OLD >= 1 && RISK-CD-OLD <= 3)) && ((RISK-CD-OLD == 5) || (RISK-CD-OLD >= 7 && RISK-CD-OLD <= 9))) || (LIMIT-AMT-NEW == 50000)));

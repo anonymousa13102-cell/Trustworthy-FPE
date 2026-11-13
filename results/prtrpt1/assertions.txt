@@ -1,0 +1,16 @@
+assert((!(!(WS-Report-Good-OLD))) || (Abn-Paragraph-NEW == "1010"));
+assert((!(!(WS-Report-Good-OLD))) || (Abn-Code-NEW == WS-Report-Status-OLD));
+assert((!(!(WS-Member-Good-OLD))) || (Abn-Paragraph-NEW == "1020"));
+assert((!(!(WS-Member-Good-OLD))) || (Abn-Code-NEW == WS-Member-Status-OLD));
+assert(LineCount-NEW == 3);
+assert(PageCount-NEW == PageCount-OLD + 1);
+assert(Abn-Paragraph-NEW == "5000");
+assert(Abn-Code-NEW == WS-Member-Status-OLD);
+assert((!((LineCount-OLD >= 40) && (LineCount-OLD <= 99))) || (PrnPageNum-NEW == PageCount-OLD));
+assert((!((LineCount-OLD >= 40) && (LineCount-OLD <= 99))) || (LineCount-NEW == 3));
+assert((!((LineCount-OLD >= 40) && (LineCount-OLD <= 99))) || (PageCount-NEW == PageCount-OLD + 1));
+assert(PrnMemberId-NEW == MemberId-OLD);
+assert(PrnMemberName-NEW == MemberName-OLD);
+assert(PrnMemberType-NEW == MemberType-OLD);
+assert(PrnMemberGender-NEW == MemberGender-OLD);
+assert(LineCount-NEW == LineCount-OLD + 1);

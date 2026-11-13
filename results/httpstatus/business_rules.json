@@ -1,0 +1,501 @@
+{
+  "program_name": "httpstatus",
+  "variable_roles": {
+    "status-code": "BUSINESS_ENTITY",
+    "status-message": "BUSINESS_ENTITY"
+  },
+  "business_rules": [
+    {
+      "id": "BR1",
+      "sbvr_class": "OBLIGATION",
+      "verb_concept": "set status message",
+      "rule": "If ((status-code = '100')), then MOVE 'Continue' TO status-message.",
+      "natural_language_rule": "If the status code (status-code) is \"100\", then the status message (status-message) is set to \"Continue\".",
+      "source_variables": [
+        "status-code",
+        "status-message"
+      ],
+      "source_block": "start-status-message"
+    },
+    {
+      "id": "BR2",
+      "sbvr_class": "OBLIGATION",
+      "verb_concept": "set status message",
+      "rule": "If (NOT ((status-code = '100'))) AND ((status-code = '101')), then MOVE 'Switching Protocols' TO status-message.",
+      "natural_language_rule": "If not (the status code (status-code) is \"100\") and the status code equals \"101\", then the status message (status-message) is set to \"Switching Protocols\".",
+      "source_variables": [
+        "status-code",
+        "status-message"
+      ],
+      "source_block": "start-status-message"
+    },
+    {
+      "id": "BR3",
+      "sbvr_class": "OBLIGATION",
+      "verb_concept": "set status message",
+      "rule": "If (NOT ((status-code = '100'))) AND (NOT ((status-code = '101'))) AND ((status-code = '200')), then MOVE 'OK' TO status-message.",
+      "natural_language_rule": "If not (the status code (status-code) is \"100\") and not (the status code is \"101\") and the status code equals \"200\", then the status message (status-message) is set to \"OK\".",
+      "source_variables": [
+        "status-code",
+        "status-message"
+      ],
+      "source_block": "start-status-message"
+    },
+    {
+      "id": "BR4",
+      "sbvr_class": "OBLIGATION",
+      "verb_concept": "set status message",
+      "rule": "If (NOT ((status-code = '100'))) AND (NOT ((status-code = '101'))) AND (NOT ((status-code = '200'))) AND ((status-code = '201')), then MOVE 'Created' TO status-message.",
+      "natural_language_rule": "If not (the status code (status-code) is \"100\") and not (the status code is \"101\") and not (the status code is \"200\") and the status code equals \"201\", then the status message (status-message) is set to \"Created\".",
+      "source_variables": [
+        "status-code",
+        "status-message"
+      ],
+      "source_block": "start-status-message"
+    },
+    {
+      "id": "BR5",
+      "sbvr_class": "OBLIGATION",
+      "verb_concept": "set status message",
+      "rule": "If (NOT ((status-code = '100'))) AND (NOT ((status-code = '101'))) AND (NOT ((status-code = '200'))) AND (NOT ((status-code = '201'))) AND ((status-code = '202')), then MOVE 'Accepted' TO status-message.",
+      "natural_language_rule": "If not (the status code (status-code) is \"100\") and not (the status code is \"101\") and not (the status code is \"200\") and not (the status code is \"201\") and the status code equals \"202\", then the status message (status-message) is set to \"Accepted\".",
+      "source_variables": [
+        "status-code",
+        "status-message"
+      ],
+      "source_block": "start-status-message"
+    },
+    {
+      "id": "BR6",
+      "sbvr_class": "OBLIGATION",
+      "verb_concept": "set status message",
+      "rule": "If (NOT ((status-code = '100'))) AND (NOT ((status-code = '101'))) AND (NOT ((status-code = '200'))) AND (NOT ((status-code = '201'))) AND (NOT ((status-code = '202'))) AND ((status-code = '203')), then MOVE 'Non-Authoritative Information' TO status-message.",
+      "natural_language_rule": "If not (the status code (status-code) is \"100\") and not (the status code is \"101\") and not (the status code is \"200\") and not (the status code is \"201\") and not (the status code is \"202\") and the status code equals \"203\", then the status message (status-message) is set to \"Non-Authoritative Information\".",
+      "source_variables": [
+        "status-code",
+        "status-message"
+      ],
+      "source_block": "start-status-message"
+    },
+    {
+      "id": "BR7",
+      "sbvr_class": "OBLIGATION",
+      "verb_concept": "set status message",
+      "rule": "If (NOT ((status-code = '100'))) AND (NOT ((status-code = '101'))) AND (NOT ((status-code = '200'))) AND (NOT ((status-code = '201'))) AND (NOT ((status-code = '202'))) AND (NOT ((status-code = '203'))) AND ((status-code = '204')), then MOVE 'No Content' TO status-message.",
+      "natural_language_rule": "If not (the status code (status-code) is \"100\") and not (the status code is \"101\") and not (the status code is \"200\") and not (the status code is \"201\") and not (the status code is \"202\") and not (the status code is \"203\") and the status code equals \"204\", then the status message (status-message) is set to \"No Content\".",
+      "source_variables": [
+        "status-code",
+        "status-message"
+      ],
+      "source_block": "start-status-message"
+    },
+    {
+      "id": "BR8",
+      "sbvr_class": "OBLIGATION",
+      "verb_concept": "set status message",
+      "rule": "If (NOT ((status-code = '100'))) AND (NOT ((status-code = '101'))) AND (NOT ((status-code = '200'))) AND (NOT ((status-code = '201'))) AND (NOT ((status-code = '202'))) AND (NOT ((status-code = '203'))) AND (NOT ((status-code = '204'))) AND ((status-code = '205')), then MOVE 'Reset Content' TO status-message.",
+      "natural_language_rule": "If not (the status code (status-code) is \"100\") and not (the status code is \"101\") and not (the status code is \"200\") and not (the status code is \"201\") and not (the status code is \"202\") and not (the status code is \"203\") and not (the status code is \"204\") and the status code equals \"205\", then the status message (status-message) is set to \"Reset Content\".",
+      "source_variables": [
+        "status-code",
+        "status-message"
+      ],
+      "source_block": "start-status-message"
+    },
+    {
+      "id": "BR9",
+      "sbvr_class": "OBLIGATION",
+      "verb_concept": "set status message",
+      "rule": "If (NOT ((status-code = '100'))) AND (NOT ((status-code = '101'))) AND (NOT ((status-code = '200'))) AND (NOT ((status-code = '201'))) AND (NOT ((status-code = '202'))) AND (NOT ((status-code = '203'))) AND (NOT ((status-code = '204'))) AND (NOT ((status-code = '205'))) AND ((status-code = '206')), then MOVE 'Partial Content' TO status-message.",
+      "natural_language_rule": "If not (the status code (status-code) is \"100\") and not (the status code is \"101\") and not (the status code is \"200\") and not (the status code is \"201\") and not (the status code is \"202\") and not (the status code is \"203\") and not (the status code is \"204\") and not (the status code is \"205\") and the status code equals \"206\", then the status message (status-message) is set to \"Partial Content\".",
+      "source_variables": [
+        "status-code",
+        "status-message"
+      ],
+      "source_block": "start-status-message"
+    },
+    {
+      "id": "BR10",
+      "sbvr_class": "OBLIGATION",
+      "verb_concept": "set status message",
+      "rule": "If (NOT ((status-code = '100'))) AND (NOT ((status-code = '101'))) AND (NOT ((status-code = '200'))) AND (NOT ((status-code = '201'))) AND (NOT ((status-code = '202'))) AND (NOT ((status-code = '203'))) AND (NOT ((status-code = '204'))) AND (NOT ((status-code = '205'))) AND (NOT ((status-code = '206'))) AND ((status-code = '300')), then MOVE 'Multiple Choices' TO status-message.",
+      "natural_language_rule": "If not (the status code (status-code) is \"100\") and not (the status code is \"101\") and not (the status code is \"200\") and not (the status code is \"201\") and not (the status code is \"202\") and not (the status code is \"203\") and not (the status code is \"204\") and not (the status code is \"205\") and not (the status code is \"206\") and the status code equals \"300\", then the status message (status-message) is set to \"Multiple Choices\".",
+      "source_variables": [
+        "status-code",
+        "status-message"
+      ],
+      "source_block": "start-status-message"
+    },
+    {
+      "id": "BR11",
+      "sbvr_class": "OBLIGATION",
+      "verb_concept": "set status message",
+      "rule": "If (NOT ((status-code = '100'))) AND (NOT ((status-code = '101'))) AND (NOT ((status-code = '200'))) AND (NOT ((status-code = '201'))) AND (NOT ((status-code = '202'))) AND (NOT ((status-code = '203'))) AND (NOT ((status-code = '204'))) AND (NOT ((status-code = '205'))) AND (NOT ((status-code = '206'))) AND (NOT ((status-code = '300'))) AND ((status-code = '301')), then MOVE 'Moved Permanently' TO status-message.",
+      "natural_language_rule": "If not (the status code (status-code) is \"100\") and not (the status code is \"101\") and not (the status code is \"200\") and not (the status code is \"201\") and not (the status code is \"202\") and not (the status code is \"203\") and not (the status code is \"204\") and not (the status code is \"205\") and not (the status code is \"206\") and not (the status code is \"300\") and the status code equals \"301\", then the status message (status-message) is set to \"Moved Permanently\".",
+      "source_variables": [
+        "status-code",
+        "status-message"
+      ],
+      "source_block": "start-status-message"
+    },
+    {
+      "id": "BR12",
+      "sbvr_class": "OBLIGATION",
+      "verb_concept": "set status message",
+      "rule": "If (NOT ((status-code = '100'))) AND (NOT ((status-code = '101'))) AND (NOT ((status-code = '200'))) AND (NOT ((status-code = '201'))) AND (NOT ((status-code = '202'))) AND (NOT ((status-code = '203'))) AND (NOT ((status-code = '204'))) AND (NOT ((status-code = '205'))) AND (NOT ((status-code = '206'))) AND (NOT ((status-code = '300'))) AND (NOT ((status-code = '301'))) AND ((status-code = '302')), then MOVE 'Found' TO status-message.",
+      "natural_language_rule": "If not (the status code (status-code) is \"100\") and not (the status code is \"101\") and not (the status code is \"200\") and not (the status code is \"201\") and not (the status code is \"202\") and not (the status code is \"203\") and not (the status code is \"204\") and not (the status code is \"205\") and not (the status code is \"206\") and not (the status code is \"300\") and not (the status code is \"301\") and the status code equals \"302\", then the status message (status-message) is set to \"Found\".",
+      "source_variables": [
+        "status-code",
+        "status-message"
+      ],
+      "source_block": "start-status-message"
+    },
+    {
+      "id": "BR13",
+      "sbvr_class": "OBLIGATION",
+      "verb_concept": "set status message",
+      "rule": "If (NOT ((status-code = '100'))) AND (NOT ((status-code = '101'))) AND (NOT ((status-code = '200'))) AND (NOT ((status-code = '201'))) AND (NOT ((status-code = '202'))) AND (NOT ((status-code = '203'))) AND (NOT ((status-code = '204'))) AND (NOT ((status-code = '205'))) AND (NOT ((status-code = '206'))) AND (NOT ((status-code = '300'))) AND (NOT ((status-code = '301'))) AND (NOT ((status-code = '302'))) AND ((status-code = '303')), then MOVE 'See Other' TO status-message.",
+      "natural_language_rule": "If not (the status code (status-code) is \"100\") and not (the status code is \"101\") and not (the status code is \"200\") and not (the status code is \"201\") and not (the status code is \"202\") and not (the status code is \"203\") and not (the status code is \"204\") and not (the status code is \"205\") and not (the status code is \"206\") and not (the status code is \"300\") and not (the status code is \"301\") and not (the status code is \"302\") and the status code equals \"303\", then the status message (status-message) is set to \"See Other\".",
+      "source_variables": [
+        "status-code",
+        "status-message"
+      ],
+      "source_block": "start-status-message"
+    },
+    {
+      "id": "BR14",
+      "sbvr_class": "OBLIGATION",
+      "verb_concept": "set status message",
+      "rule": "If (NOT ((status-code = '100'))) AND (NOT ((status-code = '101'))) AND (NOT ((status-code = '200'))) AND (NOT ((status-code = '201'))) AND (NOT ((status-code = '202'))) AND (NOT ((status-code = '203'))) AND (NOT ((status-code = '204'))) AND (NOT ((status-code = '205'))) AND (NOT ((status-code = '206'))) AND (NOT ((status-code = '300'))) AND (NOT ((status-code = '301'))) AND (NOT ((status-code = '302'))) AND (NOT ((status-code = '303'))) AND ((status-code = '304')), then MOVE 'Not Modified' TO status-message.",
+      "natural_language_rule": "If not (the status code (status-code) is \"100\") and not (the status code is \"101\") and not (the status code is \"200\") and not (the status code is \"201\") and not (the status code is \"202\") and not (the status code is \"203\") and not (the status code is \"204\") and not (the status code is \"205\") and not (the status code is \"206\") and not (the status code is \"300\") and not (the status code is \"301\") and not (the status code is \"302\") and not (the status code is \"303\") and the status code equals \"304\", then the status message (status-message) is set to \"Not Modified\".",
+      "source_variables": [
+        "status-code",
+        "status-message"
+      ],
+      "source_block": "start-status-message"
+    },
+    {
+      "id": "BR15",
+      "sbvr_class": "OBLIGATION",
+      "verb_concept": "set status message",
+      "rule": "If (NOT ((status-code = '100'))) AND (NOT ((status-code = '101'))) AND (NOT ((status-code = '200'))) AND (NOT ((status-code = '201'))) AND (NOT ((status-code = '202'))) AND (NOT ((status-code = '203'))) AND (NOT ((status-code = '204'))) AND (NOT ((status-code = '205'))) AND (NOT ((status-code = '206'))) AND (NOT ((status-code = '300'))) AND (NOT ((status-code = '301'))) AND (NOT ((status-code = '302'))) AND (NOT ((status-code = '303'))) AND (NOT ((status-code = '304'))) AND ((status-code = '305')), then MOVE 'Use Proxy' TO status-message.",
+      "natural_language_rule": "If not (the status code (status-code) is \"100\") and not (the status code is \"101\") and not (the status code is \"200\") and not (the status code is \"201\") and not (the status code is \"202\") and not (the status code is \"203\") and not (the status code is \"204\") and not (the status code is \"205\") and not (the status code is \"206\") and not (the status code is \"300\") and not (the status code is \"301\") and not (the status code is \"302\") and not (the status code is \"303\") and not (the status code is \"304\") and the status code equals \"305\", then the status message (status-message) is set to \"Use Proxy\".",
+      "source_variables": [
+        "status-code",
+        "status-message"
+      ],
+      "source_block": "start-status-message"
+    },
+    {
+      "id": "BR16",
+      "sbvr_class": "OBLIGATION",
+      "verb_concept": "set status message",
+      "rule": "If (NOT ((status-code = '100'))) AND (NOT ((status-code = '101'))) AND (NOT ((status-code = '200'))) AND (NOT ((status-code = '201'))) AND (NOT ((status-code = '202'))) AND (NOT ((status-code = '203'))) AND (NOT ((status-code = '204'))) AND (NOT ((status-code = '205'))) AND (NOT ((status-code = '206'))) AND (NOT ((status-code = '300'))) AND (NOT ((status-code = '301'))) AND (NOT ((status-code = '302'))) AND (NOT ((status-code = '303'))) AND (NOT ((status-code = '304'))) AND (NOT ((status-code = '305'))) AND ((status-code = '306')), then MOVE '(Unused)' TO status-message.",
+      "natural_language_rule": "If not (the status code (status-code) is \"100\") and not (the status code is \"101\") and not (the status code is \"200\") and not (the status code is \"201\") and not (the status code is \"202\") and not (the status code is \"203\") and not (the status code is \"204\") and not (the status code is \"205\") and not (the status code is \"206\") and not (the status code is \"300\") and not (the status code is \"301\") and not (the status code is \"302\") and not (the status code is \"303\") and not (the status code is \"304\") and not (the status code is \"305\") and the status code equals \"306\", then the status message (status-message) is set to \"(Unused)\".",
+      "source_variables": [
+        "status-code",
+        "status-message"
+      ],
+      "source_block": "start-status-message"
+    },
+    {
+      "id": "BR17",
+      "sbvr_class": "OBLIGATION",
+      "verb_concept": "set status message",
+      "rule": "If (NOT ((status-code = '100'))) AND (NOT ((status-code = '101'))) AND (NOT ((status-code = '200'))) AND (NOT ((status-code = '201'))) AND (NOT ((status-code = '202'))) AND (NOT ((status-code = '203'))) AND (NOT ((status-code = '204'))) AND (NOT ((status-code = '205'))) AND (NOT ((status-code = '206'))) AND (NOT ((status-code = '300'))) AND (NOT ((status-code = '301'))) AND (NOT ((status-code = '302'))) AND (NOT ((status-code = '303'))) AND (NOT ((status-code = '304'))) AND (NOT ((status-code = '305'))) AND (NOT ((status-code = '306'))) AND ((status-code = '400')), then MOVE 'Bad Request' TO status-message.",
+      "natural_language_rule": "If not (the status code (status-code) is \"100\") and not (the status code is \"101\") and not (the status code is \"200\") and not (the status code is \"201\") and not (the status code is \"202\") and not (the status code is \"203\") and not (the status code is \"204\") and not (the status code is \"205\") and not (the status code is \"206\") and not (the status code is \"300\") and not (the status code is \"301\") and not (the status code is \"302\") and not (the status code is \"303\") and not (the status code is \"304\") and not (the status code is \"305\") and not (the status code is \"306\") and the status code equals \"400\", then the status message (status-message) is set to \"Bad Request\".",
+      "source_variables": [
+        "status-code",
+        "status-message"
+      ],
+      "source_block": "start-status-message"
+    },
+    {
+      "id": "BR18",
+      "sbvr_class": "OBLIGATION",
+      "verb_concept": "set status message",
+      "rule": "If (NOT ((status-code = '100'))) AND (NOT ((status-code = '101'))) AND (NOT ((status-code = '200'))) AND (NOT ((status-code = '201'))) AND (NOT ((status-code = '202'))) AND (NOT ((status-code = '203'))) AND (NOT ((status-code = '204'))) AND (NOT ((status-code = '205'))) AND (NOT ((status-code = '206'))) AND (NOT ((status-code = '300'))) AND (NOT ((status-code = '301'))) AND (NOT ((status-code = '302'))) AND (NOT ((status-code = '303'))) AND (NOT ((status-code = '304'))) AND (NOT ((status-code = '305'))) AND (NOT ((status-code = '306'))) AND (NOT ((status-code = '400'))) AND ((status-code = '401')), then MOVE 'Unauthorized' TO status-message.",
+      "natural_language_rule": "If not (the status code (status-code) is \"100\") and not (the status code is \"101\") and not (the status code is \"200\") and not (the status code is \"201\") and not (the status code is \"202\") and not (the status code is \"203\") and not (the status code is \"204\") and not (the status code is \"205\") and not (the status code is \"206\") and not (the status code is \"300\") and not (the status code is \"301\") and not (the status code is \"302\") and not (the status code is \"303\") and not (the status code is \"304\") and not (the status code is \"305\") and not (the status code is \"306\") and not (the status code is \"400\") and the status code equals \"401\", then the status message (status-message) is set to \"Unauthorized\".",
+      "source_variables": [
+        "status-code",
+        "status-message"
+      ],
+      "source_block": "start-status-message"
+    },
+    {
+      "id": "BR19",
+      "sbvr_class": "OBLIGATION",
+      "verb_concept": "set status message",
+      "rule": "If (NOT ((status-code = '100'))) AND (NOT ((status-code = '101'))) AND (NOT ((status-code = '200'))) AND (NOT ((status-code = '201'))) AND (NOT ((status-code = '202'))) AND (NOT ((status-code = '203'))) AND (NOT ((status-code = '204'))) AND (NOT ((status-code = '205'))) AND (NOT ((status-code = '206'))) AND (NOT ((status-code = '300'))) AND (NOT ((status-code = '301'))) AND (NOT ((status-code = '302'))) AND (NOT ((status-code = '303'))) AND (NOT ((status-code = '304'))) AND (NOT ((status-code = '305'))) AND (NOT ((status-code = '306'))) AND (NOT ((status-code = '400'))) AND (NOT ((status-code = '401'))) AND ((status-code = '402')), then MOVE 'Payment Required' TO status-message.",
+      "natural_language_rule": "If not (the status code (status-code) is \"100\") and not (the status code is \"101\") and not (the status code is \"200\") and not (the status code is \"201\") and not (the status code is \"202\") and not (the status code is \"203\") and not (the status code is \"204\") and not (the status code is \"205\") and not (the status code is \"206\") and not (the status code is \"300\") and not (the status code is \"301\") and not (the status code is \"302\") and not (the status code is \"303\") and not (the status code is \"304\") and not (the status code is \"305\") and not (the status code is \"306\") and not (the status code is \"400\") and not (the status code is \"401\") and the status code equals \"402\", then the status message (status-message) is set to \"Payment Required\".",
+      "source_variables": [
+        "status-code",
+        "status-message"
+      ],
+      "source_block": "start-status-message"
+    },
+    {
+      "id": "BR20",
+      "sbvr_class": "OBLIGATION",
+      "verb_concept": "set status message",
+      "rule": "If (NOT ((status-code = '100'))) AND (NOT ((status-code = '101'))) AND (NOT ((status-code = '200'))) AND (NOT ((status-code = '201'))) AND (NOT ((status-code = '202'))) AND (NOT ((status-code = '203'))) AND (NOT ((status-code = '204'))) AND (NOT ((status-code = '205'))) AND (NOT ((status-code = '206'))) AND (NOT ((status-code = '300'))) AND (NOT ((status-code = '301'))) AND (NOT ((status-code = '302'))) AND (NOT ((status-code = '303'))) AND (NOT ((status-code = '304'))) AND (NOT ((status-code = '305'))) AND (NOT ((status-code = '306'))) AND (NOT ((status-code = '400'))) AND (NOT ((status-code = '401'))) AND (NOT ((status-code = '402'))) AND ((status-code = '403')), then MOVE 'Forbidden' TO status-message.",
+      "natural_language_rule": "If not (the status code (status-code) is \"100\") and not (the status code is \"101\") and not (the status code is \"200\") and not (the status code is \"201\") and not (the status code is \"202\") and not (the status code is \"203\") and not (the status code is \"204\") and not (the status code is \"205\") and not (the status code is \"206\") and not (the status code is \"300\") and not (the status code is \"301\") and not (the status code is \"302\") and not (the status code is \"303\") and not (the status code is \"304\") and not (the status code is \"305\") and not (the status code is \"306\") and not (the status code is \"400\") and not (the status code is \"401\") and not (the status code is \"402\") and the status code equals \"403\", then the status message (status-message) is set to \"Forbidden\".",
+      "source_variables": [
+        "status-code",
+        "status-message"
+      ],
+      "source_block": "start-status-message"
+    },
+    {
+      "id": "BR21",
+      "sbvr_class": "OBLIGATION",
+      "verb_concept": "set status message",
+      "rule": "If (NOT ((status-code = '100'))) AND (NOT ((status-code = '101'))) AND (NOT ((status-code = '200'))) AND (NOT ((status-code = '201'))) AND (NOT ((status-code = '202'))) AND (NOT ((status-code = '203'))) AND (NOT ((status-code = '204'))) AND (NOT ((status-code = '205'))) AND (NOT ((status-code = '206'))) AND (NOT ((status-code = '300'))) AND (NOT ((status-code = '301'))) AND (NOT ((status-code = '302'))) AND (NOT ((status-code = '303'))) AND (NOT ((status-code = '304'))) AND (NOT ((status-code = '305'))) AND (NOT ((status-code = '306'))) AND (NOT ((status-code = '400'))) AND (NOT ((status-code = '401'))) AND (NOT ((status-code = '402'))) AND (NOT ((status-code = '403'))) AND ((status-code = '404')), then MOVE 'Not Found' TO status-message.",
+      "natural_language_rule": "If not (the status code (status-code) is \"100\") and not (the status code is \"101\") and not (the status code is \"200\") and not (the status code is \"201\") and not (the status code is \"202\") and not (the status code is \"203\") and not (the status code is \"204\") and not (the status code is \"205\") and not (the status code is \"206\") and not (the status code is \"300\") and not (the status code is \"301\") and not (the status code is \"302\") and not (the status code is \"303\") and not (the status code is \"304\") and not (the status code is \"305\") and not (the status code is \"306\") and not (the status code is \"400\") and not (the status code is \"401\") and not (the status code is \"402\") and not (the status code is \"403\") and the status code equals \"404\", then the status message (status-message) is set to \"Not Found\".",
+      "source_variables": [
+        "status-code",
+        "status-message"
+      ],
+      "source_block": "start-status-message"
+    },
+    {
+      "id": "BR22",
+      "sbvr_class": "OBLIGATION",
+      "verb_concept": "set status message",
+      "rule": "If (NOT ((status-code = '100'))) AND (NOT ((status-code = '101'))) AND (NOT ((status-code = '200'))) AND (NOT ((status-code = '201'))) AND (NOT ((status-code = '202'))) AND (NOT ((status-code = '203'))) AND (NOT ((status-code = '204'))) AND (NOT ((status-code = '205'))) AND (NOT ((status-code = '206'))) AND (NOT ((status-code = '300'))) AND (NOT ((status-code = '301'))) AND (NOT ((status-code = '302'))) AND (NOT ((status-code = '303'))) AND (NOT ((status-code = '304'))) AND (NOT ((status-code = '305'))) AND (NOT ((status-code = '306'))) AND (NOT ((status-code = '400'))) AND (NOT ((status-code = '401'))) AND (NOT ((status-code = '402'))) AND (NOT ((status-code = '403'))) AND (NOT ((status-code = '404'))) AND ((status-code = '405')), then MOVE 'Method Not Allowed' TO status-message.",
+      "natural_language_rule": "If not (the status code (status-code) is \"100\") and not (the status code is \"101\") and not (the status code is \"200\") and not (the status code is \"201\") and not (the status code is \"202\") and not (the status code is \"203\") and not (the status code is \"204\") and not (the status code is \"205\") and not (the status code is \"206\") and not (the status code is \"300\") and not (the status code is \"301\") and not (the status code is \"302\") and not (the status code is \"303\") and not (the status code is \"304\") and not (the status code is \"305\") and not (the status code is \"306\") and not (the status code is \"400\") and not (the status code is \"401\") and not (the status code is \"402\") and not (the status code is \"403\") and not (the status code is \"404\") and the status code equals \"405\", then the status message (status-message) is set to \"Method Not Allowed\".",
+      "source_variables": [
+        "status-code",
+        "status-message"
+      ],
+      "source_block": "start-status-message"
+    },
+    {
+      "id": "BR23",
+      "sbvr_class": "OBLIGATION",
+      "verb_concept": "set status message",
+      "rule": "If (NOT ((status-code = '100'))) AND (NOT ((status-code = '101'))) AND (NOT ((status-code = '200'))) AND (NOT ((status-code = '201'))) AND (NOT ((status-code = '202'))) AND (NOT ((status-code = '203'))) AND (NOT ((status-code = '204'))) AND (NOT ((status-code = '205'))) AND (NOT ((status-code = '206'))) AND (NOT ((status-code = '300'))) AND (NOT ((status-code = '301'))) AND (NOT ((status-code = '302'))) AND (NOT ((status-code = '303'))) AND (NOT ((status-code = '304'))) AND (NOT ((status-code = '305'))) AND (NOT ((status-code = '306'))) AND (NOT ((status-code = '400'))) AND (NOT ((status-code = '401'))) AND (NOT ((status-code = '402'))) AND (NOT ((status-code = '403'))) AND (NOT ((status-code = '404'))) AND (NOT ((status-code = '405'))) AND ((status-code = '406')), then MOVE 'Not Acceptable' TO status-message.",
+      "natural_language_rule": "If not (the status code (status-code) is \"100\") and not (the status code is \"101\") and not (the status code is \"200\") and not (the status code is \"201\") and not (the status code is \"202\") and not (the status code is \"203\") and not (the status code is \"204\") and not (the status code is \"205\") and not (the status code is \"206\") and not (the status code is \"300\") and not (the status code is \"301\") and not (the status code is \"302\") and not (the status code is \"303\") and not (the status code is \"304\") and not (the status code is \"305\") and not (the status code is \"306\") and not (the status code is \"400\") and not (the status code is \"401\") and not (the status code is \"402\") and not (the status code is \"403\") and not (the status code is \"404\") and not (the status code is \"405\") and the status code equals \"406\", then the status message (status-message) is set to \"Not Acceptable\".",
+      "source_variables": [
+        "status-code",
+        "status-message"
+      ],
+      "source_block": "start-status-message"
+    },
+    {
+      "id": "BR24",
+      "sbvr_class": "OBLIGATION",
+      "verb_concept": "set status message",
+      "rule": "If (NOT ((status-code = '100'))) AND (NOT ((status-code = '101'))) AND (NOT ((status-code = '200'))) AND (NOT ((status-code = '201'))) AND (NOT ((status-code = '202'))) AND (NOT ((status-code = '203'))) AND (NOT ((status-code = '204'))) AND (NOT ((status-code = '205'))) AND (NOT ((status-code = '206'))) AND (NOT ((status-code = '300'))) AND (NOT ((status-code = '301'))) AND (NOT ((status-code = '302'))) AND (NOT ((status-code = '303'))) AND (NOT ((status-code = '304'))) AND (NOT ((status-code = '305'))) AND (NOT ((status-code = '306'))) AND (NOT ((status-code = '400'))) AND (NOT ((status-code = '401'))) AND (NOT ((status-code = '402'))) AND (NOT ((status-code = '403'))) AND (NOT ((status-code = '404'))) AND (NOT ((status-code = '405'))) AND (NOT ((status-code = '406'))) AND ((status-code = '407')), then MOVE 'Proxy Authentication Required' TO status-message.",
+      "natural_language_rule": "If not (the status code (status-code) is \"100\") and not (the status code is \"101\") and not (the status code is \"200\") and not (the status code is \"201\") and not (the status code is \"202\") and not (the status code is \"203\") and not (the status code is \"204\") and not (the status code is \"205\") and not (the status code is \"206\") and not (the status code is \"300\") and not (the status code is \"301\") and not (the status code is \"302\") and not (the status code is \"303\") and not (the status code is \"304\") and not (the status code is \"305\") and not (the status code is \"306\") and not (the status code is \"400\") and not (the status code is \"401\") and not (the status code is \"402\") and not (the status code is \"403\") and not (the status code is \"404\") and not (the status code is \"405\") and not (the status code is \"406\") and the status code equals \"407\", then the status message (status-message) is set to \"Proxy Authentication Required\".",
+      "source_variables": [
+        "status-code",
+        "status-message"
+      ],
+      "source_block": "start-status-message"
+    },
+    {
+      "id": "BR25",
+      "sbvr_class": "OBLIGATION",
+      "verb_concept": "set status message",
+      "rule": "If (NOT ((status-code = '100'))) AND (NOT ((status-code = '101'))) AND (NOT ((status-code = '200'))) AND (NOT ((status-code = '201'))) AND (NOT ((status-code = '202'))) AND (NOT ((status-code = '203'))) AND (NOT ((status-code = '204'))) AND (NOT ((status-code = '205'))) AND (NOT ((status-code = '206'))) AND (NOT ((status-code = '300'))) AND (NOT ((status-code = '301'))) AND (NOT ((status-code = '302'))) AND (NOT ((status-code = '303'))) AND (NOT ((status-code = '304'))) AND (NOT ((status-code = '305'))) AND (NOT ((status-code = '306'))) AND (NOT ((status-code = '400'))) AND (NOT ((status-code = '401'))) AND (NOT ((status-code = '402'))) AND (NOT ((status-code = '403'))) AND (NOT ((status-code = '404'))) AND (NOT ((status-code = '405'))) AND (NOT ((status-code = '406'))) AND (NOT ((status-code = '407'))) AND ((status-code = '408')), then MOVE 'Request Timeout' TO status-message.",
+      "natural_language_rule": "If not (the status code (status-code) is \"100\") and not (the status code is \"101\") and not (the status code is \"200\") and not (the status code is \"201\") and not (the status code is \"202\") and not (the status code is \"203\") and not (the status code is \"204\") and not (the status code is \"205\") and not (the status code is \"206\") and not (the status code is \"300\") and not (the status code is \"301\") and not (the status code is \"302\") and not (the status code is \"303\") and not (the status code is \"304\") and not (the status code is \"305\") and not (the status code is \"306\") and not (the status code is \"400\") and not (the status code is \"401\") and not (the status code is \"402\") and not (the status code is \"403\") and not (the status code is \"404\") and not (the status code is \"405\") and not (the status code is \"406\") and not (the status code is \"407\") and the status code equals \"408\", then the status message (status-message) is set to \"Request Timeout\".",
+      "source_variables": [
+        "status-code",
+        "status-message"
+      ],
+      "source_block": "start-status-message"
+    },
+    {
+      "id": "BR26",
+      "sbvr_class": "OBLIGATION",
+      "verb_concept": "set status message",
+      "rule": "If (NOT ((status-code = '100'))) AND (NOT ((status-code = '101'))) AND (NOT ((status-code = '200'))) AND (NOT ((status-code = '201'))) AND (NOT ((status-code = '202'))) AND (NOT ((status-code = '203'))) AND (NOT ((status-code = '204'))) AND (NOT ((status-code = '205'))) AND (NOT ((status-code = '206'))) AND (NOT ((status-code = '300'))) AND (NOT ((status-code = '301'))) AND (NOT ((status-code = '302'))) AND (NOT ((status-code = '303'))) AND (NOT ((status-code = '304'))) AND (NOT ((status-code = '305'))) AND (NOT ((status-code = '306'))) AND (NOT ((status-code = '400'))) AND (NOT ((status-code = '401'))) AND (NOT ((status-code = '402'))) AND (NOT ((status-code = '403'))) AND (NOT ((status-code = '404'))) AND (NOT ((status-code = '405'))) AND (NOT ((status-code = '406'))) AND (NOT ((status-code = '407'))) AND (NOT ((status-code = '408'))) AND ((status-code = '409')), then MOVE 'Conflict' TO status-message.",
+      "natural_language_rule": "If not (the status code (status-code) is \"100\") and not (the status code is \"101\") and not (the status code is \"200\") and not (the status code is \"201\") and not (the status code is \"202\") and not (the status code is \"203\") and not (the status code is \"204\") and not (the status code is \"205\") and not (the status code is \"206\") and not (the status code is \"300\") and not (the status code is \"301\") and not (the status code is \"302\") and not (the status code is \"303\") and not (the status code is \"304\") and not (the status code is \"305\") and not (the status code is \"306\") and not (the status code is \"400\") and not (the status code is \"401\") and not (the status code is \"402\") and not (the status code is \"403\") and not (the status code is \"404\") and not (the status code is \"405\") and not (the status code is \"406\") and not (the status code is \"407\") and not (the status code is \"408\") and the status code equals \"409\", then the status message (status-message) is set to \"Conflict\".",
+      "source_variables": [
+        "status-code",
+        "status-message"
+      ],
+      "source_block": "start-status-message"
+    },
+    {
+      "id": "BR27",
+      "sbvr_class": "OBLIGATION",
+      "verb_concept": "set status message",
+      "rule": "If (NOT ((status-code = '100'))) AND (NOT ((status-code = '101'))) AND (NOT ((status-code = '200'))) AND (NOT ((status-code = '201'))) AND (NOT ((status-code = '202'))) AND (NOT ((status-code = '203'))) AND (NOT ((status-code = '204'))) AND (NOT ((status-code = '205'))) AND (NOT ((status-code = '206'))) AND (NOT ((status-code = '300'))) AND (NOT ((status-code = '301'))) AND (NOT ((status-code = '302'))) AND (NOT ((status-code = '303'))) AND (NOT ((status-code = '304'))) AND (NOT ((status-code = '305'))) AND (NOT ((status-code = '306'))) AND (NOT ((status-code = '400'))) AND (NOT ((status-code = '401'))) AND (NOT ((status-code = '402'))) AND (NOT ((status-code = '403'))) AND (NOT ((status-code = '404'))) AND (NOT ((status-code = '405'))) AND (NOT ((status-code = '406'))) AND (NOT ((status-code = '407'))) AND (NOT ((status-code = '408'))) AND (NOT ((status-code = '409'))) AND ((status-code = '410')), then MOVE 'Gone' TO status-message.",
+      "natural_language_rule": "If not (the status code (status-code) is \"100\") and not (the status code is \"101\") and not (the status code is \"200\") and not (the status code is \"201\") and not (the status code is \"202\") and not (the status code is \"203\") and not (the status code is \"204\") and not (the status code is \"205\") and not (the status code is \"206\") and not (the status code is \"300\") and not (the status code is \"301\") and not (the status code is \"302\") and not (the status code is \"303\") and not (the status code is \"304\") and not (the status code is \"305\") and not (the status code is \"306\") and not (the status code is \"400\") and not (the status code is \"401\") and not (the status code is \"402\") and not (the status code is \"403\") and not (the status code is \"404\") and not (the status code is \"405\") and not (the status code is \"406\") and not (the status code is \"407\") and not (the status code is \"408\") and not (the status code is \"409\") and the status code equals \"410\", then the status message (status-message) is set to \"Gone\".",
+      "source_variables": [
+        "status-code",
+        "status-message"
+      ],
+      "source_block": "start-status-message"
+    },
+    {
+      "id": "BR28",
+      "sbvr_class": "OBLIGATION",
+      "verb_concept": "set status message",
+      "rule": "If (NOT ((status-code = '100'))) AND (NOT ((status-code = '101'))) AND (NOT ((status-code = '200'))) AND (NOT ((status-code = '201'))) AND (NOT ((status-code = '202'))) AND (NOT ((status-code = '203'))) AND (NOT ((status-code = '204'))) AND (NOT ((status-code = '205'))) AND (NOT ((status-code = '206'))) AND (NOT ((status-code = '300'))) AND (NOT ((status-code = '301'))) AND (NOT ((status-code = '302'))) AND (NOT ((status-code = '303'))) AND (NOT ((status-code = '304'))) AND (NOT ((status-code = '305'))) AND (NOT ((status-code = '306'))) AND (NOT ((status-code = '400'))) AND (NOT ((status-code = '401'))) AND (NOT ((status-code = '402'))) AND (NOT ((status-code = '403'))) AND (NOT ((status-code = '404'))) AND (NOT ((status-code = '405'))) AND (NOT ((status-code = '406'))) AND (NOT ((status-code = '407'))) AND (NOT ((status-code = '408'))) AND (NOT ((status-code = '409'))) AND (NOT ((status-code = '410'))) AND ((status-code = '411')), then MOVE 'Length Required' TO status-message.",
+      "natural_language_rule": "If not (the status code (status-code) is \"100\") and not (the status code is \"101\") and not (the status code is \"200\") and not (the status code is \"201\") and not (the status code is \"202\") and not (the status code is \"203\") and not (the status code is \"204\") and not (the status code is \"205\") and not (the status code is \"206\") and not (the status code is \"300\") and not (the status code is \"301\") and not (the status code is \"302\") and not (the status code is \"303\") and not (the status code is \"304\") and not (the status code is \"305\") and not (the status code is \"306\") and not (the status code is \"400\") and not (the status code is \"401\") and not (the status code is \"402\") and not (the status code is \"403\") and not (the status code is \"404\") and not (the status code is \"405\") and not (the status code is \"406\") and not (the status code is \"407\") and not (the status code is \"408\") and not (the status code is \"409\") and not (the status code is \"410\") and the status code equals \"411\", then the status message (status-message) is set to \"Length Required\".",
+      "source_variables": [
+        "status-code",
+        "status-message"
+      ],
+      "source_block": "start-status-message"
+    },
+    {
+      "id": "BR29",
+      "sbvr_class": "OBLIGATION",
+      "verb_concept": "set status message",
+      "rule": "If (NOT ((status-code = '100'))) AND (NOT ((status-code = '101'))) AND (NOT ((status-code = '200'))) AND (NOT ((status-code = '201'))) AND (NOT ((status-code = '202'))) AND (NOT ((status-code = '203'))) AND (NOT ((status-code = '204'))) AND (NOT ((status-code = '205'))) AND (NOT ((status-code = '206'))) AND (NOT ((status-code = '300'))) AND (NOT ((status-code = '301'))) AND (NOT ((status-code = '302'))) AND (NOT ((status-code = '303'))) AND (NOT ((status-code = '304'))) AND (NOT ((status-code = '305'))) AND (NOT ((status-code = '306'))) AND (NOT ((status-code = '400'))) AND (NOT ((status-code = '401'))) AND (NOT ((status-code = '402'))) AND (NOT ((status-code = '403'))) AND (NOT ((status-code = '404'))) AND (NOT ((status-code = '405'))) AND (NOT ((status-code = '406'))) AND (NOT ((status-code = '407'))) AND (NOT ((status-code = '408'))) AND (NOT ((status-code = '409'))) AND (NOT ((status-code = '410'))) AND (NOT ((status-code = '411'))) AND ((status-code = '412')), then MOVE 'Precondition Failed' TO status-message.",
+      "natural_language_rule": "If not (the status code (status-code) is \"100\") and not (the status code is \"101\") and not (the status code is \"200\") and not (the status code is \"201\") and not (the status code is \"202\") and not (the status code is \"203\") and not (the status code is \"204\") and not (the status code is \"205\") and not (the status code is \"206\") and not (the status code is \"300\") and not (the status code is \"301\") and not (the status code is \"302\") and not (the status code is \"303\") and not (the status code is \"304\") and not (the status code is \"305\") and not (the status code is \"306\") and not (the status code is \"400\") and not (the status code is \"401\") and not (the status code is \"402\") and not (the status code is \"403\") and not (the status code is \"404\") and not (the status code is \"405\") and not (the status code is \"406\") and not (the status code is \"407\") and not (the status code is \"408\") and not (the status code is \"409\") and not (the status code is \"410\") and not (the status code is \"411\") and the status code equals \"412\", then the status message (status-message) is set to \"Precondition Failed\".",
+      "source_variables": [
+        "status-code",
+        "status-message"
+      ],
+      "source_block": "start-status-message"
+    },
+    {
+      "id": "BR30",
+      "sbvr_class": "OBLIGATION",
+      "verb_concept": "set status message",
+      "rule": "If (NOT ((status-code = '100'))) AND (NOT ((status-code = '101'))) AND (NOT ((status-code = '200'))) AND (NOT ((status-code = '201'))) AND (NOT ((status-code = '202'))) AND (NOT ((status-code = '203'))) AND (NOT ((status-code = '204'))) AND (NOT ((status-code = '205'))) AND (NOT ((status-code = '206'))) AND (NOT ((status-code = '300'))) AND (NOT ((status-code = '301'))) AND (NOT ((status-code = '302'))) AND (NOT ((status-code = '303'))) AND (NOT ((status-code = '304'))) AND (NOT ((status-code = '305'))) AND (NOT ((status-code = '306'))) AND (NOT ((status-code = '400'))) AND (NOT ((status-code = '401'))) AND (NOT ((status-code = '402'))) AND (NOT ((status-code = '403'))) AND (NOT ((status-code = '404'))) AND (NOT ((status-code = '405'))) AND (NOT ((status-code = '406'))) AND (NOT ((status-code = '407'))) AND (NOT ((status-code = '408'))) AND (NOT ((status-code = '409'))) AND (NOT ((status-code = '410'))) AND (NOT ((status-code = '411'))) AND (NOT ((status-code = '412'))) AND ((status-code = '413')), then MOVE 'Request Entity Too Large' TO status-message.",
+      "natural_language_rule": "If not (the status code (status-code) is \"100\") and not (the status code is \"101\") and not (the status code is \"200\") and not (the status code is \"201\") and not (the status code is \"202\") and not (the status code is \"203\") and not (the status code is \"204\") and not (the status code is \"205\") and not (the status code is \"206\") and not (the status code is \"300\") and not (the status code is \"301\") and not (the status code is \"302\") and not (the status code is \"303\") and not (the status code is \"304\") and not (the status code is \"305\") and not (the status code is \"306\") and not (the status code is \"400\") and not (the status code is \"401\") and not (the status code is \"402\") and not (the status code is \"403\") and not (the status code is \"404\") and not (the status code is \"405\") and not (the status code is \"406\") and not (the status code is \"407\") and not (the status code is \"408\") and not (the status code is \"409\") and not (the status code is \"410\") and not (the status code is \"411\") and not (the status code is \"412\") and the status code equals \"413\", then the status message (status-message) is set to \"Request Entity Too Large\".",
+      "source_variables": [
+        "status-code",
+        "status-message"
+      ],
+      "source_block": "start-status-message"
+    },
+    {
+      "id": "BR31",
+      "sbvr_class": "OBLIGATION",
+      "verb_concept": "set status message",
+      "rule": "If (NOT ((status-code = '100'))) AND (NOT ((status-code = '101'))) AND (NOT ((status-code = '200'))) AND (NOT ((status-code = '201'))) AND (NOT ((status-code = '202'))) AND (NOT ((status-code = '203'))) AND (NOT ((status-code = '204'))) AND (NOT ((status-code = '205'))) AND (NOT ((status-code = '206'))) AND (NOT ((status-code = '300'))) AND (NOT ((status-code = '301'))) AND (NOT ((status-code = '302'))) AND (NOT ((status-code = '303'))) AND (NOT ((status-code = '304'))) AND (NOT ((status-code = '305'))) AND (NOT ((status-code = '306'))) AND (NOT ((status-code = '400'))) AND (NOT ((status-code = '401'))) AND (NOT ((status-code = '402'))) AND (NOT ((status-code = '403'))) AND (NOT ((status-code = '404'))) AND (NOT ((status-code = '405'))) AND (NOT ((status-code = '406'))) AND (NOT ((status-code = '407'))) AND (NOT ((status-code = '408'))) AND (NOT ((status-code = '409'))) AND (NOT ((status-code = '410'))) AND (NOT ((status-code = '411'))) AND (NOT ((status-code = '412'))) AND (NOT ((status-code = '413'))) AND ((status-code = '414')), then MOVE 'Request-URI Too Long' TO status-message.",
+      "natural_language_rule": "If not (the status code (status-code) is \"100\") and not (the status code is \"101\") and not (the status code is \"200\") and not (the status code is \"201\") and not (the status code is \"202\") and not (the status code is \"203\") and not (the status code is \"204\") and not (the status code is \"205\") and not (the status code is \"206\") and not (the status code is \"300\") and not (the status code is \"301\") and not (the status code is \"302\") and not (the status code is \"303\") and not (the status code is \"304\") and not (the status code is \"305\") and not (the status code is \"306\") and not (the status code is \"400\") and not (the status code is \"401\") and not (the status code is \"402\") and not (the status code is \"403\") and not (the status code is \"404\") and not (the status code is \"405\") and not (the status code is \"406\") and not (the status code is \"407\") and not (the status code is \"408\") and not (the status code is \"409\") and not (the status code is \"410\") and not (the status code is \"411\") and not (the status code is \"412\") and not (the status code is \"413\") and the status code equals \"414\", then the status message (status-message) is set to \"Request-URI Too Long\".",
+      "source_variables": [
+        "status-code",
+        "status-message"
+      ],
+      "source_block": "start-status-message"
+    },
+    {
+      "id": "BR32",
+      "sbvr_class": "OBLIGATION",
+      "verb_concept": "set status message",
+      "rule": "If (NOT ((status-code = '100'))) AND (NOT ((status-code = '101'))) AND (NOT ((status-code = '200'))) AND (NOT ((status-code = '201'))) AND (NOT ((status-code = '202'))) AND (NOT ((status-code = '203'))) AND (NOT ((status-code = '204'))) AND (NOT ((status-code = '205'))) AND (NOT ((status-code = '206'))) AND (NOT ((status-code = '300'))) AND (NOT ((status-code = '301'))) AND (NOT ((status-code = '302'))) AND (NOT ((status-code = '303'))) AND (NOT ((status-code = '304'))) AND (NOT ((status-code = '305'))) AND (NOT ((status-code = '306'))) AND (NOT ((status-code = '400'))) AND (NOT ((status-code = '401'))) AND (NOT ((status-code = '402'))) AND (NOT ((status-code = '403'))) AND (NOT ((status-code = '404'))) AND (NOT ((status-code = '405'))) AND (NOT ((status-code = '406'))) AND (NOT ((status-code = '407'))) AND (NOT ((status-code = '408'))) AND (NOT ((status-code = '409'))) AND (NOT ((status-code = '410'))) AND (NOT ((status-code = '411'))) AND (NOT ((status-code = '412'))) AND (NOT ((status-code = '413'))) AND (NOT ((status-code = '414'))) AND ((status-code = '415')), then MOVE 'Unsupported Media Type' TO status-message.",
+      "natural_language_rule": "If not (the status code (status-code) is \"100\") and not (the status code is \"101\") and not (the status code is \"200\") and not (the status code is \"201\") and not (the status code is \"202\") and not (the status code is \"203\") and not (the status code is \"204\") and not (the status code is \"205\") and not (the status code is \"206\") and not (the status code is \"300\") and not (the status code is \"301\") and not (the status code is \"302\") and not (the status code is \"303\") and not (the status code is \"304\") and not (the status code is \"305\") and not (the status code is \"306\") and not (the status code is \"400\") and not (the status code is \"401\") and not (the status code is \"402\") and not (the status code is \"403\") and not (the status code is \"404\") and not (the status code is \"405\") and not (the status code is \"406\") and not (the status code is \"407\") and not (the status code is \"408\") and not (the status code is \"409\") and not (the status code is \"410\") and not (the status code is \"411\") and not (the status code is \"412\") and not (the status code is \"413\") and not (the status code is \"414\") and the status code equals \"415\", then the status message (status-message) is set to \"Unsupported Media Type\".",
+      "source_variables": [
+        "status-code",
+        "status-message"
+      ],
+      "source_block": "start-status-message"
+    },
+    {
+      "id": "BR33",
+      "sbvr_class": "OBLIGATION",
+      "verb_concept": "set status message",
+      "rule": "If (NOT ((status-code = '100'))) AND (NOT ((status-code = '101'))) AND (NOT ((status-code = '200'))) AND (NOT ((status-code = '201'))) AND (NOT ((status-code = '202'))) AND (NOT ((status-code = '203'))) AND (NOT ((status-code = '204'))) AND (NOT ((status-code = '205'))) AND (NOT ((status-code = '206'))) AND (NOT ((status-code = '300'))) AND (NOT ((status-code = '301'))) AND (NOT ((status-code = '302'))) AND (NOT ((status-code = '303'))) AND (NOT ((status-code = '304'))) AND (NOT ((status-code = '305'))) AND (NOT ((status-code = '306'))) AND (NOT ((status-code = '400'))) AND (NOT ((status-code = '401'))) AND (NOT ((status-code = '402'))) AND (NOT ((status-code = '403'))) AND (NOT ((status-code = '404'))) AND (NOT ((status-code = '405'))) AND (NOT ((status-code = '406'))) AND (NOT ((status-code = '407'))) AND (NOT ((status-code = '408'))) AND (NOT ((status-code = '409'))) AND (NOT ((status-code = '410'))) AND (NOT ((status-code = '411'))) AND (NOT ((status-code = '412'))) AND (NOT ((status-code = '413'))) AND (NOT ((status-code = '414'))) AND (NOT ((status-code = '415'))) AND ((status-code = '416')), then MOVE 'Requested Range Not Satisfiable' TO status-message.",
+      "natural_language_rule": "If not (the status code (status-code) is \"100\") and not (the status code is \"101\") and not (the status code is \"200\") and not (the status code is \"201\") and not (the status code is \"202\") and not (the status code is \"203\") and not (the status code is \"204\") and not (the status code is \"205\") and not (the status code is \"206\") and not (the status code is \"300\") and not (the status code is \"301\") and not (the status code is \"302\") and not (the status code is \"303\") and not (the status code is \"304\") and not (the status code is \"305\") and not (the status code is \"306\") and not (the status code is \"400\") and not (the status code is \"401\") and not (the status code is \"402\") and not (the status code is \"403\") and not (the status code is \"404\") and not (the status code is \"405\") and not (the status code is \"406\") and not (the status code is \"407\") and not (the status code is \"408\") and not (the status code is \"409\") and not (the status code is \"410\") and not (the status code is \"411\") and not (the status code is \"412\") and not (the status code is \"413\") and not (the status code is \"414\") and not (the status code is \"415\") and the status code equals \"416\", then the status message (status-message) is set to \"Requested Range Not Satisfiable\".",
+      "source_variables": [
+        "status-code",
+        "status-message"
+      ],
+      "source_block": "start-status-message"
+    },
+    {
+      "id": "BR34",
+      "sbvr_class": "OBLIGATION",
+      "verb_concept": "set status message",
+      "rule": "If (NOT ((status-code = '100'))) AND (NOT ((status-code = '101'))) AND (NOT ((status-code = '200'))) AND (NOT ((status-code = '201'))) AND (NOT ((status-code = '202'))) AND (NOT ((status-code = '203'))) AND (NOT ((status-code = '204'))) AND (NOT ((status-code = '205'))) AND (NOT ((status-code = '206'))) AND (NOT ((status-code = '300'))) AND (NOT ((status-code = '301'))) AND (NOT ((status-code = '302'))) AND (NOT ((status-code = '303'))) AND (NOT ((status-code = '304'))) AND (NOT ((status-code = '305'))) AND (NOT ((status-code = '306'))) AND (NOT ((status-code = '400'))) AND (NOT ((status-code = '401'))) AND (NOT ((status-code = '402'))) AND (NOT ((status-code = '403'))) AND (NOT ((status-code = '404'))) AND (NOT ((status-code = '405'))) AND (NOT ((status-code = '406'))) AND (NOT ((status-code = '407'))) AND (NOT ((status-code = '408'))) AND (NOT ((status-code = '409'))) AND (NOT ((status-code = '410'))) AND (NOT ((status-code = '411'))) AND (NOT ((status-code = '412'))) AND (NOT ((status-code = '413'))) AND (NOT ((status-code = '414'))) AND (NOT ((status-code = '415'))) AND (NOT ((status-code = '416'))) AND ((status-code = '417')), then MOVE 'Expectation Failed' TO status-message.",
+      "natural_language_rule": "If not (the status code (status-code) is \"100\") and not (the status code is \"101\") and not (the status code is \"200\") and not (the status code is \"201\") and not (the status code is \"202\") and not (the status code is \"203\") and not (the status code is \"204\") and not (the status code is \"205\") and not (the status code is \"206\") and not (the status code is \"300\") and not (the status code is \"301\") and not (the status code is \"302\") and not (the status code is \"303\") and not (the status code is \"304\") and not (the status code is \"305\") and not (the status code is \"306\") and not (the status code is \"400\") and not (the status code is \"401\") and not (the status code is \"402\") and not (the status code is \"403\") and not (the status code is \"404\") and not (the status code is \"405\") and not (the status code is \"406\") and not (the status code is \"407\") and not (the status code is \"408\") and not (the status code is \"409\") and not (the status code is \"410\") and not (the status code is \"411\") and not (the status code is \"412\") and not (the status code is \"413\") and not (the status code is \"414\") and not (the status code is \"415\") and not (the status code is \"416\") and the status code equals \"417\", then the status message (status-message) is set to \"Expectation Failed\".",
+      "source_variables": [
+        "status-code",
+        "status-message"
+      ],
+      "source_block": "start-status-message"
+    },
+    {
+      "id": "BR35",
+      "sbvr_class": "OBLIGATION",
+      "verb_concept": "set status message",
+      "rule": "If (NOT ((status-code = '100'))) AND (NOT ((status-code = '101'))) AND (NOT ((status-code = '200'))) AND (NOT ((status-code = '201'))) AND (NOT ((status-code = '202'))) AND (NOT ((status-code = '203'))) AND (NOT ((status-code = '204'))) AND (NOT ((status-code = '205'))) AND (NOT ((status-code = '206'))) AND (NOT ((status-code = '300'))) AND (NOT ((status-code = '301'))) AND (NOT ((status-code = '302'))) AND (NOT ((status-code = '303'))) AND (NOT ((status-code = '304'))) AND (NOT ((status-code = '305'))) AND (NOT ((status-code = '306'))) AND (NOT ((status-code = '400'))) AND (NOT ((status-code = '401'))) AND (NOT ((status-code = '402'))) AND (NOT ((status-code = '403'))) AND (NOT ((status-code = '404'))) AND (NOT ((status-code = '405'))) AND (NOT ((status-code = '406'))) AND (NOT ((status-code = '407'))) AND (NOT ((status-code = '408'))) AND (NOT ((status-code = '409'))) AND (NOT ((status-code = '410'))) AND (NOT ((status-code = '411'))) AND (NOT ((status-code = '412'))) AND (NOT ((status-code = '413'))) AND (NOT ((status-code = '414'))) AND (NOT ((status-code = '415'))) AND (NOT ((status-code = '416'))) AND (NOT ((status-code = '417'))) AND ((status-code = '500')), then MOVE 'Internal Server Error' TO status-message.",
+      "natural_language_rule": "If not (the status code (status-code) is \"100\") and not (the status code is \"101\") and not (the status code is \"200\") and not (the status code is \"201\") and not (the status code is \"202\") and not (the status code is \"203\") and not (the status code is \"204\") and not (the status code is \"205\") and not (the status code is \"206\") and not (the status code is \"300\") and not (the status code is \"301\") and not (the status code is \"302\") and not (the status code is \"303\") and not (the status code is \"304\") and not (the status code is \"305\") and not (the status code is \"306\") and not (the status code is \"400\") and not (the status code is \"401\") and not (the status code is \"402\") and not (the status code is \"403\") and not (the status code is \"404\") and not (the status code is \"405\") and not (the status code is \"406\") and not (the status code is \"407\") and not (the status code is \"408\") and not (the status code is \"409\") and not (the status code is \"410\") and not (the status code is \"411\") and not (the status code is \"412\") and not (the status code is \"413\") and not (the status code is \"414\") and not (the status code is \"415\") and not (the status code is \"416\") and not (the status code is \"417\") and the status code equals \"500\", then the status message (status-message) is set to \"Internal Server Error\".",
+      "source_variables": [
+        "status-code",
+        "status-message"
+      ],
+      "source_block": "start-status-message"
+    },
+    {
+      "id": "BR36",
+      "sbvr_class": "OBLIGATION",
+      "verb_concept": "set status message",
+      "rule": "If (NOT ((status-code = '100'))) AND (NOT ((status-code = '101'))) AND (NOT ((status-code = '200'))) AND (NOT ((status-code = '201'))) AND (NOT ((status-code = '202'))) AND (NOT ((status-code = '203'))) AND (NOT ((status-code = '204'))) AND (NOT ((status-code = '205'))) AND (NOT ((status-code = '206'))) AND (NOT ((status-code = '300'))) AND (NOT ((status-code = '301'))) AND (NOT ((status-code = '302'))) AND (NOT ((status-code = '303'))) AND (NOT ((status-code = '304'))) AND (NOT ((status-code = '305'))) AND (NOT ((status-code = '306'))) AND (NOT ((status-code = '400'))) AND (NOT ((status-code = '401'))) AND (NOT ((status-code = '402'))) AND (NOT ((status-code = '403'))) AND (NOT ((status-code = '404'))) AND (NOT ((status-code = '405'))) AND (NOT ((status-code = '406'))) AND (NOT ((status-code = '407'))) AND (NOT ((status-code = '408'))) AND (NOT ((status-code = '409'))) AND (NOT ((status-code = '410'))) AND (NOT ((status-code = '411'))) AND (NOT ((status-code = '412'))) AND (NOT ((status-code = '413'))) AND (NOT ((status-code = '414'))) AND (NOT ((status-code = '415'))) AND (NOT ((status-code = '416'))) AND (NOT ((status-code = '417'))) AND (NOT ((status-code = '500'))) AND ((status-code = '501')), then MOVE 'Not Implemented' TO status-message.",
+      "natural_language_rule": "If not (the status code (status-code) is \"100\") and not (the status code is \"101\") and not (the status code is \"200\") and not (the status code is \"201\") and not (the status code is \"202\") and not (the status code is \"203\") and not (the status code is \"204\") and not (the status code is \"205\") and not (the status code is \"206\") and not (the status code is \"300\") and not (the status code is \"301\") and not (the status code is \"302\") and not (the status code is \"303\") and not (the status code is \"304\") and not (the status code is \"305\") and not (the status code is \"306\") and not (the status code is \"400\") and not (the status code is \"401\") and not (the status code is \"402\") and not (the status code is \"403\") and not (the status code is \"404\") and not (the status code is \"405\") and not (the status code is \"406\") and not (the status code is \"407\") and not (the status code is \"408\") and not (the status code is \"409\") and not (the status code is \"410\") and not (the status code is \"411\") and not (the status code is \"412\") and not (the status code is \"413\") and not (the status code is \"414\") and not (the status code is \"415\") and not (the status code is \"416\") and not (the status code is \"417\") and not (the status code is \"500\") and the status code equals \"501\", then the status message (status-message) is set to \"Not Implemented\".",
+      "source_variables": [
+        "status-code",
+        "status-message"
+      ],
+      "source_block": "start-status-message"
+    },
+    {
+      "id": "BR37",
+      "sbvr_class": "OBLIGATION",
+      "verb_concept": "set status message",
+      "rule": "If (NOT ((status-code = '100'))) AND (NOT ((status-code = '101'))) AND (NOT ((status-code = '200'))) AND (NOT ((status-code = '201'))) AND (NOT ((status-code = '202'))) AND (NOT ((status-code = '203'))) AND (NOT ((status-code = '204'))) AND (NOT ((status-code = '205'))) AND (NOT ((status-code = '206'))) AND (NOT ((status-code = '300'))) AND (NOT ((status-code = '301'))) AND (NOT ((status-code = '302'))) AND (NOT ((status-code = '303'))) AND (NOT ((status-code = '304'))) AND (NOT ((status-code = '305'))) AND (NOT ((status-code = '306'))) AND (NOT ((status-code = '400'))) AND (NOT ((status-code = '401'))) AND (NOT ((status-code = '402'))) AND (NOT ((status-code = '403'))) AND (NOT ((status-code = '404'))) AND (NOT ((status-code = '405'))) AND (NOT ((status-code = '406'))) AND (NOT ((status-code = '407'))) AND (NOT ((status-code = '408'))) AND (NOT ((status-code = '409'))) AND (NOT ((status-code = '410'))) AND (NOT ((status-code = '411'))) AND (NOT ((status-code = '412'))) AND (NOT ((status-code = '413'))) AND (NOT ((status-code = '414'))) AND (NOT ((status-code = '415'))) AND (NOT ((status-code = '416'))) AND (NOT ((status-code = '417'))) AND (NOT ((status-code = '500'))) AND (NOT ((status-code = '501'))) AND ((status-code = '502')), then MOVE 'Bad Gateway' TO status-message.",
+      "natural_language_rule": "If not (the status code (status-code) is \"100\") and not (the status code is \"101\") and not (the status code is \"200\") and not (the status code is \"201\") and not (the status code is \"202\") and not (the status code is \"203\") and not (the status code is \"204\") and not (the status code is \"205\") and not (the status code is \"206\") and not (the status code is \"300\") and not (the status code is \"301\") and not (the status code is \"302\") and not (the status code is \"303\") and not (the status code is \"304\") and not (the status code is \"305\") and not (the status code is \"306\") and not (the status code is \"400\") and not (the status code is \"401\") and not (the status code is \"402\") and not (the status code is \"403\") and not (the status code is \"404\") and not (the status code is \"405\") and not (the status code is \"406\") and not (the status code is \"407\") and not (the status code is \"408\") and not (the status code is \"409\") and not (the status code is \"410\") and not (the status code is \"411\") and not (the status code is \"412\") and not (the status code is \"413\") and not (the status code is \"414\") and not (the status code is \"415\") and not (the status code is \"416\") and not (the status code is \"417\") and not (the status code is \"500\") and not (the status code is \"501\") and the status code equals \"502\", then the status message (status-message) is set to \"Bad Gateway\".",
+      "source_variables": [
+        "status-code",
+        "status-message"
+      ],
+      "source_block": "start-status-message"
+    },
+    {
+      "id": "BR38",
+      "sbvr_class": "OBLIGATION",
+      "verb_concept": "set status message",
+      "rule": "If (NOT ((status-code = '100'))) AND (NOT ((status-code = '101'))) AND (NOT ((status-code = '200'))) AND (NOT ((status-code = '201'))) AND (NOT ((status-code = '202'))) AND (NOT ((status-code = '203'))) AND (NOT ((status-code = '204'))) AND (NOT ((status-code = '205'))) AND (NOT ((status-code = '206'))) AND (NOT ((status-code = '300'))) AND (NOT ((status-code = '301'))) AND (NOT ((status-code = '302'))) AND (NOT ((status-code = '303'))) AND (NOT ((status-code = '304'))) AND (NOT ((status-code = '305'))) AND (NOT ((status-code = '306'))) AND (NOT ((status-code = '400'))) AND (NOT ((status-code = '401'))) AND (NOT ((status-code = '402'))) AND (NOT ((status-code = '403'))) AND (NOT ((status-code = '404'))) AND (NOT ((status-code = '405'))) AND (NOT ((status-code = '406'))) AND (NOT ((status-code = '407'))) AND (NOT ((status-code = '408'))) AND (NOT ((status-code = '409'))) AND (NOT ((status-code = '410'))) AND (NOT ((status-code = '411'))) AND (NOT ((status-code = '412'))) AND (NOT ((status-code = '413'))) AND (NOT ((status-code = '414'))) AND (NOT ((status-code = '415'))) AND (NOT ((status-code = '416'))) AND (NOT ((status-code = '417'))) AND (NOT ((status-code = '500'))) AND (NOT ((status-code = '501'))) AND (NOT ((status-code = '502'))) AND ((status-code = '503')), then MOVE 'Service Unavailable' TO status-message.",
+      "natural_language_rule": "If not (the status code (status-code) is \"100\") and not (the status code is \"101\") and not (the status code is \"200\") and not (the status code is \"201\") and not (the status code is \"202\") and not (the status code is \"203\") and not (the status code is \"204\") and not (the status code is \"205\") and not (the status code is \"206\") and not (the status code is \"300\") and not (the status code is \"301\") and not (the status code is \"302\") and not (the status code is \"303\") and not (the status code is \"304\") and not (the status code is \"305\") and not (the status code is \"306\") and not (the status code is \"400\") and not (the status code is \"401\") and not (the status code is \"402\") and not (the status code is \"403\") and not (the status code is \"404\") and not (the status code is \"405\") and not (the status code is \"406\") and not (the status code is \"407\") and not (the status code is \"408\") and not (the status code is \"409\") and not (the status code is \"410\") and not (the status code is \"411\") and not (the status code is \"412\") and not (the status code is \"413\") and not (the status code is \"414\") and not (the status code is \"415\") and not (the status code is \"416\") and not (the status code is \"417\") and not (the status code is \"500\") and not (the status code is \"501\") and not (the status code is \"502\") and the status code equals \"503\", then the status message (status-message) is set to \"Service Unavailable\".",
+      "source_variables": [
+        "status-code",
+        "status-message"
+      ],
+      "source_block": "start-status-message"
+    },
+    {
+      "id": "BR39",
+      "sbvr_class": "OBLIGATION",
+      "verb_concept": "set status message",
+      "rule": "If (NOT ((status-code = '100'))) AND (NOT ((status-code = '101'))) AND (NOT ((status-code = '200'))) AND (NOT ((status-code = '201'))) AND (NOT ((status-code = '202'))) AND (NOT ((status-code = '203'))) AND (NOT ((status-code = '204'))) AND (NOT ((status-code = '205'))) AND (NOT ((status-code = '206'))) AND (NOT ((status-code = '300'))) AND (NOT ((status-code = '301'))) AND (NOT ((status-code = '302'))) AND (NOT ((status-code = '303'))) AND (NOT ((status-code = '304'))) AND (NOT ((status-code = '305'))) AND (NOT ((status-code = '306'))) AND (NOT ((status-code = '400'))) AND (NOT ((status-code = '401'))) AND (NOT ((status-code = '402'))) AND (NOT ((status-code = '403'))) AND (NOT ((status-code = '404'))) AND (NOT ((status-code = '405'))) AND (NOT ((status-code = '406'))) AND (NOT ((status-code = '407'))) AND (NOT ((status-code = '408'))) AND (NOT ((status-code = '409'))) AND (NOT ((status-code = '410'))) AND (NOT ((status-code = '411'))) AND (NOT ((status-code = '412'))) AND (NOT ((status-code = '413'))) AND (NOT ((status-code = '414'))) AND (NOT ((status-code = '415'))) AND (NOT ((status-code = '416'))) AND (NOT ((status-code = '417'))) AND (NOT ((status-code = '500'))) AND (NOT ((status-code = '501'))) AND (NOT ((status-code = '502'))) AND (NOT ((status-code = '503'))) AND ((status-code = '504')), then MOVE 'Gateway Timeout' TO status-message.",
+      "natural_language_rule": "If not (the status code (status-code) is \"100\") and not (the status code is \"101\") and not (the status code is \"200\") and not (the status code is \"201\") and not (the status code is \"202\") and not (the status code is \"203\") and not (the status code is \"204\") and not (the status code is \"205\") and not (the status code is \"206\") and not (the status code is \"300\") and not (the status code is \"301\") and not (the status code is \"302\") and not (the status code is \"303\") and not (the status code is \"304\") and not (the status code is \"305\") and not (the status code is \"306\") and not (the status code is \"400\") and not (the status code is \"401\") and not (the status code is \"402\") and not (the status code is \"403\") and not (the status code is \"404\") and not (the status code is \"405\") and not (the status code is \"406\") and not (the status code is \"407\") and not (the status code is \"408\") and not (the status code is \"409\") and not (the status code is \"410\") and not (the status code is \"411\") and not (the status code is \"412\") and not (the status code is \"413\") and not (the status code is \"414\") and not (the status code is \"415\") and not (the status code is \"416\") and not (the status code is \"417\") and not (the status code is \"500\") and not (the status code is \"501\") and not (the status code is \"502\") and not (the status code is \"503\") and the status code equals \"504\", then the status message (status-message) is set to \"Gateway Timeout\".",
+      "source_variables": [
+        "status-code",
+        "status-message"
+      ],
+      "source_block": "start-status-message"
+    },
+    {
+      "id": "BR40",
+      "sbvr_class": "OBLIGATION",
+      "verb_concept": "set status message",
+      "rule": "If (NOT ((status-code = '100'))) AND (NOT ((status-code = '101'))) AND (NOT ((status-code = '200'))) AND (NOT ((status-code = '201'))) AND (NOT ((status-code = '202'))) AND (NOT ((status-code = '203'))) AND (NOT ((status-code = '204'))) AND (NOT ((status-code = '205'))) AND (NOT ((status-code = '206'))) AND (NOT ((status-code = '300'))) AND (NOT ((status-code = '301'))) AND (NOT ((status-code = '302'))) AND (NOT ((status-code = '303'))) AND (NOT ((status-code = '304'))) AND (NOT ((status-code = '305'))) AND (NOT ((status-code = '306'))) AND (NOT ((status-code = '400'))) AND (NOT ((status-code = '401'))) AND (NOT ((status-code = '402'))) AND (NOT ((status-code = '403'))) AND (NOT ((status-code = '404'))) AND (NOT ((status-code = '405'))) AND (NOT ((status-code = '406'))) AND (NOT ((status-code = '407'))) AND (NOT ((status-code = '408'))) AND (NOT ((status-code = '409'))) AND (NOT ((status-code = '410'))) AND (NOT ((status-code = '411'))) AND (NOT ((status-code = '412'))) AND (NOT ((status-code = '413'))) AND (NOT ((status-code = '414'))) AND (NOT ((status-code = '415'))) AND (NOT ((status-code = '416'))) AND (NOT ((status-code = '417'))) AND (NOT ((status-code = '500'))) AND (NOT ((status-code = '501'))) AND (NOT ((status-code = '502'))) AND (NOT ((status-code = '503'))) AND (NOT ((status-code = '504'))) AND ((status-code = '505')), then MOVE 'HTTP Version Not Supported' TO status-message.",
+      "natural_language_rule": "If not (the status code (status-code) is \"100\") and not (the status code is \"101\") and not (the status code is \"200\") and not (the status code is \"201\") and not (the status code is \"202\") and not (the status code is \"203\") and not (the status code is \"204\") and not (the status code is \"205\") and not (the status code is \"206\") and not (the status code is \"300\") and not (the status code is \"301\") and not (the status code is \"302\") and not (the status code is \"303\") and not (the status code is \"304\") and not (the status code is \"305\") and not (the status code is \"306\") and not (the status code is \"400\") and not (the status code is \"401\") and not (the status code is \"402\") and not (the status code is \"403\") and not (the status code is \"404\") and not (the status code is \"405\") and not (the status code is \"406\") and not (the status code is \"407\") and not (the status code is \"408\") and not (the status code is \"409\") and not (the status code is \"410\") and not (the status code is \"411\") and not (the status code is \"412\") and not (the status code is \"413\") and not (the status code is \"414\") and not (the status code is \"415\") and not (the status code is \"416\") and not (the status code is \"417\") and not (the status code is \"500\") and not (the status code is \"501\") and not (the status code is \"502\") and not (the status code is \"503\") and not (the status code is \"504\") and the status code equals \"505\", then the status message (status-message) is set to \"HTTP Version Not Supported\".",
+      "source_variables": [
+        "status-code",
+        "status-message"
+      ],
+      "source_block": "start-status-message"
+    },
+    {
+      "id": "BR41",
+      "sbvr_class": "OBLIGATION",
+      "verb_concept": "set status message",
+      "rule": "If (NOT ((status-code = '100'))) AND (NOT ((status-code = '101'))) AND (NOT ((status-code = '200'))) AND (NOT ((status-code = '201'))) AND (NOT ((status-code = '202'))) AND (NOT ((status-code = '203'))) AND (NOT ((status-code = '204'))) AND (NOT ((status-code = '205'))) AND (NOT ((status-code = '206'))) AND (NOT ((status-code = '300'))) AND (NOT ((status-code = '301'))) AND (NOT ((status-code = '302'))) AND (NOT ((status-code = '303'))) AND (NOT ((status-code = '304'))) AND (NOT ((status-code = '305'))) AND (NOT ((status-code = '306'))) AND (NOT ((status-code = '400'))) AND (NOT ((status-code = '401'))) AND (NOT ((status-code = '402'))) AND (NOT ((status-code = '403'))) AND (NOT ((status-code = '404'))) AND (NOT ((status-code = '405'))) AND (NOT ((status-code = '406'))) AND (NOT ((status-code = '407'))) AND (NOT ((status-code = '408'))) AND (NOT ((status-code = '409'))) AND (NOT ((status-code = '410'))) AND (NOT ((status-code = '411'))) AND (NOT ((status-code = '412'))) AND (NOT ((status-code = '413'))) AND (NOT ((status-code = '414'))) AND (NOT ((status-code = '415'))) AND (NOT ((status-code = '416'))) AND (NOT ((status-code = '417'))) AND (NOT ((status-code = '500'))) AND (NOT ((status-code = '501'))) AND (NOT ((status-code = '502'))) AND (NOT ((status-code = '503'))) AND (NOT ((status-code = '504'))) AND (NOT ((status-code = '505'))), then MOVE 'unknown status' TO status-message.",
+      "natural_language_rule": "If not (the status code (status-code) is \"100\") and not (the status code is \"101\") and not (the status code is \"200\") and not (the status code is \"201\") and not (the status code is \"202\") and not (the status code is \"203\") and not (the status code is \"204\") and not (the status code is \"205\") and not (the status code is \"206\") and not (the status code is \"300\") and not (the status code is \"301\") and not (the status code is \"302\") and not (the status code is \"303\") and not (the status code is \"304\") and not (the status code is \"305\") and not (the status code is \"306\") and not (the status code is \"400\") and not (the status code is \"401\") and not (the status code is \"402\") and not (the status code is \"403\") and not (the status code is \"404\") and not (the status code is \"405\") and not (the status code is \"406\") and not (the status code is \"407\") and not (the status code is \"408\") and not (the status code is \"409\") and not (the status code is \"410\") and not (the status code is \"411\") and not (the status code is \"412\") and not (the status code is \"413\") and not (the status code is \"414\") and not (the status code is \"415\") and not (the status code is \"416\") and not (the status code is \"417\") and not (the status code is \"500\") and not (the status code is \"501\") and not (the status code is \"502\") and not (the status code is \"503\") and not (the status code is \"504\") and not (the status code is \"505\"), then the status message (status-message) is set to \"unknown status\".",
+      "source_variables": [
+        "status-code",
+        "status-message"
+      ],
+      "source_block": "start-status-message"
+    }
+  ]
+}

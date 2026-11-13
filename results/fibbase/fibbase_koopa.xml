@@ -1,0 +1,992 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<koopa>
+  <compilationGroup>
+    <t><![CDATA[      ]]></t>
+    <t><![CDATA[ ]]></t>
+    <sourceUnit>
+      <programDefinition>
+        <identificationDivision>
+          <header>
+            <t><![CDATA[IDENTIFICATION]]></t>
+            <t><![CDATA[ ]]></t>
+            <t><![CDATA[DIVISION]]></t>
+            <t><![CDATA[.]]></t>
+          </header>
+        </identificationDivision>
+      </programDefinition>
+    </sourceUnit>
+    <t><![CDATA[
+]]></t>
+    <t><![CDATA[      ]]></t>
+    <t><![CDATA[ ]]></t>
+    <sourceUnit>
+      <functionDefinition>
+        <identificationDivision>
+          <functionIdParagraph>
+            <t><![CDATA[FUNCTION-ID]]></t>
+            <t><![CDATA[.]]></t>
+            <t><![CDATA[ ]]></t>
+            <name>
+              <cobolWord>
+                <t><![CDATA[FIBBASE]]></t>
+              </cobolWord>
+            </name>
+            <t><![CDATA[.]]></t>
+          </functionIdParagraph>
+        </identificationDivision>
+        <t><![CDATA[
+]]></t>
+        <t><![CDATA[      ]]></t>
+        <t><![CDATA[ ]]></t>
+        <environmentDivision>
+          <header>
+            <t><![CDATA[ENVIRONMENT]]></t>
+            <t><![CDATA[ ]]></t>
+            <t><![CDATA[DIVISION]]></t>
+            <t><![CDATA[.]]></t>
+          </header>
+          <t><![CDATA[
+]]></t>
+          <t><![CDATA[      ]]></t>
+          <t><![CDATA[ ]]></t>
+          <configurationSection>
+            <header>
+              <t><![CDATA[CONFIGURATION]]></t>
+              <t><![CDATA[ ]]></t>
+              <t><![CDATA[SECTION]]></t>
+              <t><![CDATA[.]]></t>
+            </header>
+            <t><![CDATA[
+]]></t>
+            <t><![CDATA[      ]]></t>
+            <t><![CDATA[ ]]></t>
+            <repositoryParagraph>
+              <t><![CDATA[REPOSITORY]]></t>
+              <t><![CDATA[.]]></t>
+              <t><![CDATA[
+]]></t>
+              <t><![CDATA[      ]]></t>
+              <t><![CDATA[ ]]></t>
+              <t><![CDATA[    ]]></t>
+              <functionSpecifier>
+                <t><![CDATA[FUNCTION]]></t>
+                <t><![CDATA[ ]]></t>
+                <t><![CDATA[ALL]]></t>
+                <t><![CDATA[ ]]></t>
+                <t><![CDATA[INTRINSIC]]></t>
+              </functionSpecifier>
+              <t><![CDATA[.]]></t>
+            </repositoryParagraph>
+          </configurationSection>
+        </environmentDivision>
+        <t><![CDATA[
+]]></t>
+        <t><![CDATA[      ]]></t>
+        <t><![CDATA[ ]]></t>
+        <dataDivision>
+          <header>
+            <t><![CDATA[DATA]]></t>
+            <t><![CDATA[ ]]></t>
+            <t><![CDATA[DIVISION]]></t>
+            <t><![CDATA[.]]></t>
+          </header>
+          <t><![CDATA[
+]]></t>
+          <t><![CDATA[      ]]></t>
+          <t><![CDATA[ ]]></t>
+          <localStorageSection>
+            <header>
+              <t><![CDATA[LOCAL-STORAGE]]></t>
+              <t><![CDATA[ ]]></t>
+              <t><![CDATA[SECTION]]></t>
+              <t><![CDATA[.]]></t>
+            </header>
+            <t><![CDATA[
+]]></t>
+            <t><![CDATA[      ]]></t>
+            <t><![CDATA[ ]]></t>
+            <recordDescriptionEntry>
+              <dataDescriptionEntry>
+                <levelNumber>
+                  <t><![CDATA[77]]></t>
+                </levelNumber>
+                <t><![CDATA[  ]]></t>
+                <entryName>
+                  <dataName>
+                    <cobolWord>
+                      <t><![CDATA[LS-NUM]]></t>
+                    </cobolWord>
+                  </dataName>
+                </entryName>
+                <t><![CDATA[ ]]></t>
+                <pictureClause>
+                  <t><![CDATA[PIC]]></t>
+                  <t><![CDATA[ ]]></t>
+                  <pictureString>
+                    <t><![CDATA[9]]></t>
+                    <t><![CDATA[(]]></t>
+                    <t><![CDATA[38]]></t>
+                    <t><![CDATA[)]]></t>
+                  </pictureString>
+                </pictureClause>
+                <unknown />
+                <t><![CDATA[.]]></t>
+              </dataDescriptionEntry>
+            </recordDescriptionEntry>
+            <t><![CDATA[
+]]></t>
+            <t><![CDATA[      ]]></t>
+            <t><![CDATA[ ]]></t>
+            <recordDescriptionEntry>
+              <dataDescriptionEntry>
+                <levelNumber>
+                  <t><![CDATA[77]]></t>
+                </levelNumber>
+                <t><![CDATA[  ]]></t>
+                <entryName>
+                  <dataName>
+                    <cobolWord>
+                      <t><![CDATA[LS-ATU]]></t>
+                    </cobolWord>
+                  </dataName>
+                </entryName>
+                <t><![CDATA[ ]]></t>
+                <pictureClause>
+                  <t><![CDATA[PIC]]></t>
+                  <t><![CDATA[ ]]></t>
+                  <pictureString>
+                    <t><![CDATA[9]]></t>
+                    <t><![CDATA[(]]></t>
+                    <t><![CDATA[38]]></t>
+                    <t><![CDATA[)]]></t>
+                  </pictureString>
+                </pictureClause>
+                <unknown />
+                <t><![CDATA[.]]></t>
+              </dataDescriptionEntry>
+            </recordDescriptionEntry>
+            <t><![CDATA[
+]]></t>
+            <t><![CDATA[      ]]></t>
+            <t><![CDATA[ ]]></t>
+            <recordDescriptionEntry>
+              <dataDescriptionEntry>
+                <levelNumber>
+                  <t><![CDATA[77]]></t>
+                </levelNumber>
+                <t><![CDATA[  ]]></t>
+                <entryName>
+                  <dataName>
+                    <cobolWord>
+                      <t><![CDATA[LS-PRX]]></t>
+                    </cobolWord>
+                  </dataName>
+                </entryName>
+                <t><![CDATA[ ]]></t>
+                <pictureClause>
+                  <t><![CDATA[PIC]]></t>
+                  <t><![CDATA[ ]]></t>
+                  <pictureString>
+                    <t><![CDATA[9]]></t>
+                    <t><![CDATA[(]]></t>
+                    <t><![CDATA[38]]></t>
+                    <t><![CDATA[)]]></t>
+                  </pictureString>
+                </pictureClause>
+                <unknown />
+                <t><![CDATA[.]]></t>
+              </dataDescriptionEntry>
+            </recordDescriptionEntry>
+          </localStorageSection>
+          <t><![CDATA[
+]]></t>
+          <t><![CDATA[      ]]></t>
+          <t><![CDATA[ ]]></t>
+          <linkageSection>
+            <header>
+              <t><![CDATA[LINKAGE]]></t>
+              <t><![CDATA[ ]]></t>
+              <t><![CDATA[SECTION]]></t>
+              <t><![CDATA[.]]></t>
+            </header>
+            <t><![CDATA[
+]]></t>
+            <t><![CDATA[      ]]></t>
+            <t><![CDATA[ ]]></t>
+            <recordDescriptionEntry>
+              <dataDescriptionEntry>
+                <levelNumber>
+                  <t><![CDATA[77]]></t>
+                </levelNumber>
+                <t><![CDATA[  ]]></t>
+                <entryName>
+                  <dataName>
+                    <cobolWord>
+                      <t><![CDATA[LK-NUM]]></t>
+                    </cobolWord>
+                  </dataName>
+                </entryName>
+                <t><![CDATA[ ]]></t>
+                <pictureClause>
+                  <t><![CDATA[PIC]]></t>
+                  <t><![CDATA[ ]]></t>
+                  <pictureString>
+                    <t><![CDATA[9]]></t>
+                    <t><![CDATA[(]]></t>
+                    <t><![CDATA[38]]></t>
+                    <t><![CDATA[)]]></t>
+                  </pictureString>
+                </pictureClause>
+                <unknown />
+                <t><![CDATA[.]]></t>
+              </dataDescriptionEntry>
+            </recordDescriptionEntry>
+            <t><![CDATA[
+]]></t>
+            <t><![CDATA[      ]]></t>
+            <t><![CDATA[ ]]></t>
+            <recordDescriptionEntry>
+              <dataDescriptionEntry>
+                <levelNumber>
+                  <t><![CDATA[77]]></t>
+                </levelNumber>
+                <t><![CDATA[  ]]></t>
+                <entryName>
+                  <dataName>
+                    <cobolWord>
+                      <t><![CDATA[LK-ANT]]></t>
+                    </cobolWord>
+                  </dataName>
+                </entryName>
+                <t><![CDATA[ ]]></t>
+                <pictureClause>
+                  <t><![CDATA[PIC]]></t>
+                  <t><![CDATA[ ]]></t>
+                  <pictureString>
+                    <t><![CDATA[9]]></t>
+                    <t><![CDATA[(]]></t>
+                    <t><![CDATA[38]]></t>
+                    <t><![CDATA[)]]></t>
+                  </pictureString>
+                </pictureClause>
+                <unknown />
+                <t><![CDATA[.]]></t>
+              </dataDescriptionEntry>
+            </recordDescriptionEntry>
+            <t><![CDATA[
+]]></t>
+            <t><![CDATA[      ]]></t>
+            <t><![CDATA[ ]]></t>
+            <recordDescriptionEntry>
+              <dataDescriptionEntry>
+                <levelNumber>
+                  <t><![CDATA[77]]></t>
+                </levelNumber>
+                <t><![CDATA[  ]]></t>
+                <entryName>
+                  <dataName>
+                    <cobolWord>
+                      <t><![CDATA[LK-ATU]]></t>
+                    </cobolWord>
+                  </dataName>
+                </entryName>
+                <t><![CDATA[ ]]></t>
+                <pictureClause>
+                  <t><![CDATA[PIC]]></t>
+                  <t><![CDATA[ ]]></t>
+                  <pictureString>
+                    <t><![CDATA[9]]></t>
+                    <t><![CDATA[(]]></t>
+                    <t><![CDATA[38]]></t>
+                    <t><![CDATA[)]]></t>
+                  </pictureString>
+                </pictureClause>
+                <unknown />
+                <t><![CDATA[.]]></t>
+              </dataDescriptionEntry>
+            </recordDescriptionEntry>
+            <t><![CDATA[
+]]></t>
+            <t><![CDATA[      ]]></t>
+            <t><![CDATA[ ]]></t>
+            <recordDescriptionEntry>
+              <dataDescriptionEntry>
+                <levelNumber>
+                  <t><![CDATA[77]]></t>
+                </levelNumber>
+                <t><![CDATA[  ]]></t>
+                <entryName>
+                  <dataName>
+                    <cobolWord>
+                      <t><![CDATA[LK-FIB]]></t>
+                    </cobolWord>
+                  </dataName>
+                </entryName>
+                <t><![CDATA[ ]]></t>
+                <pictureClause>
+                  <t><![CDATA[PIC]]></t>
+                  <t><![CDATA[ ]]></t>
+                  <pictureString>
+                    <t><![CDATA[9]]></t>
+                    <t><![CDATA[(]]></t>
+                    <t><![CDATA[38]]></t>
+                    <t><![CDATA[)]]></t>
+                  </pictureString>
+                </pictureClause>
+                <unknown />
+                <t><![CDATA[.]]></t>
+              </dataDescriptionEntry>
+            </recordDescriptionEntry>
+          </linkageSection>
+        </dataDivision>
+        <t><![CDATA[
+]]></t>
+        <t><![CDATA[      ]]></t>
+        <t><![CDATA[ ]]></t>
+        <procedureDivision>
+          <header>
+            <t><![CDATA[PROCEDURE]]></t>
+            <t><![CDATA[ ]]></t>
+            <t><![CDATA[DIVISION]]></t>
+            <t><![CDATA[ ]]></t>
+            <using>
+              <t><![CDATA[USING]]></t>
+              <t><![CDATA[ ]]></t>
+              <byValue>
+                <t><![CDATA[BY]]></t>
+                <t><![CDATA[ ]]></t>
+                <t><![CDATA[VALUE]]></t>
+                <t><![CDATA[ ]]></t>
+                <arg>
+                  <value>
+                    <dataName>
+                      <cobolWord>
+                        <t><![CDATA[LK-NUM]]></t>
+                      </cobolWord>
+                    </dataName>
+                  </value>
+                </arg>
+                <t><![CDATA[,]]></t>
+                <t><![CDATA[ ]]></t>
+                <arg>
+                  <value>
+                    <dataName>
+                      <cobolWord>
+                        <t><![CDATA[LK-ANT]]></t>
+                      </cobolWord>
+                    </dataName>
+                  </value>
+                </arg>
+                <t><![CDATA[,]]></t>
+                <t><![CDATA[ ]]></t>
+                <arg>
+                  <value>
+                    <dataName>
+                      <cobolWord>
+                        <t><![CDATA[LK-ATU]]></t>
+                      </cobolWord>
+                    </dataName>
+                  </value>
+                </arg>
+              </byValue>
+            </using>
+            <t><![CDATA[
+]]></t>
+            <t><![CDATA[      ]]></t>
+            <t><![CDATA[ ]]></t>
+            <returning>
+              <t><![CDATA[RETURNING]]></t>
+              <t><![CDATA[ ]]></t>
+              <dataName>
+                <cobolWord>
+                  <t><![CDATA[LK-FIB]]></t>
+                </cobolWord>
+              </dataName>
+            </returning>
+            <t><![CDATA[.]]></t>
+          </header>
+          <t><![CDATA[
+]]></t>
+          <t><![CDATA[      ]]></t>
+          <t><![CDATA[ ]]></t>
+          <paragraph>
+            <paragraphName>
+              <name>
+                <cobolWord>
+                  <t><![CDATA[PROG-PRINCIPAL-PARA]]></t>
+                </cobolWord>
+              </name>
+            </paragraphName>
+            <t><![CDATA[.]]></t>
+            <t><![CDATA[       ]]></t>
+            <t><![CDATA[
+]]></t>
+            <t><![CDATA[      ]]></t>
+            <t><![CDATA[ ]]></t>
+            <t><![CDATA[    ]]></t>
+            <sentence>
+              <statement>
+                <evaluateStatement>
+                  <t><![CDATA[EVALUATE]]></t>
+                  <t><![CDATA[ ]]></t>
+                  <subject>
+                    <condition>
+                      <conditionNameCondition>
+                        <conditionName>
+                          <identifier>
+                            <identifier_format2>
+                              <qualifiedDataName>
+                                <dataName>
+                                  <cobolWord>
+                                    <t><![CDATA[LK-NUM]]></t>
+                                  </cobolWord>
+                                </dataName>
+                              </qualifiedDataName>
+                            </identifier_format2>
+                          </identifier>
+                        </conditionName>
+                      </conditionNameCondition>
+                    </condition>
+                  </subject>
+                  <t><![CDATA[
+]]></t>
+                  <t><![CDATA[      ]]></t>
+                  <t><![CDATA[ ]]></t>
+                  <t><![CDATA[       ]]></t>
+                  <when>
+                    <t><![CDATA[WHEN]]></t>
+                    <t><![CDATA[ ]]></t>
+                    <object>
+                      <literal>
+                        <literalValue>
+                          <numericLiteral>
+                            <integerLiteral>
+                              <t><![CDATA[0]]></t>
+                            </integerLiteral>
+                          </numericLiteral>
+                        </literalValue>
+                      </literal>
+                    </object>
+                    <t><![CDATA[
+]]></t>
+                    <t><![CDATA[      ]]></t>
+                    <t><![CDATA[ ]]></t>
+                    <t><![CDATA[          ]]></t>
+                    <nestedStatements>
+                      <statement>
+                        <computeStatement>
+                          <t><![CDATA[COMPUTE]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <qualifiedDataName>
+                            <dataName>
+                              <cobolWord>
+                                <t><![CDATA[LK-FIB]]></t>
+                              </cobolWord>
+                            </dataName>
+                          </qualifiedDataName>
+                          <t><![CDATA[ ]]></t>
+                          <t><![CDATA[=]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <arithmeticExpression>
+                            <identifierAtom>
+                              <identifier>
+                                <identifier_format2>
+                                  <qualifiedDataName>
+                                    <dataName>
+                                      <cobolWord>
+                                        <t><![CDATA[LK-ANT]]></t>
+                                      </cobolWord>
+                                    </dataName>
+                                  </qualifiedDataName>
+                                </identifier_format2>
+                              </identifier>
+                            </identifierAtom>
+                          </arithmeticExpression>
+                        </computeStatement>
+                      </statement>
+                    </nestedStatements>
+                  </when>
+                  <t><![CDATA[
+]]></t>
+                  <t><![CDATA[      ]]></t>
+                  <t><![CDATA[ ]]></t>
+                  <t><![CDATA[       ]]></t>
+                  <when>
+                    <t><![CDATA[WHEN]]></t>
+                    <t><![CDATA[ ]]></t>
+                    <object>
+                      <literal>
+                        <literalValue>
+                          <numericLiteral>
+                            <integerLiteral>
+                              <t><![CDATA[1]]></t>
+                            </integerLiteral>
+                          </numericLiteral>
+                        </literalValue>
+                      </literal>
+                    </object>
+                    <t><![CDATA[
+]]></t>
+                    <t><![CDATA[      ]]></t>
+                    <t><![CDATA[ ]]></t>
+                    <t><![CDATA[          ]]></t>
+                    <nestedStatements>
+                      <statement>
+                        <computeStatement>
+                          <t><![CDATA[COMPUTE]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <qualifiedDataName>
+                            <dataName>
+                              <cobolWord>
+                                <t><![CDATA[LK-FIB]]></t>
+                              </cobolWord>
+                            </dataName>
+                          </qualifiedDataName>
+                          <t><![CDATA[ ]]></t>
+                          <t><![CDATA[=]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <arithmeticExpression>
+                            <identifierAtom>
+                              <identifier>
+                                <identifier_format2>
+                                  <qualifiedDataName>
+                                    <dataName>
+                                      <cobolWord>
+                                        <t><![CDATA[LK-ATU]]></t>
+                                      </cobolWord>
+                                    </dataName>
+                                  </qualifiedDataName>
+                                </identifier_format2>
+                              </identifier>
+                            </identifierAtom>
+                          </arithmeticExpression>
+                        </computeStatement>
+                      </statement>
+                    </nestedStatements>
+                  </when>
+                  <t><![CDATA[
+]]></t>
+                  <t><![CDATA[      ]]></t>
+                  <t><![CDATA[ ]]></t>
+                  <t><![CDATA[       ]]></t>
+                  <when>
+                    <t><![CDATA[WHEN]]></t>
+                    <t><![CDATA[ ]]></t>
+                    <object>
+                      <literal>
+                        <literalValue>
+                          <numericLiteral>
+                            <integerLiteral>
+                              <t><![CDATA[2]]></t>
+                            </integerLiteral>
+                          </numericLiteral>
+                        </literalValue>
+                      </literal>
+                    </object>
+                    <t><![CDATA[
+]]></t>
+                    <t><![CDATA[      ]]></t>
+                    <t><![CDATA[ ]]></t>
+                    <t><![CDATA[          ]]></t>
+                    <nestedStatements>
+                      <statement>
+                        <computeStatement>
+                          <t><![CDATA[COMPUTE]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <qualifiedDataName>
+                            <dataName>
+                              <cobolWord>
+                                <t><![CDATA[LS-PRX]]></t>
+                              </cobolWord>
+                            </dataName>
+                          </qualifiedDataName>
+                          <t><![CDATA[ ]]></t>
+                          <t><![CDATA[=]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <arithmeticExpression>
+                            <expression>
+                              <identifierAtom>
+                                <identifier>
+                                  <identifier_format2>
+                                    <qualifiedDataName>
+                                      <dataName>
+                                        <cobolWord>
+                                          <t><![CDATA[LK-ANT]]></t>
+                                        </cobolWord>
+                                      </dataName>
+                                    </qualifiedDataName>
+                                  </identifier_format2>
+                                </identifier>
+                              </identifierAtom>
+                              <t><![CDATA[ ]]></t>
+                              <add>
+                                <t><![CDATA[+]]></t>
+                                <t><![CDATA[ ]]></t>
+                                <identifierAtom>
+                                  <identifier>
+                                    <identifier_format2>
+                                      <qualifiedDataName>
+                                        <dataName>
+                                          <cobolWord>
+                                            <t><![CDATA[LK-ATU]]></t>
+                                          </cobolWord>
+                                        </dataName>
+                                      </qualifiedDataName>
+                                    </identifier_format2>
+                                  </identifier>
+                                </identifierAtom>
+                              </add>
+                            </expression>
+                          </arithmeticExpression>
+                        </computeStatement>
+                      </statement>
+                      <t><![CDATA[
+]]></t>
+                      <t><![CDATA[      ]]></t>
+                      <t><![CDATA[ ]]></t>
+                      <t><![CDATA[          ]]></t>
+                      <statement>
+                        <computeStatement>
+                          <t><![CDATA[COMPUTE]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <qualifiedDataName>
+                            <dataName>
+                              <cobolWord>
+                                <t><![CDATA[LK-FIB]]></t>
+                              </cobolWord>
+                            </dataName>
+                          </qualifiedDataName>
+                          <t><![CDATA[ ]]></t>
+                          <t><![CDATA[=]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <arithmeticExpression>
+                            <identifierAtom>
+                              <identifier>
+                                <identifier_format2>
+                                  <qualifiedDataName>
+                                    <dataName>
+                                      <cobolWord>
+                                        <t><![CDATA[LS-PRX]]></t>
+                                      </cobolWord>
+                                    </dataName>
+                                  </qualifiedDataName>
+                                </identifier_format2>
+                              </identifier>
+                            </identifierAtom>
+                          </arithmeticExpression>
+                        </computeStatement>
+                      </statement>
+                    </nestedStatements>
+                  </when>
+                  <t><![CDATA[
+]]></t>
+                  <t><![CDATA[      ]]></t>
+                  <t><![CDATA[ ]]></t>
+                  <t><![CDATA[       ]]></t>
+                  <whenOther>
+                    <t><![CDATA[WHEN]]></t>
+                    <t><![CDATA[ ]]></t>
+                    <t><![CDATA[OTHER]]></t>
+                    <t><![CDATA[
+]]></t>
+                    <t><![CDATA[      ]]></t>
+                    <t><![CDATA[ ]]></t>
+                    <t><![CDATA[          ]]></t>
+                    <nestedStatements>
+                      <statement>
+                        <moveStatement>
+                          <t><![CDATA[MOVE]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <sending>
+                            <identifier>
+                              <identifier_format2>
+                                <qualifiedDataName>
+                                  <dataName>
+                                    <cobolWord>
+                                      <t><![CDATA[LK-ATU]]></t>
+                                    </cobolWord>
+                                  </dataName>
+                                </qualifiedDataName>
+                              </identifier_format2>
+                            </identifier>
+                          </sending>
+                          <t><![CDATA[ ]]></t>
+                          <t><![CDATA[TO]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <identifier>
+                            <identifier_format2>
+                              <qualifiedDataName>
+                                <dataName>
+                                  <cobolWord>
+                                    <t><![CDATA[LS-ATU]]></t>
+                                  </cobolWord>
+                                </dataName>
+                              </qualifiedDataName>
+                            </identifier_format2>
+                          </identifier>
+                          <unknown />
+                        </moveStatement>
+                      </statement>
+                      <t><![CDATA[
+]]></t>
+                      <t><![CDATA[      ]]></t>
+                      <t><![CDATA[ ]]></t>
+                      <t><![CDATA[          ]]></t>
+                      <statement>
+                        <computeStatement>
+                          <t><![CDATA[COMPUTE]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <qualifiedDataName>
+                            <dataName>
+                              <cobolWord>
+                                <t><![CDATA[LS-NUM]]></t>
+                              </cobolWord>
+                            </dataName>
+                          </qualifiedDataName>
+                          <t><![CDATA[ ]]></t>
+                          <t><![CDATA[=]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <arithmeticExpression>
+                            <expression>
+                              <identifierAtom>
+                                <identifier>
+                                  <identifier_format2>
+                                    <qualifiedDataName>
+                                      <dataName>
+                                        <cobolWord>
+                                          <t><![CDATA[LK-NUM]]></t>
+                                        </cobolWord>
+                                      </dataName>
+                                    </qualifiedDataName>
+                                  </identifier_format2>
+                                </identifier>
+                              </identifierAtom>
+                              <t><![CDATA[ ]]></t>
+                              <subtract>
+                                <t><![CDATA[-]]></t>
+                                <t><![CDATA[ ]]></t>
+                                <numericAtom>
+                                  <numeric>
+                                    <integer>
+                                      <integerLiteral>
+                                        <t><![CDATA[1]]></t>
+                                      </integerLiteral>
+                                    </integer>
+                                  </numeric>
+                                </numericAtom>
+                              </subtract>
+                            </expression>
+                          </arithmeticExpression>
+                        </computeStatement>
+                      </statement>
+                      <t><![CDATA[
+]]></t>
+                      <t><![CDATA[      ]]></t>
+                      <t><![CDATA[ ]]></t>
+                      <t><![CDATA[          ]]></t>
+                      <statement>
+                        <computeStatement>
+                          <t><![CDATA[COMPUTE]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <qualifiedDataName>
+                            <dataName>
+                              <cobolWord>
+                                <t><![CDATA[LS-PRX]]></t>
+                              </cobolWord>
+                            </dataName>
+                          </qualifiedDataName>
+                          <t><![CDATA[ ]]></t>
+                          <t><![CDATA[=]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <arithmeticExpression>
+                            <expression>
+                              <identifierAtom>
+                                <identifier>
+                                  <identifier_format2>
+                                    <qualifiedDataName>
+                                      <dataName>
+                                        <cobolWord>
+                                          <t><![CDATA[LK-ANT]]></t>
+                                        </cobolWord>
+                                      </dataName>
+                                    </qualifiedDataName>
+                                  </identifier_format2>
+                                </identifier>
+                              </identifierAtom>
+                              <t><![CDATA[ ]]></t>
+                              <add>
+                                <t><![CDATA[+]]></t>
+                                <t><![CDATA[ ]]></t>
+                                <identifierAtom>
+                                  <identifier>
+                                    <identifier_format2>
+                                      <qualifiedDataName>
+                                        <dataName>
+                                          <cobolWord>
+                                            <t><![CDATA[LK-ATU]]></t>
+                                          </cobolWord>
+                                        </dataName>
+                                      </qualifiedDataName>
+                                    </identifier_format2>
+                                  </identifier>
+                                </identifierAtom>
+                              </add>
+                            </expression>
+                          </arithmeticExpression>
+                        </computeStatement>
+                      </statement>
+                      <t><![CDATA[
+]]></t>
+                      <t><![CDATA[      ]]></t>
+                      <t><![CDATA[ ]]></t>
+                      <t><![CDATA[          ]]></t>
+                      <statement>
+                        <computeStatement>
+                          <t><![CDATA[COMPUTE]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <qualifiedDataName>
+                            <dataName>
+                              <cobolWord>
+                                <t><![CDATA[LK-FIB]]></t>
+                              </cobolWord>
+                            </dataName>
+                          </qualifiedDataName>
+                          <t><![CDATA[ ]]></t>
+                          <t><![CDATA[=]]></t>
+                          <t><![CDATA[
+]]></t>
+                          <t><![CDATA[      ]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <t><![CDATA[                  ]]></t>
+                          <arithmeticExpression>
+                            <identifierAtom>
+                              <identifier>
+                                <identifier_format2>
+                                  <qualifiedDataName>
+                                    <dataName>
+                                      <cobolWord>
+                                        <t><![CDATA[NUMVAL]]></t>
+                                      </cobolWord>
+                                    </dataName>
+                                    <t><![CDATA[(]]></t>
+                                    <subscript>
+                                      <directSubscript>
+                                        <identifier>
+                                          <identifier_format2>
+                                            <qualifiedDataName>
+                                              <dataName>
+                                                <cobolWord>
+                                                  <t><![CDATA[FIBBASE]]></t>
+                                                </cobolWord>
+                                              </dataName>
+                                              <t><![CDATA[(]]></t>
+                                              <subscript>
+                                                <directSubscript>
+                                                  <identifier>
+                                                    <identifier_format2>
+                                                      <qualifiedDataName>
+                                                        <dataName>
+                                                          <cobolWord>
+                                                            <t><![CDATA[LS-NUM]]></t>
+                                                          </cobolWord>
+                                                        </dataName>
+                                                      </qualifiedDataName>
+                                                    </identifier_format2>
+                                                  </identifier>
+                                                </directSubscript>
+                                              </subscript>
+                                              <t><![CDATA[,]]></t>
+                                              <t><![CDATA[ ]]></t>
+                                              <subscript>
+                                                <directSubscript>
+                                                  <identifier>
+                                                    <identifier_format2>
+                                                      <qualifiedDataName>
+                                                        <dataName>
+                                                          <cobolWord>
+                                                            <t><![CDATA[LS-ATU]]></t>
+                                                          </cobolWord>
+                                                        </dataName>
+                                                      </qualifiedDataName>
+                                                    </identifier_format2>
+                                                  </identifier>
+                                                </directSubscript>
+                                              </subscript>
+                                              <t><![CDATA[,]]></t>
+                                              <t><![CDATA[ ]]></t>
+                                              <subscript>
+                                                <directSubscript>
+                                                  <identifier>
+                                                    <identifier_format2>
+                                                      <qualifiedDataName>
+                                                        <dataName>
+                                                          <cobolWord>
+                                                            <t><![CDATA[LS-PRX]]></t>
+                                                          </cobolWord>
+                                                        </dataName>
+                                                      </qualifiedDataName>
+                                                    </identifier_format2>
+                                                  </identifier>
+                                                </directSubscript>
+                                              </subscript>
+                                              <t><![CDATA[)]]></t>
+                                            </qualifiedDataName>
+                                          </identifier_format2>
+                                        </identifier>
+                                      </directSubscript>
+                                    </subscript>
+                                    <t><![CDATA[)]]></t>
+                                  </qualifiedDataName>
+                                </identifier_format2>
+                              </identifier>
+                            </identifierAtom>
+                          </arithmeticExpression>
+                        </computeStatement>
+                      </statement>
+                    </nestedStatements>
+                  </whenOther>
+                  <t><![CDATA[
+]]></t>
+                  <t><![CDATA[      ]]></t>
+                  <t><![CDATA[ ]]></t>
+                  <t><![CDATA[    ]]></t>
+                  <t><![CDATA[END-EVALUATE]]></t>
+                </evaluateStatement>
+              </statement>
+              <t><![CDATA[.]]></t>
+            </sentence>
+            <t><![CDATA[
+]]></t>
+            <t><![CDATA[      ]]></t>
+            <t><![CDATA[ ]]></t>
+            <t><![CDATA[    ]]></t>
+            <sentence>
+              <statement>
+                <gobackStatement>
+                  <t><![CDATA[GOBACK]]></t>
+                </gobackStatement>
+              </statement>
+              <t><![CDATA[.]]></t>
+            </sentence>
+          </paragraph>
+        </procedureDivision>
+        <t><![CDATA[
+]]></t>
+        <t><![CDATA[      ]]></t>
+        <t><![CDATA[ ]]></t>
+        <t><![CDATA[END]]></t>
+        <t><![CDATA[ ]]></t>
+        <t><![CDATA[FUNCTION]]></t>
+        <t><![CDATA[ ]]></t>
+        <name>
+          <cobolWord>
+            <t><![CDATA[FIBBASE]]></t>
+          </cobolWord>
+        </name>
+        <t><![CDATA[.]]></t>
+      </functionDefinition>
+    </sourceUnit>
+    <t><![CDATA[
+]]></t>
+  </compilationGroup>
+</koopa>

@@ -1,0 +1,327 @@
+{
+  "program": "PRTRPT1",
+  "status": "verified",
+  "verification_status": "verified",
+  "verification_rounds": 2,
+  "iterations": 1,
+  "repairs": [
+    {
+      "iteration": 1,
+      "layer": "BR",
+      "id": "BR7",
+      "action": "UPDATE",
+      "old": "If (TRUE), then Abn-Paragraph is set to \"5000\".",
+      "new": "If (NOT ((WS-Member-Okay))), then Abn-Paragraph is set to \"5000\".",
+      "reason": "The authoritative parsed control flow places MOVE \"5000\" TO Abn-Paragraph in the WHEN OTHER branch of EVALUATE TRUE after WHEN WS-Member-Okay. Therefore, the operation executes only when WS-Member-Okay does not hold. The unconditional TRUE guard incorrectly requires Abn-Paragraph to be set to \"5000\" even after a successful member-file read.",
+      "accepted": true
+    },
+    {
+      "iteration": 1,
+      "layer": "MS",
+      "id": "MS7",
+      "action": "UPDATE",
+      "old": "Abn-Paragraph-NEW = \"5000\"",
+      "new": "(NOT WS-Member-Okay-OLD) IMPLIES (Abn-Paragraph-NEW = \"5000\")",
+      "reason": "Targeted regeneration after BR7 restored the missing WHEN OTHER fallback guard for the abnormal paragraph assignment.",
+      "accepted": true
+    },
+    {
+      "iteration": 1,
+      "layer": "ASSERTION",
+      "index": 7,
+      "action": "UPDATE",
+      "old": "Abn-Paragraph-NEW == \"5000\"",
+      "new": "(!(!(WS-Member-Okay-OLD))) || (Abn-Paragraph-NEW == \"5000\")",
+      "reason": "MS7 requires NOT WS-Member-Okay-OLD to imply that Abn-Paragraph becomes \"5000\". Rewriting A IMPLIES B as NOT(A) OR B produces WS-Member-Okay-OLD OR the abnormal-paragraph postcondition.",
+      "accepted": true
+    },
+    {
+      "iteration": 1,
+      "layer": "BR",
+      "id": "BR8",
+      "action": "UPDATE",
+      "old": "If (TRUE), then Abn-Code is set to WS-Member-Status.",
+      "new": "If (NOT ((WS-Member-Okay))), then Abn-Code is set to WS-Member-Status.",
+      "reason": "The authoritative parsed control flow places MOVE WS-Member-Status TO Abn-Code in the same WHEN OTHER branch after WHEN WS-Member-Okay. Therefore, the status-code assignment executes only when WS-Member-Okay does not hold. The unconditional TRUE guard incorrectly applies the error status assignment after successful reads.",
+      "accepted": true
+    },
+    {
+      "iteration": 1,
+      "layer": "MS",
+      "id": "MS8",
+      "action": "UPDATE",
+      "old": "Abn-Code-NEW = WS-Member-Status-OLD",
+      "new": "(NOT WS-Member-Okay-OLD) IMPLIES (Abn-Code-NEW = WS-Member-Status-OLD)",
+      "reason": "Targeted regeneration after BR8 restored the missing WHEN OTHER fallback guard for the abnormal status-code assignment.",
+      "accepted": true
+    },
+    {
+      "iteration": 1,
+      "layer": "ASSERTION",
+      "index": 8,
+      "action": "UPDATE",
+      "old": "Abn-Code-NEW == WS-Member-Status-OLD",
+      "new": "(!(!(WS-Member-Okay-OLD))) || (Abn-Code-NEW == WS-Member-Status-OLD)",
+      "reason": "MS8 requires NOT WS-Member-Okay-OLD to imply that Abn-Code receives WS-Member-Status-OLD. Rewriting the implication produces WS-Member-Okay-OLD OR the abnormal-code postcondition.",
+      "accepted": true
+    }
+  ],
+  "accepted_repairs": [
+    {
+      "iteration": 1,
+      "layer": "BR",
+      "id": "BR7",
+      "action": "UPDATE",
+      "old": "If (TRUE), then Abn-Paragraph is set to \"5000\".",
+      "new": "If (NOT ((WS-Member-Okay))), then Abn-Paragraph is set to \"5000\".",
+      "reason": "The WHEN OTHER branch executes only when the preceding condition WS-Member-Okay does not hold.",
+      "accepted": true
+    },
+    {
+      "iteration": 1,
+      "layer": "MS",
+      "id": "MS7",
+      "action": "UPDATE",
+      "old": "Abn-Paragraph-NEW = \"5000\"",
+      "new": "(NOT WS-Member-Okay-OLD) IMPLIES (Abn-Paragraph-NEW = \"5000\")",
+      "reason": "Targeted regeneration after BR7.",
+      "accepted": true
+    },
+    {
+      "iteration": 1,
+      "layer": "ASSERTION",
+      "index": 7,
+      "action": "UPDATE",
+      "old": "Abn-Paragraph-NEW == \"5000\"",
+      "new": "(!(!(WS-Member-Okay-OLD))) || (Abn-Paragraph-NEW == \"5000\")",
+      "reason": "Targeted regeneration after MS7.",
+      "accepted": true
+    },
+    {
+      "iteration": 1,
+      "layer": "BR",
+      "id": "BR8",
+      "action": "UPDATE",
+      "old": "If (TRUE), then Abn-Code is set to WS-Member-Status.",
+      "new": "If (NOT ((WS-Member-Okay))), then Abn-Code is set to WS-Member-Status.",
+      "reason": "The WHEN OTHER branch executes only when the preceding condition WS-Member-Okay does not hold.",
+      "accepted": true
+    },
+    {
+      "iteration": 1,
+      "layer": "MS",
+      "id": "MS8",
+      "action": "UPDATE",
+      "old": "Abn-Code-NEW = WS-Member-Status-OLD",
+      "new": "(NOT WS-Member-Okay-OLD) IMPLIES (Abn-Code-NEW = WS-Member-Status-OLD)",
+      "reason": "Targeted regeneration after BR8.",
+      "accepted": true
+    },
+    {
+      "iteration": 1,
+      "layer": "ASSERTION",
+      "index": 8,
+      "action": "UPDATE",
+      "old": "Abn-Code-NEW == WS-Member-Status-OLD",
+      "new": "(!(!(WS-Member-Okay-OLD))) || (Abn-Code-NEW == WS-Member-Status-OLD)",
+      "reason": "Targeted regeneration after MS8.",
+      "accepted": true
+    }
+  ],
+  "rejected_repairs": [],
+  "attempt_history": [
+    {
+      "iteration": 1,
+      "candidates": [
+        {
+          "br_ids": [
+            "BR7"
+          ],
+          "ms_id": "MS7",
+          "assertion_index": 7,
+          "checks": [
+            "postcondition"
+          ]
+        },
+        {
+          "br_ids": [
+            "BR8"
+          ],
+          "ms_id": "MS8",
+          "assertion_index": 8,
+          "checks": [
+            "postcondition"
+          ]
+        }
+      ],
+      "candidate_count": 2,
+      "strategy": "repair_when_other_fallback_guard",
+      "proposed_repairs": [
+        {
+          "iteration": 1,
+          "layer": "BR",
+          "id": "BR7",
+          "action": "UPDATE",
+          "old": "If (TRUE), then Abn-Paragraph is set to \"5000\".",
+          "new": "If (NOT ((WS-Member-Okay))), then Abn-Paragraph is set to \"5000\".",
+          "reason": "The parsed EVALUATE TRUE executes the WHEN OTHER assignment only when WS-Member-Okay does not hold.",
+          "accepted": true
+        },
+        {
+          "iteration": 1,
+          "layer": "MS",
+          "id": "MS7",
+          "action": "UPDATE",
+          "old": "Abn-Paragraph-NEW = \"5000\"",
+          "new": "(NOT WS-Member-Okay-OLD) IMPLIES (Abn-Paragraph-NEW = \"5000\")",
+          "reason": "Targeted regeneration after BR7.",
+          "accepted": true
+        },
+        {
+          "iteration": 1,
+          "layer": "ASSERTION",
+          "index": 7,
+          "action": "UPDATE",
+          "old": "Abn-Paragraph-NEW == \"5000\"",
+          "new": "(!(!(WS-Member-Okay-OLD))) || (Abn-Paragraph-NEW == \"5000\")",
+          "reason": "Targeted regeneration after MS7.",
+          "accepted": true
+        },
+        {
+          "iteration": 1,
+          "layer": "BR",
+          "id": "BR8",
+          "action": "UPDATE",
+          "old": "If (TRUE), then Abn-Code is set to WS-Member-Status.",
+          "new": "If (NOT ((WS-Member-Okay))), then Abn-Code is set to WS-Member-Status.",
+          "reason": "The parsed EVALUATE TRUE executes the WHEN OTHER assignment only when WS-Member-Okay does not hold.",
+          "accepted": true
+        },
+        {
+          "iteration": 1,
+          "layer": "MS",
+          "id": "MS8",
+          "action": "UPDATE",
+          "old": "Abn-Code-NEW = WS-Member-Status-OLD",
+          "new": "(NOT WS-Member-Okay-OLD) IMPLIES (Abn-Code-NEW = WS-Member-Status-OLD)",
+          "reason": "Targeted regeneration after BR8.",
+          "accepted": true
+        },
+        {
+          "iteration": 1,
+          "layer": "ASSERTION",
+          "index": 8,
+          "action": "UPDATE",
+          "old": "Abn-Code-NEW == WS-Member-Status-OLD",
+          "new": "(!(!(WS-Member-Okay-OLD))) || (Abn-Code-NEW == WS-Member-Status-OLD)",
+          "reason": "Targeted regeneration after MS8.",
+          "accepted": true
+        }
+      ],
+      "result": {
+        "status": "verified",
+        "failed_assertion_indices": [],
+        "failed_checks": {}
+      }
+    }
+  ],
+  "counterexample_history": [
+    {
+      "round": 1,
+      "iteration": 1,
+      "phase": "initial_verification",
+      "verification_status": "failed",
+      "counterexample": {
+        "variables": {
+          "WS_MEMBER_OKAY": true,
+          "WS_MEMBER_GOOD": true,
+          "WS_REPORT_GOOD": true,
+          "WS_MEMBER_STATUS_0": "00",
+          "ABN_CODE_0": "99",
+          "ABN_CODE_1": "99",
+          "ABN_CODE_2": "99",
+          "ABN_CODE_3": "99",
+          "ABN_PARAGRAPH_0": "0000",
+          "ABN_PARAGRAPH_1": "0000",
+          "ABN_PARAGRAPH_2": "0000",
+          "ABN_PARAGRAPH_3": "0000"
+        },
+        "control_variables": {
+          "WS_MEMBER_OKAY": true,
+          "WS_MEMBER_GOOD": true,
+          "WS_REPORT_GOOD": true
+        },
+        "raw": "[Z3 Runtime] Initializing symbolic verification matrix...\n[Z3 Runtime] 1/3 Starting assertion consistency check...\n[Z3 Runtime] 1/3 Assertion consistency finished: sat (0.00s)\n[Z3 Runtime] 2/3 Reachability assertion 7: sat (0.00s)\n[Z3 Runtime] 2/3 Reachability assertion 8: sat (0.00s)\n[Z3 Runtime] 3/3 Starting final verification...\n[Z3 Runtime] 3/3 Final verification finished: sat (0.00s)\nCOUNTEREXAMPLE: ASSERTION VIOLATION DETECTED:\n[WS_MEMBER_OKAY = True,\n WS_MEMBER_GOOD = True,\n WS_REPORT_GOOD = True,\n WS_MEMBER_STATUS_0 = \"00\",\n ABN_CODE_0 = \"99\",\n ABN_CODE_1 = \"99\",\n ABN_CODE_2 = \"99\",\n ABN_CODE_3 = \"99\",\n ABN_PARAGRAPH_0 = \"0000\",\n ABN_PARAGRAPH_1 = \"0000\",\n ABN_PARAGRAPH_2 = \"0000\",\n ABN_PARAGRAPH_3 = \"0000\"]\nFAILED_CHECK: assertion 7 postcondition\nFAILED_CHECK: assertion 8 postcondition\nFAILED_ASSERTION_INDICES: [7, 8]",
+        "failed_assertion_indices": [
+          7,
+          8
+        ],
+        "failed_checks": {
+          "7": [
+            "postcondition"
+          ],
+          "8": [
+            "postcondition"
+          ]
+        },
+        "contradictory_assertion_indices": [],
+        "reachability_by_assertion": {
+          "7": "sat",
+          "8": "sat"
+        },
+        "vacuous_assertion_indices": [],
+        "model_fingerprint": "598b9185167db796514fe631040bc328401745fd786691cd120967461277e4b7",
+        "failure_fingerprint": "b03ec2ca191cc564579676c989fbacadee6186968f4a1ccf93b48090e69be00c"
+      },
+      "failed_assertion_indices": [
+        7,
+        8
+      ],
+      "failed_checks": {
+        "7": [
+          "postcondition"
+        ],
+        "8": [
+          "postcondition"
+        ]
+      }
+    }
+  ],
+  "candidates": [
+    {
+      "br_ids": [
+        "BR7"
+      ],
+      "ms_id": "MS7",
+      "assertion_index": 7,
+      "checks": [
+        "postcondition"
+      ]
+    },
+    {
+      "br_ids": [
+        "BR8"
+      ],
+      "ms_id": "MS8",
+      "assertion_index": 8,
+      "checks": [
+        "postcondition"
+      ]
+    }
+  ],
+  "candidate_count": 2,
+  "baseline_policy": "immutable_state0_with_growing_diagnostic_memory",
+  "verification_history": [
+    {
+      "round": 2,
+      "iteration": 1,
+      "phase": "post_repair_verification",
+      "status": "verified",
+      "return_code": 0,
+      "contradictory_assertion_indices": [],
+      "failed_assertion_indices": [],
+      "failed_checks": {},
+      "z3_output": "[Z3 Runtime] Initializing symbolic verification matrix...\n[Z3 Runtime] 1/3 Starting assertion consistency check...\n[Z3 Runtime] 1/3 Assertion consistency finished: sat (0.00s)\n[Z3 Runtime] 2/3 Starting 9 reachability check(s)...\n[Z3 Runtime] 2/3 Reachability assertion 7: sat (0.00s)\n[Z3 Runtime] 2/3 Reachability assertion 8: sat (0.00s)\n[Z3 Runtime] 3/3 Starting final verification...\n[Z3 Runtime] 3/3 Final verification finished: unsat (0.00s)\nVERIFIED: The program satisfies the assertion."
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+assert(WS-R-NEW == WS-A-OLD + WS-B-OLD);
+assert((!(WS-R-OLD >= 10)) || (WS-R-NEW == WS-R-OLD + 5));
+assert((!(WS-R-OLD >= 10)) || (WS-DSP-R-NEW == WS-R-OLD));
+assert((!(!(WS-R-OLD >= 10))) || (WS-R-NEW == WS-R-OLD - 7));
+assert((!(!(WS-R-OLD >= 10))) || (WS-DSP-R-NEW == WS-R-OLD));

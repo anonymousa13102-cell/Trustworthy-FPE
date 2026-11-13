@@ -1,0 +1,77 @@
+{
+  "program_name": "CNWYLIFE",
+  "math_specs": [
+    {
+      "id": "MS1",
+      "source_br_ids": [
+        "BR1"
+      ],
+      "kind": "transition",
+      "description": "The end-of-file flag is set to \"F\".",
+      "expression": "end-of-file-flag-NEW = \"F\""
+    },
+    {
+      "id": "MS2",
+      "source_br_ids": [
+        "BR2"
+      ],
+      "kind": "transition",
+      "description": "The previous-generation row at row-counter is set to initial-condx-record.",
+      "expression": "pg-row-NEW(row-counter-OLD) = initial-condx-record-OLD"
+    },
+    {
+      "id": "MS3",
+      "source_br_ids": [
+        "BR3"
+      ],
+      "kind": "transition",
+      "description": "The next generation is set to the previous generation.",
+      "expression": "next-generation-NEW = previous-generation-OLD"
+    },
+    {
+      "id": "MS4",
+      "source_br_ids": [
+        "BR4"
+      ],
+      "kind": "transition",
+      "description": "The previous generation is set to the next generation.",
+      "expression": "previous-generation-NEW = next-generation-OLD"
+    },
+    {
+      "id": "MS5",
+      "source_br_ids": [
+        "BR5"
+      ],
+      "kind": "transition",
+      "description": "When neighbor-counter equals 2 or 3, the next-generation cell at row-counter and column-counter is set to living-cell.",
+      "expression": "((neighbor-counter-OLD = 2) OR (neighbor-counter-OLD = 3)) IMPLIES (ng-column-NEW(row-counter-OLD, column-counter-OLD) = living-cell-OLD)"
+    },
+    {
+      "id": "MS6",
+      "source_br_ids": [
+        "BR6"
+      ],
+      "kind": "transition",
+      "description": "When neighbor-counter is neither 2 nor 3, the next-generation cell at row-counter and column-counter is set to dead-cell.",
+      "expression": "(NOT ((neighbor-counter-OLD = 2) OR (neighbor-counter-OLD = 3))) IMPLIES (ng-column-NEW(row-counter-OLD, column-counter-OLD) = dead-cell-OLD)"
+    },
+    {
+      "id": "MS7",
+      "source_br_ids": [
+        "BR7"
+      ],
+      "kind": "transition",
+      "description": "When neighbor-counter equals 3, the next-generation cell at row-counter and column-counter is set to living-cell.",
+      "expression": "(neighbor-counter-OLD = 3) IMPLIES (ng-column-NEW(row-counter-OLD, column-counter-OLD) = living-cell-OLD)"
+    },
+    {
+      "id": "MS8",
+      "source_br_ids": [
+        "BR8"
+      ],
+      "kind": "transition",
+      "description": "The next-generation cell at row-counter and column-counter is unconditionally set to dead-cell; this represents the intentionally missing WHEN OTHER negation guard.",
+      "expression": "ng-column-NEW(row-counter-OLD, column-counter-OLD) = dead-cell-OLD"
+    }
+  ]
+}

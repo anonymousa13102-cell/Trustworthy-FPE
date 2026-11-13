@@ -1,0 +1,104 @@
+{
+  "program_name": "EMPPAY",
+  "math_specs": [
+    {
+      "id": "MS1",
+      "source_br_ids": [
+        "BR1"
+      ],
+      "kind": "transition",
+      "description": "Initialize employee first name.",
+      "expression": "EMP-FNAME-NEW = \"Millard\""
+    },
+    {
+      "id": "MS2",
+      "source_br_ids": [
+        "BR2"
+      ],
+      "kind": "transition",
+      "description": "Initialize employee last name.",
+      "expression": "EMP-LNAME-NEW = \"Fillmore\""
+    },
+    {
+      "id": "MS3",
+      "source_br_ids": [
+        "BR3"
+      ],
+      "kind": "transition",
+      "description": "Initialize employee hours.",
+      "expression": "EMP-HOURS-NEW = 19"
+    },
+    {
+      "id": "MS4",
+      "source_br_ids": [
+        "BR4"
+      ],
+      "kind": "transition",
+      "description": "Initialize employee hourly rate.",
+      "expression": "EMP-HOURLY-RATE-NEW = 23.50"
+    },
+    {
+      "id": "MS5",
+      "source_br_ids": [
+        "BR5"
+      ],
+      "kind": "transition",
+      "description": "Set employee overtime rate to .25 when the supplied condition holds.",
+      "expression": "(EMP-HOURS-OLD >= 40) IMPLIES (EMP-OT-RATE-NEW = .25)"
+    },
+    {
+      "id": "MS6",
+      "source_br_ids": [
+        "BR6"
+      ],
+      "kind": "transition",
+      "description": "Set employee overtime rate to .50 when the supplied condition holds.",
+      "expression": "((NOT (EMP-HOURS-OLD >= 40)) AND (EMP-HOURS-OLD >= 50)) IMPLIES (EMP-OT-RATE-NEW = .50)"
+    },
+    {
+      "id": "MS7",
+      "source_br_ids": [
+        "BR7"
+      ],
+      "kind": "transition",
+      "description": "Set employee overtime rate to ZERO when the supplied condition holds.",
+      "expression": "((NOT (EMP-HOURS-OLD >= 40)) AND (NOT (EMP-HOURS-OLD >= 50))) IMPLIES (EMP-OT-RATE-NEW = ZERO)"
+    },
+    {
+      "id": "MS8",
+      "source_br_ids": [
+        "BR8"
+      ],
+      "kind": "transition",
+      "description": "Compute employee weekly pay using the specified formula.",
+      "expression": "EMP-PAY-WEEK-NEW = ( EMP-HOURS-OLD * EMP-HOURLY-RATE-OLD ) * ( 1 + EMP-OT-RATE-OLD )"
+    },
+    {
+      "id": "MS9",
+      "source_br_ids": [
+        "BR9"
+      ],
+      "kind": "transition",
+      "description": "Set employee reward to .50 when the supplied condition holds.",
+      "expression": "(EMP-HOURS-OLD > 150) IMPLIES (EMP-REWARD-NEW = .50)"
+    },
+    {
+      "id": "MS10",
+      "source_br_ids": [
+        "BR10"
+      ],
+      "kind": "transition",
+      "description": "Set employee reward to ZERO when the supplied condition holds.",
+      "expression": "(NOT (EMP-HOURS-OLD > 150)) IMPLIES (EMP-REWARD-NEW = ZERO)"
+    },
+    {
+      "id": "MS11",
+      "source_br_ids": [
+        "BR11"
+      ],
+      "kind": "transition",
+      "description": "Compute employee monthly pay using the specified formula.",
+      "expression": "EMP-PAY-MONTH-NEW = ( EMP-PAY-WEEK-OLD * 4 ) * ( 1 + EMP-REWARD-OLD )"
+    }
+  ]
+}

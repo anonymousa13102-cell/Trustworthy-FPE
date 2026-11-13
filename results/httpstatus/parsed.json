@@ -1,0 +1,503 @@
+{
+  "programs": [
+    {
+      "name": "httpstatus",
+      "data_division": {
+        "sections": {
+          "Linkage Section": {
+            "variables": [
+              {
+                "level": "01",
+                "name": "status-code",
+                "declaration": "01 status-code pic x ( 3).",
+                "usage": "DISPLAY",
+                "picture": "X(3)",
+                "type": "alphanumeric",
+                "characters": 3
+              },
+              {
+                "level": "01",
+                "name": "status-message",
+                "declaration": "01 status-message pic x ( 40).",
+                "usage": "DISPLAY",
+                "picture": "X(40)",
+                "type": "alphanumeric",
+                "characters": 40
+              }
+            ]
+          }
+        }
+      },
+      "procedure_division": {
+        "functions": {
+          "start-status-message": {
+            "kind": "paragraph",
+            "blocks": [
+              {
+                "Evaluate-block": {
+                  "subjects": [
+                    "status-code"
+                  ],
+                  "branches": [
+                    {
+                      "kind": "when",
+                      "statements": [
+                        {
+                          "Move Statement": "move 'Continue' to status-message"
+                        }
+                      ],
+                      "objects": [
+                        "'100'"
+                      ]
+                    },
+                    {
+                      "kind": "when",
+                      "statements": [
+                        {
+                          "Move Statement": "move 'Switching Protocols' to status-message"
+                        }
+                      ],
+                      "objects": [
+                        "'101'"
+                      ]
+                    },
+                    {
+                      "kind": "when",
+                      "statements": [
+                        {
+                          "Move Statement": "move 'OK' to status-message"
+                        }
+                      ],
+                      "objects": [
+                        "'200'"
+                      ]
+                    },
+                    {
+                      "kind": "when",
+                      "statements": [
+                        {
+                          "Move Statement": "move 'Created' to status-message"
+                        }
+                      ],
+                      "objects": [
+                        "'201'"
+                      ]
+                    },
+                    {
+                      "kind": "when",
+                      "statements": [
+                        {
+                          "Move Statement": "move 'Accepted' to status-message"
+                        }
+                      ],
+                      "objects": [
+                        "'202'"
+                      ]
+                    },
+                    {
+                      "kind": "when",
+                      "statements": [
+                        {
+                          "Move Statement": "move 'Non-Authoritative Information' to status-message"
+                        }
+                      ],
+                      "objects": [
+                        "'203'"
+                      ]
+                    },
+                    {
+                      "kind": "when",
+                      "statements": [
+                        {
+                          "Move Statement": "move 'No Content' to status-message"
+                        }
+                      ],
+                      "objects": [
+                        "'204'"
+                      ]
+                    },
+                    {
+                      "kind": "when",
+                      "statements": [
+                        {
+                          "Move Statement": "move 'Reset Content' to status-message"
+                        }
+                      ],
+                      "objects": [
+                        "'205'"
+                      ]
+                    },
+                    {
+                      "kind": "when",
+                      "statements": [
+                        {
+                          "Move Statement": "move 'Partial Content' to status-message"
+                        }
+                      ],
+                      "objects": [
+                        "'206'"
+                      ]
+                    },
+                    {
+                      "kind": "when",
+                      "statements": [
+                        {
+                          "Move Statement": "move 'Multiple Choices' to status-message"
+                        }
+                      ],
+                      "objects": [
+                        "'300'"
+                      ]
+                    },
+                    {
+                      "kind": "when",
+                      "statements": [
+                        {
+                          "Move Statement": "move 'Moved Permanently' to status-message"
+                        }
+                      ],
+                      "objects": [
+                        "'301'"
+                      ]
+                    },
+                    {
+                      "kind": "when",
+                      "statements": [
+                        {
+                          "Move Statement": "move 'Found' to status-message"
+                        }
+                      ],
+                      "objects": [
+                        "'302'"
+                      ]
+                    },
+                    {
+                      "kind": "when",
+                      "statements": [
+                        {
+                          "Move Statement": "move 'See Other' to status-message"
+                        }
+                      ],
+                      "objects": [
+                        "'303'"
+                      ]
+                    },
+                    {
+                      "kind": "when",
+                      "statements": [
+                        {
+                          "Move Statement": "move 'Not Modified' to status-message"
+                        }
+                      ],
+                      "objects": [
+                        "'304'"
+                      ]
+                    },
+                    {
+                      "kind": "when",
+                      "statements": [
+                        {
+                          "Move Statement": "move 'Use Proxy' to status-message"
+                        }
+                      ],
+                      "objects": [
+                        "'305'"
+                      ]
+                    },
+                    {
+                      "kind": "when",
+                      "statements": [
+                        {
+                          "Move Statement": "move '(Unused)' to status-message"
+                        }
+                      ],
+                      "objects": [
+                        "'306'"
+                      ]
+                    },
+                    {
+                      "kind": "when",
+                      "statements": [
+                        {
+                          "Move Statement": "move 'Bad Request' to status-message"
+                        }
+                      ],
+                      "objects": [
+                        "'400'"
+                      ]
+                    },
+                    {
+                      "kind": "when",
+                      "statements": [
+                        {
+                          "Move Statement": "move 'Unauthorized' to status-message"
+                        }
+                      ],
+                      "objects": [
+                        "'401'"
+                      ]
+                    },
+                    {
+                      "kind": "when",
+                      "statements": [
+                        {
+                          "Move Statement": "move 'Payment Required' to status-message"
+                        }
+                      ],
+                      "objects": [
+                        "'402'"
+                      ]
+                    },
+                    {
+                      "kind": "when",
+                      "statements": [
+                        {
+                          "Move Statement": "move 'Forbidden' to status-message"
+                        }
+                      ],
+                      "objects": [
+                        "'403'"
+                      ]
+                    },
+                    {
+                      "kind": "when",
+                      "statements": [
+                        {
+                          "Move Statement": "move 'Not Found' to status-message"
+                        }
+                      ],
+                      "objects": [
+                        "'404'"
+                      ]
+                    },
+                    {
+                      "kind": "when",
+                      "statements": [
+                        {
+                          "Move Statement": "move 'Method Not Allowed' to status-message"
+                        }
+                      ],
+                      "objects": [
+                        "'405'"
+                      ]
+                    },
+                    {
+                      "kind": "when",
+                      "statements": [
+                        {
+                          "Move Statement": "move 'Not Acceptable' to status-message"
+                        }
+                      ],
+                      "objects": [
+                        "'406'"
+                      ]
+                    },
+                    {
+                      "kind": "when",
+                      "statements": [
+                        {
+                          "Move Statement": "move 'Proxy Authentication Required' to status-message"
+                        }
+                      ],
+                      "objects": [
+                        "'407'"
+                      ]
+                    },
+                    {
+                      "kind": "when",
+                      "statements": [
+                        {
+                          "Move Statement": "move 'Request Timeout' to status-message"
+                        }
+                      ],
+                      "objects": [
+                        "'408'"
+                      ]
+                    },
+                    {
+                      "kind": "when",
+                      "statements": [
+                        {
+                          "Move Statement": "move 'Conflict' to status-message"
+                        }
+                      ],
+                      "objects": [
+                        "'409'"
+                      ]
+                    },
+                    {
+                      "kind": "when",
+                      "statements": [
+                        {
+                          "Move Statement": "move 'Gone' to status-message"
+                        }
+                      ],
+                      "objects": [
+                        "'410'"
+                      ]
+                    },
+                    {
+                      "kind": "when",
+                      "statements": [
+                        {
+                          "Move Statement": "move 'Length Required' to status-message"
+                        }
+                      ],
+                      "objects": [
+                        "'411'"
+                      ]
+                    },
+                    {
+                      "kind": "when",
+                      "statements": [
+                        {
+                          "Move Statement": "move 'Precondition Failed' to status-message"
+                        }
+                      ],
+                      "objects": [
+                        "'412'"
+                      ]
+                    },
+                    {
+                      "kind": "when",
+                      "statements": [
+                        {
+                          "Move Statement": "move 'Request Entity Too Large' to status-message"
+                        }
+                      ],
+                      "objects": [
+                        "'413'"
+                      ]
+                    },
+                    {
+                      "kind": "when",
+                      "statements": [
+                        {
+                          "Move Statement": "move 'Request-URI Too Long' to status-message"
+                        }
+                      ],
+                      "objects": [
+                        "'414'"
+                      ]
+                    },
+                    {
+                      "kind": "when",
+                      "statements": [
+                        {
+                          "Move Statement": "move 'Unsupported Media Type' to status-message"
+                        }
+                      ],
+                      "objects": [
+                        "'415'"
+                      ]
+                    },
+                    {
+                      "kind": "when",
+                      "statements": [
+                        {
+                          "Move Statement": "move 'Requested Range Not Satisfiable' to status-message"
+                        }
+                      ],
+                      "objects": [
+                        "'416'"
+                      ]
+                    },
+                    {
+                      "kind": "when",
+                      "statements": [
+                        {
+                          "Move Statement": "move 'Expectation Failed' to status-message"
+                        }
+                      ],
+                      "objects": [
+                        "'417'"
+                      ]
+                    },
+                    {
+                      "kind": "when",
+                      "statements": [
+                        {
+                          "Move Statement": "move 'Internal Server Error' to status-message"
+                        }
+                      ],
+                      "objects": [
+                        "'500'"
+                      ]
+                    },
+                    {
+                      "kind": "when",
+                      "statements": [
+                        {
+                          "Move Statement": "move 'Not Implemented' to status-message"
+                        }
+                      ],
+                      "objects": [
+                        "'501'"
+                      ]
+                    },
+                    {
+                      "kind": "when",
+                      "statements": [
+                        {
+                          "Move Statement": "move 'Bad Gateway' to status-message"
+                        }
+                      ],
+                      "objects": [
+                        "'502'"
+                      ]
+                    },
+                    {
+                      "kind": "when",
+                      "statements": [
+                        {
+                          "Move Statement": "move 'Service Unavailable' to status-message"
+                        }
+                      ],
+                      "objects": [
+                        "'503'"
+                      ]
+                    },
+                    {
+                      "kind": "when",
+                      "statements": [
+                        {
+                          "Move Statement": "move 'Gateway Timeout' to status-message"
+                        }
+                      ],
+                      "objects": [
+                        "'504'"
+                      ]
+                    },
+                    {
+                      "kind": "when",
+                      "statements": [
+                        {
+                          "Move Statement": "move 'HTTP Version Not Supported' to status-message"
+                        }
+                      ],
+                      "objects": [
+                        "'505'"
+                      ]
+                    },
+                    {
+                      "kind": "when-other",
+                      "statements": [
+                        {
+                          "Move Statement": "move 'unknown status' to status-message"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              {
+                "Goback Statement": "goback"
+              }
+            ]
+          }
+        },
+        "blocks": []
+      }
+    }
+  ]
+}

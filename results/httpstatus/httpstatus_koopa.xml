@@ -1,0 +1,2339 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<koopa>
+  <compilationGroup>
+    <t><![CDATA[          >>SOURCE FORMAT FREE]]></t>
+    <t><![CDATA[
+]]></t>
+    <sourceUnit>
+      <programDefinition>
+        <identificationDivision>
+          <header>
+            <t><![CDATA[identification]]></t>
+            <t><![CDATA[ ]]></t>
+            <t><![CDATA[division]]></t>
+            <t><![CDATA[.]]></t>
+          </header>
+          <t><![CDATA[
+]]></t>
+          <programIdParagraph>
+            <t><![CDATA[program-id]]></t>
+            <t><![CDATA[.]]></t>
+            <t><![CDATA[ ]]></t>
+            <programName>
+              <alphanumeric>
+                <alphanumericConstant>
+                  <cobolWord>
+                    <t><![CDATA[httpstatus]]></t>
+                  </cobolWord>
+                </alphanumericConstant>
+              </alphanumeric>
+            </programName>
+            <t><![CDATA[.]]></t>
+          </programIdParagraph>
+        </identificationDivision>
+        <t><![CDATA[
+]]></t>
+        <t><![CDATA[*]]></t>
+        <!-- >  -->
+        <t><![CDATA[
+]]></t>
+        <t><![CDATA[*]]></t>
+        <!-- >  Copyright (C) 2014 Steve Williams <stevewilliams38@gmail.com> -->
+        <t><![CDATA[
+]]></t>
+        <t><![CDATA[*]]></t>
+        <!-- >  -->
+        <t><![CDATA[
+]]></t>
+        <t><![CDATA[*]]></t>
+        <!-- >  This program is free software; you can redistribute it and/or -->
+        <t><![CDATA[
+]]></t>
+        <t><![CDATA[*]]></t>
+        <!-- >  modify it under the terms of the GNU General Public License as -->
+        <t><![CDATA[
+]]></t>
+        <t><![CDATA[*]]></t>
+        <!-- >  published by the Free Software Foundation; either version 2, -->
+        <t><![CDATA[
+]]></t>
+        <t><![CDATA[*]]></t>
+        <!-- >  or (at your option) any later version. -->
+        <t><![CDATA[
+]]></t>
+        <t><![CDATA[*]]></t>
+        <!-- >   -->
+        <t><![CDATA[
+]]></t>
+        <t><![CDATA[*]]></t>
+        <!-- >  This program is distributed in the hope that it will be useful, -->
+        <t><![CDATA[
+]]></t>
+        <t><![CDATA[*]]></t>
+        <!-- >  but WITHOUT ANY WARRANTY; without even the implied warranty of -->
+        <t><![CDATA[
+]]></t>
+        <t><![CDATA[*]]></t>
+        <!-- >  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the -->
+        <t><![CDATA[
+]]></t>
+        <t><![CDATA[*]]></t>
+        <!-- >  GNU General Public License for more details. -->
+        <t><![CDATA[
+]]></t>
+        <t><![CDATA[*]]></t>
+        <!-- >   -->
+        <t><![CDATA[
+]]></t>
+        <t><![CDATA[*]]></t>
+        <!-- >  You should have received a copy of the GNU General Public -->
+        <t><![CDATA[
+]]></t>
+        <t><![CDATA[*]]></t>
+        <!-- >  License along with this software; see the file COPYING. -->
+        <t><![CDATA[
+]]></t>
+        <t><![CDATA[*]]></t>
+        <!-- >  If not, write to the Free Software Foundation, Inc., -->
+        <t><![CDATA[
+]]></t>
+        <t><![CDATA[*]]></t>
+        <!-- >  59 Temple Place, Suite 330, Boston, MA 02111-1307 USA -->
+        <t><![CDATA[
+]]></t>
+        <t><![CDATA[
+]]></t>
+        <t><![CDATA[*]]></t>
+        <!-- > =========================================================== -->
+        <t><![CDATA[
+]]></t>
+        <t><![CDATA[*]]></t>
+        <!-- > eturn the http-status-message for a given http-status-code -->
+        <t><![CDATA[
+]]></t>
+        <t><![CDATA[*]]></t>
+        <!-- > ============================================================ -->
+        <t><![CDATA[
+]]></t>
+        <t><![CDATA[
+]]></t>
+        <t><![CDATA[
+]]></t>
+        <dataDivision>
+          <header>
+            <t><![CDATA[data]]></t>
+            <t><![CDATA[ ]]></t>
+            <t><![CDATA[division]]></t>
+            <t><![CDATA[.]]></t>
+          </header>
+          <t><![CDATA[
+]]></t>
+          <linkageSection>
+            <header>
+              <t><![CDATA[linkage]]></t>
+              <t><![CDATA[ ]]></t>
+              <t><![CDATA[section]]></t>
+              <t><![CDATA[.]]></t>
+            </header>
+            <t><![CDATA[
+]]></t>
+            <recordDescriptionEntry>
+              <dataDescriptionEntry>
+                <levelNumber>
+                  <t><![CDATA[01]]></t>
+                </levelNumber>
+                <t><![CDATA[  ]]></t>
+                <entryName>
+                  <dataName>
+                    <cobolWord>
+                      <t><![CDATA[status-code]]></t>
+                    </cobolWord>
+                  </dataName>
+                </entryName>
+                <t><![CDATA[ ]]></t>
+                <pictureClause>
+                  <t><![CDATA[pic]]></t>
+                  <t><![CDATA[ ]]></t>
+                  <pictureString>
+                    <t><![CDATA[x]]></t>
+                    <t><![CDATA[(]]></t>
+                    <t><![CDATA[3]]></t>
+                    <t><![CDATA[)]]></t>
+                  </pictureString>
+                </pictureClause>
+                <unknown />
+                <t><![CDATA[.]]></t>
+              </dataDescriptionEntry>
+            </recordDescriptionEntry>
+            <t><![CDATA[
+]]></t>
+            <recordDescriptionEntry>
+              <dataDescriptionEntry>
+                <levelNumber>
+                  <t><![CDATA[01]]></t>
+                </levelNumber>
+                <t><![CDATA[  ]]></t>
+                <entryName>
+                  <dataName>
+                    <cobolWord>
+                      <t><![CDATA[status-message]]></t>
+                    </cobolWord>
+                  </dataName>
+                </entryName>
+                <t><![CDATA[ ]]></t>
+                <pictureClause>
+                  <t><![CDATA[pic]]></t>
+                  <t><![CDATA[ ]]></t>
+                  <pictureString>
+                    <t><![CDATA[x]]></t>
+                    <t><![CDATA[(]]></t>
+                    <t><![CDATA[40]]></t>
+                    <t><![CDATA[)]]></t>
+                  </pictureString>
+                </pictureClause>
+                <unknown />
+                <t><![CDATA[.]]></t>
+              </dataDescriptionEntry>
+            </recordDescriptionEntry>
+          </linkageSection>
+        </dataDivision>
+        <t><![CDATA[
+]]></t>
+        <procedureDivision>
+          <header>
+            <t><![CDATA[procedure]]></t>
+            <t><![CDATA[ ]]></t>
+            <t><![CDATA[division]]></t>
+            <t><![CDATA[ ]]></t>
+            <using>
+              <t><![CDATA[using]]></t>
+              <t><![CDATA[ ]]></t>
+              <byReference>
+                <arg>
+                  <value>
+                    <dataName>
+                      <cobolWord>
+                        <t><![CDATA[status-code]]></t>
+                      </cobolWord>
+                    </dataName>
+                  </value>
+                </arg>
+                <t><![CDATA[,]]></t>
+                <t><![CDATA[ ]]></t>
+                <arg>
+                  <value>
+                    <dataName>
+                      <cobolWord>
+                        <t><![CDATA[status-message]]></t>
+                      </cobolWord>
+                    </dataName>
+                  </value>
+                </arg>
+              </byReference>
+            </using>
+            <t><![CDATA[.]]></t>
+          </header>
+          <t><![CDATA[
+]]></t>
+          <paragraph>
+            <paragraphName>
+              <name>
+                <cobolWord>
+                  <t><![CDATA[start-status-message]]></t>
+                </cobolWord>
+              </name>
+            </paragraphName>
+            <t><![CDATA[.]]></t>
+            <t><![CDATA[
+]]></t>
+            <t><![CDATA[    ]]></t>
+            <sentence>
+              <statement>
+                <evaluateStatement>
+                  <t><![CDATA[evaluate]]></t>
+                  <t><![CDATA[ ]]></t>
+                  <subject>
+                    <condition>
+                      <conditionNameCondition>
+                        <conditionName>
+                          <identifier>
+                            <identifier_format2>
+                              <qualifiedDataName>
+                                <dataName>
+                                  <cobolWord>
+                                    <t><![CDATA[status-code]]></t>
+                                  </cobolWord>
+                                </dataName>
+                              </qualifiedDataName>
+                            </identifier_format2>
+                          </identifier>
+                        </conditionName>
+                      </conditionNameCondition>
+                    </condition>
+                  </subject>
+                  <t><![CDATA[
+]]></t>
+                  <t><![CDATA[*]]></t>
+                  <!-- >  10.1 Informational 1xx -->
+                  <t><![CDATA[
+]]></t>
+                  <t><![CDATA[    ]]></t>
+                  <when>
+                    <t><![CDATA[when]]></t>
+                    <t><![CDATA[ ]]></t>
+                    <object>
+                      <literal>
+                        <literalValue>
+                          <alphanumericLiteral>
+                            <t><![CDATA['100']]></t>
+                          </alphanumericLiteral>
+                        </literalValue>
+                      </literal>
+                    </object>
+                    <t><![CDATA[
+]]></t>
+                    <t><![CDATA[        ]]></t>
+                    <nestedStatements>
+                      <statement>
+                        <moveStatement>
+                          <t><![CDATA[move]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <literal>
+                            <literalValue>
+                              <alphanumericLiteral>
+                                <t><![CDATA['Continue']]></t>
+                              </alphanumericLiteral>
+                            </literalValue>
+                          </literal>
+                          <t><![CDATA[ ]]></t>
+                          <t><![CDATA[to]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <identifier>
+                            <identifier_format2>
+                              <qualifiedDataName>
+                                <dataName>
+                                  <cobolWord>
+                                    <t><![CDATA[status-message]]></t>
+                                  </cobolWord>
+                                </dataName>
+                              </qualifiedDataName>
+                            </identifier_format2>
+                          </identifier>
+                          <unknown />
+                        </moveStatement>
+                      </statement>
+                    </nestedStatements>
+                  </when>
+                  <t><![CDATA[
+]]></t>
+                  <t><![CDATA[    ]]></t>
+                  <when>
+                    <t><![CDATA[when]]></t>
+                    <t><![CDATA[ ]]></t>
+                    <object>
+                      <literal>
+                        <literalValue>
+                          <alphanumericLiteral>
+                            <t><![CDATA['101']]></t>
+                          </alphanumericLiteral>
+                        </literalValue>
+                      </literal>
+                    </object>
+                    <t><![CDATA[
+]]></t>
+                    <t><![CDATA[        ]]></t>
+                    <nestedStatements>
+                      <statement>
+                        <moveStatement>
+                          <t><![CDATA[move]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <literal>
+                            <literalValue>
+                              <alphanumericLiteral>
+                                <t><![CDATA['Switching Protocols']]></t>
+                              </alphanumericLiteral>
+                            </literalValue>
+                          </literal>
+                          <t><![CDATA[ ]]></t>
+                          <t><![CDATA[to]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <identifier>
+                            <identifier_format2>
+                              <qualifiedDataName>
+                                <dataName>
+                                  <cobolWord>
+                                    <t><![CDATA[status-message]]></t>
+                                  </cobolWord>
+                                </dataName>
+                              </qualifiedDataName>
+                            </identifier_format2>
+                          </identifier>
+                          <unknown />
+                        </moveStatement>
+                      </statement>
+                    </nestedStatements>
+                  </when>
+                  <t><![CDATA[
+]]></t>
+                  <t><![CDATA[*]]></t>
+                  <!-- >  Successful 2xx -->
+                  <t><![CDATA[
+]]></t>
+                  <t><![CDATA[    ]]></t>
+                  <when>
+                    <t><![CDATA[when]]></t>
+                    <t><![CDATA[ ]]></t>
+                    <object>
+                      <literal>
+                        <literalValue>
+                          <alphanumericLiteral>
+                            <t><![CDATA['200']]></t>
+                          </alphanumericLiteral>
+                        </literalValue>
+                      </literal>
+                    </object>
+                    <t><![CDATA[
+]]></t>
+                    <t><![CDATA[        ]]></t>
+                    <nestedStatements>
+                      <statement>
+                        <moveStatement>
+                          <t><![CDATA[move]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <literal>
+                            <literalValue>
+                              <alphanumericLiteral>
+                                <t><![CDATA['OK']]></t>
+                              </alphanumericLiteral>
+                            </literalValue>
+                          </literal>
+                          <t><![CDATA[ ]]></t>
+                          <t><![CDATA[to]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <identifier>
+                            <identifier_format2>
+                              <qualifiedDataName>
+                                <dataName>
+                                  <cobolWord>
+                                    <t><![CDATA[status-message]]></t>
+                                  </cobolWord>
+                                </dataName>
+                              </qualifiedDataName>
+                            </identifier_format2>
+                          </identifier>
+                          <unknown />
+                        </moveStatement>
+                      </statement>
+                    </nestedStatements>
+                  </when>
+                  <t><![CDATA[
+]]></t>
+                  <t><![CDATA[    ]]></t>
+                  <when>
+                    <t><![CDATA[when]]></t>
+                    <t><![CDATA[ ]]></t>
+                    <object>
+                      <literal>
+                        <literalValue>
+                          <alphanumericLiteral>
+                            <t><![CDATA['201']]></t>
+                          </alphanumericLiteral>
+                        </literalValue>
+                      </literal>
+                    </object>
+                    <t><![CDATA[
+]]></t>
+                    <t><![CDATA[        ]]></t>
+                    <nestedStatements>
+                      <statement>
+                        <moveStatement>
+                          <t><![CDATA[move]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <literal>
+                            <literalValue>
+                              <alphanumericLiteral>
+                                <t><![CDATA['Created']]></t>
+                              </alphanumericLiteral>
+                            </literalValue>
+                          </literal>
+                          <t><![CDATA[ ]]></t>
+                          <t><![CDATA[to]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <identifier>
+                            <identifier_format2>
+                              <qualifiedDataName>
+                                <dataName>
+                                  <cobolWord>
+                                    <t><![CDATA[status-message]]></t>
+                                  </cobolWord>
+                                </dataName>
+                              </qualifiedDataName>
+                            </identifier_format2>
+                          </identifier>
+                          <unknown />
+                        </moveStatement>
+                      </statement>
+                    </nestedStatements>
+                  </when>
+                  <t><![CDATA[
+]]></t>
+                  <t><![CDATA[    ]]></t>
+                  <when>
+                    <t><![CDATA[when]]></t>
+                    <t><![CDATA[ ]]></t>
+                    <object>
+                      <literal>
+                        <literalValue>
+                          <alphanumericLiteral>
+                            <t><![CDATA['202']]></t>
+                          </alphanumericLiteral>
+                        </literalValue>
+                      </literal>
+                    </object>
+                    <t><![CDATA[
+]]></t>
+                    <t><![CDATA[        ]]></t>
+                    <nestedStatements>
+                      <statement>
+                        <moveStatement>
+                          <t><![CDATA[move]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <literal>
+                            <literalValue>
+                              <alphanumericLiteral>
+                                <t><![CDATA['Accepted']]></t>
+                              </alphanumericLiteral>
+                            </literalValue>
+                          </literal>
+                          <t><![CDATA[ ]]></t>
+                          <t><![CDATA[to]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <identifier>
+                            <identifier_format2>
+                              <qualifiedDataName>
+                                <dataName>
+                                  <cobolWord>
+                                    <t><![CDATA[status-message]]></t>
+                                  </cobolWord>
+                                </dataName>
+                              </qualifiedDataName>
+                            </identifier_format2>
+                          </identifier>
+                          <unknown />
+                        </moveStatement>
+                      </statement>
+                    </nestedStatements>
+                  </when>
+                  <t><![CDATA[
+]]></t>
+                  <t><![CDATA[    ]]></t>
+                  <when>
+                    <t><![CDATA[when]]></t>
+                    <t><![CDATA[ ]]></t>
+                    <object>
+                      <literal>
+                        <literalValue>
+                          <alphanumericLiteral>
+                            <t><![CDATA['203']]></t>
+                          </alphanumericLiteral>
+                        </literalValue>
+                      </literal>
+                    </object>
+                    <t><![CDATA[
+]]></t>
+                    <t><![CDATA[        ]]></t>
+                    <nestedStatements>
+                      <statement>
+                        <moveStatement>
+                          <t><![CDATA[move]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <literal>
+                            <literalValue>
+                              <alphanumericLiteral>
+                                <t><![CDATA['Non-Authoritative Information']]></t>
+                              </alphanumericLiteral>
+                            </literalValue>
+                          </literal>
+                          <t><![CDATA[ ]]></t>
+                          <t><![CDATA[to]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <identifier>
+                            <identifier_format2>
+                              <qualifiedDataName>
+                                <dataName>
+                                  <cobolWord>
+                                    <t><![CDATA[status-message]]></t>
+                                  </cobolWord>
+                                </dataName>
+                              </qualifiedDataName>
+                            </identifier_format2>
+                          </identifier>
+                          <unknown />
+                        </moveStatement>
+                      </statement>
+                    </nestedStatements>
+                  </when>
+                  <t><![CDATA[
+]]></t>
+                  <t><![CDATA[    ]]></t>
+                  <when>
+                    <t><![CDATA[when]]></t>
+                    <t><![CDATA[ ]]></t>
+                    <object>
+                      <literal>
+                        <literalValue>
+                          <alphanumericLiteral>
+                            <t><![CDATA['204']]></t>
+                          </alphanumericLiteral>
+                        </literalValue>
+                      </literal>
+                    </object>
+                    <t><![CDATA[
+]]></t>
+                    <t><![CDATA[        ]]></t>
+                    <nestedStatements>
+                      <statement>
+                        <moveStatement>
+                          <t><![CDATA[move]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <literal>
+                            <literalValue>
+                              <alphanumericLiteral>
+                                <t><![CDATA['No Content']]></t>
+                              </alphanumericLiteral>
+                            </literalValue>
+                          </literal>
+                          <t><![CDATA[ ]]></t>
+                          <t><![CDATA[to]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <identifier>
+                            <identifier_format2>
+                              <qualifiedDataName>
+                                <dataName>
+                                  <cobolWord>
+                                    <t><![CDATA[status-message]]></t>
+                                  </cobolWord>
+                                </dataName>
+                              </qualifiedDataName>
+                            </identifier_format2>
+                          </identifier>
+                          <unknown />
+                        </moveStatement>
+                      </statement>
+                    </nestedStatements>
+                  </when>
+                  <t><![CDATA[
+]]></t>
+                  <t><![CDATA[    ]]></t>
+                  <when>
+                    <t><![CDATA[when]]></t>
+                    <t><![CDATA[ ]]></t>
+                    <object>
+                      <literal>
+                        <literalValue>
+                          <alphanumericLiteral>
+                            <t><![CDATA['205']]></t>
+                          </alphanumericLiteral>
+                        </literalValue>
+                      </literal>
+                    </object>
+                    <t><![CDATA[
+]]></t>
+                    <t><![CDATA[        ]]></t>
+                    <nestedStatements>
+                      <statement>
+                        <moveStatement>
+                          <t><![CDATA[move]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <literal>
+                            <literalValue>
+                              <alphanumericLiteral>
+                                <t><![CDATA['Reset Content']]></t>
+                              </alphanumericLiteral>
+                            </literalValue>
+                          </literal>
+                          <t><![CDATA[ ]]></t>
+                          <t><![CDATA[to]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <identifier>
+                            <identifier_format2>
+                              <qualifiedDataName>
+                                <dataName>
+                                  <cobolWord>
+                                    <t><![CDATA[status-message]]></t>
+                                  </cobolWord>
+                                </dataName>
+                              </qualifiedDataName>
+                            </identifier_format2>
+                          </identifier>
+                          <unknown />
+                        </moveStatement>
+                      </statement>
+                    </nestedStatements>
+                  </when>
+                  <t><![CDATA[
+]]></t>
+                  <t><![CDATA[    ]]></t>
+                  <when>
+                    <t><![CDATA[when]]></t>
+                    <t><![CDATA[ ]]></t>
+                    <object>
+                      <literal>
+                        <literalValue>
+                          <alphanumericLiteral>
+                            <t><![CDATA['206']]></t>
+                          </alphanumericLiteral>
+                        </literalValue>
+                      </literal>
+                    </object>
+                    <t><![CDATA[
+]]></t>
+                    <t><![CDATA[        ]]></t>
+                    <nestedStatements>
+                      <statement>
+                        <moveStatement>
+                          <t><![CDATA[move]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <literal>
+                            <literalValue>
+                              <alphanumericLiteral>
+                                <t><![CDATA['Partial Content']]></t>
+                              </alphanumericLiteral>
+                            </literalValue>
+                          </literal>
+                          <t><![CDATA[ ]]></t>
+                          <t><![CDATA[to]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <identifier>
+                            <identifier_format2>
+                              <qualifiedDataName>
+                                <dataName>
+                                  <cobolWord>
+                                    <t><![CDATA[status-message]]></t>
+                                  </cobolWord>
+                                </dataName>
+                              </qualifiedDataName>
+                            </identifier_format2>
+                          </identifier>
+                          <unknown />
+                        </moveStatement>
+                      </statement>
+                    </nestedStatements>
+                  </when>
+                  <t><![CDATA[
+]]></t>
+                  <t><![CDATA[*]]></t>
+                  <!-- >  Redirection 3xx -->
+                  <t><![CDATA[
+]]></t>
+                  <t><![CDATA[    ]]></t>
+                  <when>
+                    <t><![CDATA[when]]></t>
+                    <t><![CDATA[ ]]></t>
+                    <object>
+                      <literal>
+                        <literalValue>
+                          <alphanumericLiteral>
+                            <t><![CDATA['300']]></t>
+                          </alphanumericLiteral>
+                        </literalValue>
+                      </literal>
+                    </object>
+                    <t><![CDATA[
+]]></t>
+                    <t><![CDATA[        ]]></t>
+                    <nestedStatements>
+                      <statement>
+                        <moveStatement>
+                          <t><![CDATA[move]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <literal>
+                            <literalValue>
+                              <alphanumericLiteral>
+                                <t><![CDATA['Multiple Choices']]></t>
+                              </alphanumericLiteral>
+                            </literalValue>
+                          </literal>
+                          <t><![CDATA[ ]]></t>
+                          <t><![CDATA[to]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <identifier>
+                            <identifier_format2>
+                              <qualifiedDataName>
+                                <dataName>
+                                  <cobolWord>
+                                    <t><![CDATA[status-message]]></t>
+                                  </cobolWord>
+                                </dataName>
+                              </qualifiedDataName>
+                            </identifier_format2>
+                          </identifier>
+                          <unknown />
+                        </moveStatement>
+                      </statement>
+                    </nestedStatements>
+                  </when>
+                  <t><![CDATA[
+]]></t>
+                  <t><![CDATA[    ]]></t>
+                  <when>
+                    <t><![CDATA[when]]></t>
+                    <t><![CDATA[ ]]></t>
+                    <object>
+                      <literal>
+                        <literalValue>
+                          <alphanumericLiteral>
+                            <t><![CDATA['301']]></t>
+                          </alphanumericLiteral>
+                        </literalValue>
+                      </literal>
+                    </object>
+                    <t><![CDATA[
+]]></t>
+                    <t><![CDATA[        ]]></t>
+                    <nestedStatements>
+                      <statement>
+                        <moveStatement>
+                          <t><![CDATA[move]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <literal>
+                            <literalValue>
+                              <alphanumericLiteral>
+                                <t><![CDATA['Moved Permanently']]></t>
+                              </alphanumericLiteral>
+                            </literalValue>
+                          </literal>
+                          <t><![CDATA[ ]]></t>
+                          <t><![CDATA[to]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <identifier>
+                            <identifier_format2>
+                              <qualifiedDataName>
+                                <dataName>
+                                  <cobolWord>
+                                    <t><![CDATA[status-message]]></t>
+                                  </cobolWord>
+                                </dataName>
+                              </qualifiedDataName>
+                            </identifier_format2>
+                          </identifier>
+                          <unknown />
+                        </moveStatement>
+                      </statement>
+                    </nestedStatements>
+                  </when>
+                  <t><![CDATA[
+]]></t>
+                  <t><![CDATA[    ]]></t>
+                  <when>
+                    <t><![CDATA[when]]></t>
+                    <t><![CDATA[ ]]></t>
+                    <object>
+                      <literal>
+                        <literalValue>
+                          <alphanumericLiteral>
+                            <t><![CDATA['302']]></t>
+                          </alphanumericLiteral>
+                        </literalValue>
+                      </literal>
+                    </object>
+                    <t><![CDATA[
+]]></t>
+                    <t><![CDATA[        ]]></t>
+                    <nestedStatements>
+                      <statement>
+                        <moveStatement>
+                          <t><![CDATA[move]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <literal>
+                            <literalValue>
+                              <alphanumericLiteral>
+                                <t><![CDATA['Found']]></t>
+                              </alphanumericLiteral>
+                            </literalValue>
+                          </literal>
+                          <t><![CDATA[ ]]></t>
+                          <t><![CDATA[to]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <identifier>
+                            <identifier_format2>
+                              <qualifiedDataName>
+                                <dataName>
+                                  <cobolWord>
+                                    <t><![CDATA[status-message]]></t>
+                                  </cobolWord>
+                                </dataName>
+                              </qualifiedDataName>
+                            </identifier_format2>
+                          </identifier>
+                          <unknown />
+                        </moveStatement>
+                      </statement>
+                    </nestedStatements>
+                  </when>
+                  <t><![CDATA[
+]]></t>
+                  <t><![CDATA[    ]]></t>
+                  <when>
+                    <t><![CDATA[when]]></t>
+                    <t><![CDATA[ ]]></t>
+                    <object>
+                      <literal>
+                        <literalValue>
+                          <alphanumericLiteral>
+                            <t><![CDATA['303']]></t>
+                          </alphanumericLiteral>
+                        </literalValue>
+                      </literal>
+                    </object>
+                    <t><![CDATA[
+]]></t>
+                    <t><![CDATA[        ]]></t>
+                    <nestedStatements>
+                      <statement>
+                        <moveStatement>
+                          <t><![CDATA[move]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <literal>
+                            <literalValue>
+                              <alphanumericLiteral>
+                                <t><![CDATA['See Other']]></t>
+                              </alphanumericLiteral>
+                            </literalValue>
+                          </literal>
+                          <t><![CDATA[ ]]></t>
+                          <t><![CDATA[to]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <identifier>
+                            <identifier_format2>
+                              <qualifiedDataName>
+                                <dataName>
+                                  <cobolWord>
+                                    <t><![CDATA[status-message]]></t>
+                                  </cobolWord>
+                                </dataName>
+                              </qualifiedDataName>
+                            </identifier_format2>
+                          </identifier>
+                          <unknown />
+                        </moveStatement>
+                      </statement>
+                    </nestedStatements>
+                  </when>
+                  <t><![CDATA[
+]]></t>
+                  <t><![CDATA[    ]]></t>
+                  <when>
+                    <t><![CDATA[when]]></t>
+                    <t><![CDATA[ ]]></t>
+                    <object>
+                      <literal>
+                        <literalValue>
+                          <alphanumericLiteral>
+                            <t><![CDATA['304']]></t>
+                          </alphanumericLiteral>
+                        </literalValue>
+                      </literal>
+                    </object>
+                    <t><![CDATA[
+]]></t>
+                    <t><![CDATA[        ]]></t>
+                    <nestedStatements>
+                      <statement>
+                        <moveStatement>
+                          <t><![CDATA[move]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <literal>
+                            <literalValue>
+                              <alphanumericLiteral>
+                                <t><![CDATA['Not Modified']]></t>
+                              </alphanumericLiteral>
+                            </literalValue>
+                          </literal>
+                          <t><![CDATA[ ]]></t>
+                          <t><![CDATA[to]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <identifier>
+                            <identifier_format2>
+                              <qualifiedDataName>
+                                <dataName>
+                                  <cobolWord>
+                                    <t><![CDATA[status-message]]></t>
+                                  </cobolWord>
+                                </dataName>
+                              </qualifiedDataName>
+                            </identifier_format2>
+                          </identifier>
+                          <unknown />
+                        </moveStatement>
+                      </statement>
+                    </nestedStatements>
+                  </when>
+                  <t><![CDATA[
+]]></t>
+                  <t><![CDATA[    ]]></t>
+                  <when>
+                    <t><![CDATA[when]]></t>
+                    <t><![CDATA[ ]]></t>
+                    <object>
+                      <literal>
+                        <literalValue>
+                          <alphanumericLiteral>
+                            <t><![CDATA['305']]></t>
+                          </alphanumericLiteral>
+                        </literalValue>
+                      </literal>
+                    </object>
+                    <t><![CDATA[
+]]></t>
+                    <t><![CDATA[        ]]></t>
+                    <nestedStatements>
+                      <statement>
+                        <moveStatement>
+                          <t><![CDATA[move]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <literal>
+                            <literalValue>
+                              <alphanumericLiteral>
+                                <t><![CDATA['Use Proxy']]></t>
+                              </alphanumericLiteral>
+                            </literalValue>
+                          </literal>
+                          <t><![CDATA[ ]]></t>
+                          <t><![CDATA[to]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <identifier>
+                            <identifier_format2>
+                              <qualifiedDataName>
+                                <dataName>
+                                  <cobolWord>
+                                    <t><![CDATA[status-message]]></t>
+                                  </cobolWord>
+                                </dataName>
+                              </qualifiedDataName>
+                            </identifier_format2>
+                          </identifier>
+                          <unknown />
+                        </moveStatement>
+                      </statement>
+                    </nestedStatements>
+                  </when>
+                  <t><![CDATA[
+]]></t>
+                  <t><![CDATA[    ]]></t>
+                  <when>
+                    <t><![CDATA[when]]></t>
+                    <t><![CDATA[ ]]></t>
+                    <object>
+                      <literal>
+                        <literalValue>
+                          <alphanumericLiteral>
+                            <t><![CDATA['306']]></t>
+                          </alphanumericLiteral>
+                        </literalValue>
+                      </literal>
+                    </object>
+                    <t><![CDATA[
+]]></t>
+                    <t><![CDATA[        ]]></t>
+                    <nestedStatements>
+                      <statement>
+                        <moveStatement>
+                          <t><![CDATA[move]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <literal>
+                            <literalValue>
+                              <alphanumericLiteral>
+                                <t><![CDATA['(Unused)']]></t>
+                              </alphanumericLiteral>
+                            </literalValue>
+                          </literal>
+                          <t><![CDATA[ ]]></t>
+                          <t><![CDATA[to]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <identifier>
+                            <identifier_format2>
+                              <qualifiedDataName>
+                                <dataName>
+                                  <cobolWord>
+                                    <t><![CDATA[status-message]]></t>
+                                  </cobolWord>
+                                </dataName>
+                              </qualifiedDataName>
+                            </identifier_format2>
+                          </identifier>
+                          <unknown />
+                        </moveStatement>
+                      </statement>
+                    </nestedStatements>
+                  </when>
+                  <t><![CDATA[
+]]></t>
+                  <t><![CDATA[*]]></t>
+                  <!-- >  Client Error 4xx -->
+                  <t><![CDATA[
+]]></t>
+                  <t><![CDATA[    ]]></t>
+                  <when>
+                    <t><![CDATA[when]]></t>
+                    <t><![CDATA[ ]]></t>
+                    <object>
+                      <literal>
+                        <literalValue>
+                          <alphanumericLiteral>
+                            <t><![CDATA['400']]></t>
+                          </alphanumericLiteral>
+                        </literalValue>
+                      </literal>
+                    </object>
+                    <t><![CDATA[
+]]></t>
+                    <t><![CDATA[        ]]></t>
+                    <nestedStatements>
+                      <statement>
+                        <moveStatement>
+                          <t><![CDATA[move]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <literal>
+                            <literalValue>
+                              <alphanumericLiteral>
+                                <t><![CDATA['Bad Request']]></t>
+                              </alphanumericLiteral>
+                            </literalValue>
+                          </literal>
+                          <t><![CDATA[ ]]></t>
+                          <t><![CDATA[to]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <identifier>
+                            <identifier_format2>
+                              <qualifiedDataName>
+                                <dataName>
+                                  <cobolWord>
+                                    <t><![CDATA[status-message]]></t>
+                                  </cobolWord>
+                                </dataName>
+                              </qualifiedDataName>
+                            </identifier_format2>
+                          </identifier>
+                          <unknown />
+                        </moveStatement>
+                      </statement>
+                    </nestedStatements>
+                  </when>
+                  <t><![CDATA[
+]]></t>
+                  <t><![CDATA[    ]]></t>
+                  <when>
+                    <t><![CDATA[when]]></t>
+                    <t><![CDATA[ ]]></t>
+                    <object>
+                      <literal>
+                        <literalValue>
+                          <alphanumericLiteral>
+                            <t><![CDATA['401']]></t>
+                          </alphanumericLiteral>
+                        </literalValue>
+                      </literal>
+                    </object>
+                    <t><![CDATA[
+]]></t>
+                    <t><![CDATA[        ]]></t>
+                    <nestedStatements>
+                      <statement>
+                        <moveStatement>
+                          <t><![CDATA[move]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <literal>
+                            <literalValue>
+                              <alphanumericLiteral>
+                                <t><![CDATA['Unauthorized']]></t>
+                              </alphanumericLiteral>
+                            </literalValue>
+                          </literal>
+                          <t><![CDATA[ ]]></t>
+                          <t><![CDATA[to]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <identifier>
+                            <identifier_format2>
+                              <qualifiedDataName>
+                                <dataName>
+                                  <cobolWord>
+                                    <t><![CDATA[status-message]]></t>
+                                  </cobolWord>
+                                </dataName>
+                              </qualifiedDataName>
+                            </identifier_format2>
+                          </identifier>
+                          <unknown />
+                        </moveStatement>
+                      </statement>
+                    </nestedStatements>
+                  </when>
+                  <t><![CDATA[
+]]></t>
+                  <t><![CDATA[    ]]></t>
+                  <when>
+                    <t><![CDATA[when]]></t>
+                    <t><![CDATA[ ]]></t>
+                    <object>
+                      <literal>
+                        <literalValue>
+                          <alphanumericLiteral>
+                            <t><![CDATA['402']]></t>
+                          </alphanumericLiteral>
+                        </literalValue>
+                      </literal>
+                    </object>
+                    <t><![CDATA[
+]]></t>
+                    <t><![CDATA[        ]]></t>
+                    <nestedStatements>
+                      <statement>
+                        <moveStatement>
+                          <t><![CDATA[move]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <literal>
+                            <literalValue>
+                              <alphanumericLiteral>
+                                <t><![CDATA['Payment Required']]></t>
+                              </alphanumericLiteral>
+                            </literalValue>
+                          </literal>
+                          <t><![CDATA[ ]]></t>
+                          <t><![CDATA[to]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <identifier>
+                            <identifier_format2>
+                              <qualifiedDataName>
+                                <dataName>
+                                  <cobolWord>
+                                    <t><![CDATA[status-message]]></t>
+                                  </cobolWord>
+                                </dataName>
+                              </qualifiedDataName>
+                            </identifier_format2>
+                          </identifier>
+                          <unknown />
+                        </moveStatement>
+                      </statement>
+                    </nestedStatements>
+                  </when>
+                  <t><![CDATA[
+]]></t>
+                  <t><![CDATA[    ]]></t>
+                  <when>
+                    <t><![CDATA[when]]></t>
+                    <t><![CDATA[ ]]></t>
+                    <object>
+                      <literal>
+                        <literalValue>
+                          <alphanumericLiteral>
+                            <t><![CDATA['403']]></t>
+                          </alphanumericLiteral>
+                        </literalValue>
+                      </literal>
+                    </object>
+                    <t><![CDATA[
+]]></t>
+                    <t><![CDATA[        ]]></t>
+                    <nestedStatements>
+                      <statement>
+                        <moveStatement>
+                          <t><![CDATA[move]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <literal>
+                            <literalValue>
+                              <alphanumericLiteral>
+                                <t><![CDATA['Forbidden']]></t>
+                              </alphanumericLiteral>
+                            </literalValue>
+                          </literal>
+                          <t><![CDATA[ ]]></t>
+                          <t><![CDATA[to]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <identifier>
+                            <identifier_format2>
+                              <qualifiedDataName>
+                                <dataName>
+                                  <cobolWord>
+                                    <t><![CDATA[status-message]]></t>
+                                  </cobolWord>
+                                </dataName>
+                              </qualifiedDataName>
+                            </identifier_format2>
+                          </identifier>
+                          <unknown />
+                        </moveStatement>
+                      </statement>
+                    </nestedStatements>
+                  </when>
+                  <t><![CDATA[
+]]></t>
+                  <t><![CDATA[    ]]></t>
+                  <when>
+                    <t><![CDATA[when]]></t>
+                    <t><![CDATA[ ]]></t>
+                    <object>
+                      <literal>
+                        <literalValue>
+                          <alphanumericLiteral>
+                            <t><![CDATA['404']]></t>
+                          </alphanumericLiteral>
+                        </literalValue>
+                      </literal>
+                    </object>
+                    <t><![CDATA[
+]]></t>
+                    <t><![CDATA[        ]]></t>
+                    <nestedStatements>
+                      <statement>
+                        <moveStatement>
+                          <t><![CDATA[move]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <literal>
+                            <literalValue>
+                              <alphanumericLiteral>
+                                <t><![CDATA['Not Found']]></t>
+                              </alphanumericLiteral>
+                            </literalValue>
+                          </literal>
+                          <t><![CDATA[ ]]></t>
+                          <t><![CDATA[to]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <identifier>
+                            <identifier_format2>
+                              <qualifiedDataName>
+                                <dataName>
+                                  <cobolWord>
+                                    <t><![CDATA[status-message]]></t>
+                                  </cobolWord>
+                                </dataName>
+                              </qualifiedDataName>
+                            </identifier_format2>
+                          </identifier>
+                          <unknown />
+                        </moveStatement>
+                      </statement>
+                    </nestedStatements>
+                  </when>
+                  <t><![CDATA[
+]]></t>
+                  <t><![CDATA[    ]]></t>
+                  <when>
+                    <t><![CDATA[when]]></t>
+                    <t><![CDATA[ ]]></t>
+                    <object>
+                      <literal>
+                        <literalValue>
+                          <alphanumericLiteral>
+                            <t><![CDATA['405']]></t>
+                          </alphanumericLiteral>
+                        </literalValue>
+                      </literal>
+                    </object>
+                    <t><![CDATA[
+]]></t>
+                    <t><![CDATA[        ]]></t>
+                    <nestedStatements>
+                      <statement>
+                        <moveStatement>
+                          <t><![CDATA[move]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <literal>
+                            <literalValue>
+                              <alphanumericLiteral>
+                                <t><![CDATA['Method Not Allowed']]></t>
+                              </alphanumericLiteral>
+                            </literalValue>
+                          </literal>
+                          <t><![CDATA[ ]]></t>
+                          <t><![CDATA[to]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <identifier>
+                            <identifier_format2>
+                              <qualifiedDataName>
+                                <dataName>
+                                  <cobolWord>
+                                    <t><![CDATA[status-message]]></t>
+                                  </cobolWord>
+                                </dataName>
+                              </qualifiedDataName>
+                            </identifier_format2>
+                          </identifier>
+                          <unknown />
+                        </moveStatement>
+                      </statement>
+                    </nestedStatements>
+                  </when>
+                  <t><![CDATA[
+]]></t>
+                  <t><![CDATA[    ]]></t>
+                  <when>
+                    <t><![CDATA[when]]></t>
+                    <t><![CDATA[ ]]></t>
+                    <object>
+                      <literal>
+                        <literalValue>
+                          <alphanumericLiteral>
+                            <t><![CDATA['406']]></t>
+                          </alphanumericLiteral>
+                        </literalValue>
+                      </literal>
+                    </object>
+                    <t><![CDATA[
+]]></t>
+                    <t><![CDATA[        ]]></t>
+                    <nestedStatements>
+                      <statement>
+                        <moveStatement>
+                          <t><![CDATA[move]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <literal>
+                            <literalValue>
+                              <alphanumericLiteral>
+                                <t><![CDATA['Not Acceptable']]></t>
+                              </alphanumericLiteral>
+                            </literalValue>
+                          </literal>
+                          <t><![CDATA[ ]]></t>
+                          <t><![CDATA[to]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <identifier>
+                            <identifier_format2>
+                              <qualifiedDataName>
+                                <dataName>
+                                  <cobolWord>
+                                    <t><![CDATA[status-message]]></t>
+                                  </cobolWord>
+                                </dataName>
+                              </qualifiedDataName>
+                            </identifier_format2>
+                          </identifier>
+                          <unknown />
+                        </moveStatement>
+                      </statement>
+                    </nestedStatements>
+                  </when>
+                  <t><![CDATA[
+]]></t>
+                  <t><![CDATA[    ]]></t>
+                  <when>
+                    <t><![CDATA[when]]></t>
+                    <t><![CDATA[ ]]></t>
+                    <object>
+                      <literal>
+                        <literalValue>
+                          <alphanumericLiteral>
+                            <t><![CDATA['407']]></t>
+                          </alphanumericLiteral>
+                        </literalValue>
+                      </literal>
+                    </object>
+                    <t><![CDATA[
+]]></t>
+                    <t><![CDATA[        ]]></t>
+                    <nestedStatements>
+                      <statement>
+                        <moveStatement>
+                          <t><![CDATA[move]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <literal>
+                            <literalValue>
+                              <alphanumericLiteral>
+                                <t><![CDATA['Proxy Authentication Required']]></t>
+                              </alphanumericLiteral>
+                            </literalValue>
+                          </literal>
+                          <t><![CDATA[ ]]></t>
+                          <t><![CDATA[to]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <identifier>
+                            <identifier_format2>
+                              <qualifiedDataName>
+                                <dataName>
+                                  <cobolWord>
+                                    <t><![CDATA[status-message]]></t>
+                                  </cobolWord>
+                                </dataName>
+                              </qualifiedDataName>
+                            </identifier_format2>
+                          </identifier>
+                          <unknown />
+                        </moveStatement>
+                      </statement>
+                    </nestedStatements>
+                  </when>
+                  <t><![CDATA[
+]]></t>
+                  <t><![CDATA[    ]]></t>
+                  <when>
+                    <t><![CDATA[when]]></t>
+                    <t><![CDATA[ ]]></t>
+                    <object>
+                      <literal>
+                        <literalValue>
+                          <alphanumericLiteral>
+                            <t><![CDATA['408']]></t>
+                          </alphanumericLiteral>
+                        </literalValue>
+                      </literal>
+                    </object>
+                    <t><![CDATA[
+]]></t>
+                    <t><![CDATA[        ]]></t>
+                    <nestedStatements>
+                      <statement>
+                        <moveStatement>
+                          <t><![CDATA[move]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <literal>
+                            <literalValue>
+                              <alphanumericLiteral>
+                                <t><![CDATA['Request Timeout']]></t>
+                              </alphanumericLiteral>
+                            </literalValue>
+                          </literal>
+                          <t><![CDATA[ ]]></t>
+                          <t><![CDATA[to]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <identifier>
+                            <identifier_format2>
+                              <qualifiedDataName>
+                                <dataName>
+                                  <cobolWord>
+                                    <t><![CDATA[status-message]]></t>
+                                  </cobolWord>
+                                </dataName>
+                              </qualifiedDataName>
+                            </identifier_format2>
+                          </identifier>
+                          <unknown />
+                        </moveStatement>
+                      </statement>
+                    </nestedStatements>
+                  </when>
+                  <t><![CDATA[
+]]></t>
+                  <t><![CDATA[    ]]></t>
+                  <when>
+                    <t><![CDATA[when]]></t>
+                    <t><![CDATA[ ]]></t>
+                    <object>
+                      <literal>
+                        <literalValue>
+                          <alphanumericLiteral>
+                            <t><![CDATA['409']]></t>
+                          </alphanumericLiteral>
+                        </literalValue>
+                      </literal>
+                    </object>
+                    <t><![CDATA[
+]]></t>
+                    <t><![CDATA[        ]]></t>
+                    <nestedStatements>
+                      <statement>
+                        <moveStatement>
+                          <t><![CDATA[move]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <literal>
+                            <literalValue>
+                              <alphanumericLiteral>
+                                <t><![CDATA['Conflict']]></t>
+                              </alphanumericLiteral>
+                            </literalValue>
+                          </literal>
+                          <t><![CDATA[ ]]></t>
+                          <t><![CDATA[to]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <identifier>
+                            <identifier_format2>
+                              <qualifiedDataName>
+                                <dataName>
+                                  <cobolWord>
+                                    <t><![CDATA[status-message]]></t>
+                                  </cobolWord>
+                                </dataName>
+                              </qualifiedDataName>
+                            </identifier_format2>
+                          </identifier>
+                          <unknown />
+                        </moveStatement>
+                      </statement>
+                    </nestedStatements>
+                  </when>
+                  <t><![CDATA[
+]]></t>
+                  <t><![CDATA[    ]]></t>
+                  <when>
+                    <t><![CDATA[when]]></t>
+                    <t><![CDATA[ ]]></t>
+                    <object>
+                      <literal>
+                        <literalValue>
+                          <alphanumericLiteral>
+                            <t><![CDATA['410']]></t>
+                          </alphanumericLiteral>
+                        </literalValue>
+                      </literal>
+                    </object>
+                    <t><![CDATA[
+]]></t>
+                    <t><![CDATA[        ]]></t>
+                    <nestedStatements>
+                      <statement>
+                        <moveStatement>
+                          <t><![CDATA[move]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <literal>
+                            <literalValue>
+                              <alphanumericLiteral>
+                                <t><![CDATA['Gone']]></t>
+                              </alphanumericLiteral>
+                            </literalValue>
+                          </literal>
+                          <t><![CDATA[ ]]></t>
+                          <t><![CDATA[to]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <identifier>
+                            <identifier_format2>
+                              <qualifiedDataName>
+                                <dataName>
+                                  <cobolWord>
+                                    <t><![CDATA[status-message]]></t>
+                                  </cobolWord>
+                                </dataName>
+                              </qualifiedDataName>
+                            </identifier_format2>
+                          </identifier>
+                          <unknown />
+                        </moveStatement>
+                      </statement>
+                    </nestedStatements>
+                  </when>
+                  <t><![CDATA[
+]]></t>
+                  <t><![CDATA[    ]]></t>
+                  <when>
+                    <t><![CDATA[when]]></t>
+                    <t><![CDATA[ ]]></t>
+                    <object>
+                      <literal>
+                        <literalValue>
+                          <alphanumericLiteral>
+                            <t><![CDATA['411']]></t>
+                          </alphanumericLiteral>
+                        </literalValue>
+                      </literal>
+                    </object>
+                    <t><![CDATA[
+]]></t>
+                    <t><![CDATA[        ]]></t>
+                    <nestedStatements>
+                      <statement>
+                        <moveStatement>
+                          <t><![CDATA[move]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <literal>
+                            <literalValue>
+                              <alphanumericLiteral>
+                                <t><![CDATA['Length Required']]></t>
+                              </alphanumericLiteral>
+                            </literalValue>
+                          </literal>
+                          <t><![CDATA[ ]]></t>
+                          <t><![CDATA[to]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <identifier>
+                            <identifier_format2>
+                              <qualifiedDataName>
+                                <dataName>
+                                  <cobolWord>
+                                    <t><![CDATA[status-message]]></t>
+                                  </cobolWord>
+                                </dataName>
+                              </qualifiedDataName>
+                            </identifier_format2>
+                          </identifier>
+                          <unknown />
+                        </moveStatement>
+                      </statement>
+                    </nestedStatements>
+                  </when>
+                  <t><![CDATA[
+]]></t>
+                  <t><![CDATA[    ]]></t>
+                  <when>
+                    <t><![CDATA[when]]></t>
+                    <t><![CDATA[ ]]></t>
+                    <object>
+                      <literal>
+                        <literalValue>
+                          <alphanumericLiteral>
+                            <t><![CDATA['412']]></t>
+                          </alphanumericLiteral>
+                        </literalValue>
+                      </literal>
+                    </object>
+                    <t><![CDATA[
+]]></t>
+                    <t><![CDATA[        ]]></t>
+                    <nestedStatements>
+                      <statement>
+                        <moveStatement>
+                          <t><![CDATA[move]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <literal>
+                            <literalValue>
+                              <alphanumericLiteral>
+                                <t><![CDATA['Precondition Failed']]></t>
+                              </alphanumericLiteral>
+                            </literalValue>
+                          </literal>
+                          <t><![CDATA[ ]]></t>
+                          <t><![CDATA[to]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <identifier>
+                            <identifier_format2>
+                              <qualifiedDataName>
+                                <dataName>
+                                  <cobolWord>
+                                    <t><![CDATA[status-message]]></t>
+                                  </cobolWord>
+                                </dataName>
+                              </qualifiedDataName>
+                            </identifier_format2>
+                          </identifier>
+                          <unknown />
+                        </moveStatement>
+                      </statement>
+                    </nestedStatements>
+                  </when>
+                  <t><![CDATA[
+]]></t>
+                  <t><![CDATA[    ]]></t>
+                  <when>
+                    <t><![CDATA[when]]></t>
+                    <t><![CDATA[ ]]></t>
+                    <object>
+                      <literal>
+                        <literalValue>
+                          <alphanumericLiteral>
+                            <t><![CDATA['413']]></t>
+                          </alphanumericLiteral>
+                        </literalValue>
+                      </literal>
+                    </object>
+                    <t><![CDATA[
+]]></t>
+                    <t><![CDATA[        ]]></t>
+                    <nestedStatements>
+                      <statement>
+                        <moveStatement>
+                          <t><![CDATA[move]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <literal>
+                            <literalValue>
+                              <alphanumericLiteral>
+                                <t><![CDATA['Request Entity Too Large']]></t>
+                              </alphanumericLiteral>
+                            </literalValue>
+                          </literal>
+                          <t><![CDATA[ ]]></t>
+                          <t><![CDATA[to]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <identifier>
+                            <identifier_format2>
+                              <qualifiedDataName>
+                                <dataName>
+                                  <cobolWord>
+                                    <t><![CDATA[status-message]]></t>
+                                  </cobolWord>
+                                </dataName>
+                              </qualifiedDataName>
+                            </identifier_format2>
+                          </identifier>
+                          <unknown />
+                        </moveStatement>
+                      </statement>
+                    </nestedStatements>
+                  </when>
+                  <t><![CDATA[
+]]></t>
+                  <t><![CDATA[    ]]></t>
+                  <when>
+                    <t><![CDATA[when]]></t>
+                    <t><![CDATA[ ]]></t>
+                    <object>
+                      <literal>
+                        <literalValue>
+                          <alphanumericLiteral>
+                            <t><![CDATA['414']]></t>
+                          </alphanumericLiteral>
+                        </literalValue>
+                      </literal>
+                    </object>
+                    <t><![CDATA[
+]]></t>
+                    <t><![CDATA[        ]]></t>
+                    <nestedStatements>
+                      <statement>
+                        <moveStatement>
+                          <t><![CDATA[move]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <literal>
+                            <literalValue>
+                              <alphanumericLiteral>
+                                <t><![CDATA['Request-URI Too Long']]></t>
+                              </alphanumericLiteral>
+                            </literalValue>
+                          </literal>
+                          <t><![CDATA[ ]]></t>
+                          <t><![CDATA[to]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <identifier>
+                            <identifier_format2>
+                              <qualifiedDataName>
+                                <dataName>
+                                  <cobolWord>
+                                    <t><![CDATA[status-message]]></t>
+                                  </cobolWord>
+                                </dataName>
+                              </qualifiedDataName>
+                            </identifier_format2>
+                          </identifier>
+                          <unknown />
+                        </moveStatement>
+                      </statement>
+                    </nestedStatements>
+                  </when>
+                  <t><![CDATA[
+]]></t>
+                  <t><![CDATA[    ]]></t>
+                  <when>
+                    <t><![CDATA[when]]></t>
+                    <t><![CDATA[ ]]></t>
+                    <object>
+                      <literal>
+                        <literalValue>
+                          <alphanumericLiteral>
+                            <t><![CDATA['415']]></t>
+                          </alphanumericLiteral>
+                        </literalValue>
+                      </literal>
+                    </object>
+                    <t><![CDATA[
+]]></t>
+                    <t><![CDATA[        ]]></t>
+                    <nestedStatements>
+                      <statement>
+                        <moveStatement>
+                          <t><![CDATA[move]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <literal>
+                            <literalValue>
+                              <alphanumericLiteral>
+                                <t><![CDATA['Unsupported Media Type']]></t>
+                              </alphanumericLiteral>
+                            </literalValue>
+                          </literal>
+                          <t><![CDATA[ ]]></t>
+                          <t><![CDATA[to]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <identifier>
+                            <identifier_format2>
+                              <qualifiedDataName>
+                                <dataName>
+                                  <cobolWord>
+                                    <t><![CDATA[status-message]]></t>
+                                  </cobolWord>
+                                </dataName>
+                              </qualifiedDataName>
+                            </identifier_format2>
+                          </identifier>
+                          <unknown />
+                        </moveStatement>
+                      </statement>
+                    </nestedStatements>
+                  </when>
+                  <t><![CDATA[
+]]></t>
+                  <t><![CDATA[    ]]></t>
+                  <when>
+                    <t><![CDATA[when]]></t>
+                    <t><![CDATA[ ]]></t>
+                    <object>
+                      <literal>
+                        <literalValue>
+                          <alphanumericLiteral>
+                            <t><![CDATA['416']]></t>
+                          </alphanumericLiteral>
+                        </literalValue>
+                      </literal>
+                    </object>
+                    <t><![CDATA[
+]]></t>
+                    <t><![CDATA[        ]]></t>
+                    <nestedStatements>
+                      <statement>
+                        <moveStatement>
+                          <t><![CDATA[move]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <literal>
+                            <literalValue>
+                              <alphanumericLiteral>
+                                <t><![CDATA['Requested Range Not Satisfiable']]></t>
+                              </alphanumericLiteral>
+                            </literalValue>
+                          </literal>
+                          <t><![CDATA[ ]]></t>
+                          <t><![CDATA[to]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <identifier>
+                            <identifier_format2>
+                              <qualifiedDataName>
+                                <dataName>
+                                  <cobolWord>
+                                    <t><![CDATA[status-message]]></t>
+                                  </cobolWord>
+                                </dataName>
+                              </qualifiedDataName>
+                            </identifier_format2>
+                          </identifier>
+                          <unknown />
+                        </moveStatement>
+                      </statement>
+                    </nestedStatements>
+                  </when>
+                  <t><![CDATA[
+]]></t>
+                  <t><![CDATA[    ]]></t>
+                  <when>
+                    <t><![CDATA[when]]></t>
+                    <t><![CDATA[ ]]></t>
+                    <object>
+                      <literal>
+                        <literalValue>
+                          <alphanumericLiteral>
+                            <t><![CDATA['417']]></t>
+                          </alphanumericLiteral>
+                        </literalValue>
+                      </literal>
+                    </object>
+                    <t><![CDATA[
+]]></t>
+                    <t><![CDATA[        ]]></t>
+                    <nestedStatements>
+                      <statement>
+                        <moveStatement>
+                          <t><![CDATA[move]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <literal>
+                            <literalValue>
+                              <alphanumericLiteral>
+                                <t><![CDATA['Expectation Failed']]></t>
+                              </alphanumericLiteral>
+                            </literalValue>
+                          </literal>
+                          <t><![CDATA[ ]]></t>
+                          <t><![CDATA[to]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <identifier>
+                            <identifier_format2>
+                              <qualifiedDataName>
+                                <dataName>
+                                  <cobolWord>
+                                    <t><![CDATA[status-message]]></t>
+                                  </cobolWord>
+                                </dataName>
+                              </qualifiedDataName>
+                            </identifier_format2>
+                          </identifier>
+                          <unknown />
+                        </moveStatement>
+                      </statement>
+                    </nestedStatements>
+                  </when>
+                  <t><![CDATA[
+]]></t>
+                  <t><![CDATA[*]]></t>
+                  <!-- >  Server Error 5xx -->
+                  <t><![CDATA[
+]]></t>
+                  <t><![CDATA[    ]]></t>
+                  <when>
+                    <t><![CDATA[when]]></t>
+                    <t><![CDATA[ ]]></t>
+                    <object>
+                      <literal>
+                        <literalValue>
+                          <alphanumericLiteral>
+                            <t><![CDATA['500']]></t>
+                          </alphanumericLiteral>
+                        </literalValue>
+                      </literal>
+                    </object>
+                    <t><![CDATA[
+]]></t>
+                    <t><![CDATA[        ]]></t>
+                    <nestedStatements>
+                      <statement>
+                        <moveStatement>
+                          <t><![CDATA[move]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <literal>
+                            <literalValue>
+                              <alphanumericLiteral>
+                                <t><![CDATA['Internal Server Error']]></t>
+                              </alphanumericLiteral>
+                            </literalValue>
+                          </literal>
+                          <t><![CDATA[ ]]></t>
+                          <t><![CDATA[to]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <identifier>
+                            <identifier_format2>
+                              <qualifiedDataName>
+                                <dataName>
+                                  <cobolWord>
+                                    <t><![CDATA[status-message]]></t>
+                                  </cobolWord>
+                                </dataName>
+                              </qualifiedDataName>
+                            </identifier_format2>
+                          </identifier>
+                          <unknown />
+                        </moveStatement>
+                      </statement>
+                    </nestedStatements>
+                  </when>
+                  <t><![CDATA[
+]]></t>
+                  <t><![CDATA[    ]]></t>
+                  <when>
+                    <t><![CDATA[when]]></t>
+                    <t><![CDATA[ ]]></t>
+                    <object>
+                      <literal>
+                        <literalValue>
+                          <alphanumericLiteral>
+                            <t><![CDATA['501']]></t>
+                          </alphanumericLiteral>
+                        </literalValue>
+                      </literal>
+                    </object>
+                    <t><![CDATA[
+]]></t>
+                    <t><![CDATA[        ]]></t>
+                    <nestedStatements>
+                      <statement>
+                        <moveStatement>
+                          <t><![CDATA[move]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <literal>
+                            <literalValue>
+                              <alphanumericLiteral>
+                                <t><![CDATA['Not Implemented']]></t>
+                              </alphanumericLiteral>
+                            </literalValue>
+                          </literal>
+                          <t><![CDATA[ ]]></t>
+                          <t><![CDATA[to]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <identifier>
+                            <identifier_format2>
+                              <qualifiedDataName>
+                                <dataName>
+                                  <cobolWord>
+                                    <t><![CDATA[status-message]]></t>
+                                  </cobolWord>
+                                </dataName>
+                              </qualifiedDataName>
+                            </identifier_format2>
+                          </identifier>
+                          <unknown />
+                        </moveStatement>
+                      </statement>
+                    </nestedStatements>
+                  </when>
+                  <t><![CDATA[
+]]></t>
+                  <t><![CDATA[    ]]></t>
+                  <when>
+                    <t><![CDATA[when]]></t>
+                    <t><![CDATA[ ]]></t>
+                    <object>
+                      <literal>
+                        <literalValue>
+                          <alphanumericLiteral>
+                            <t><![CDATA['502']]></t>
+                          </alphanumericLiteral>
+                        </literalValue>
+                      </literal>
+                    </object>
+                    <t><![CDATA[
+]]></t>
+                    <t><![CDATA[        ]]></t>
+                    <nestedStatements>
+                      <statement>
+                        <moveStatement>
+                          <t><![CDATA[move]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <literal>
+                            <literalValue>
+                              <alphanumericLiteral>
+                                <t><![CDATA['Bad Gateway']]></t>
+                              </alphanumericLiteral>
+                            </literalValue>
+                          </literal>
+                          <t><![CDATA[ ]]></t>
+                          <t><![CDATA[to]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <identifier>
+                            <identifier_format2>
+                              <qualifiedDataName>
+                                <dataName>
+                                  <cobolWord>
+                                    <t><![CDATA[status-message]]></t>
+                                  </cobolWord>
+                                </dataName>
+                              </qualifiedDataName>
+                            </identifier_format2>
+                          </identifier>
+                          <unknown />
+                        </moveStatement>
+                      </statement>
+                    </nestedStatements>
+                  </when>
+                  <t><![CDATA[
+]]></t>
+                  <t><![CDATA[    ]]></t>
+                  <when>
+                    <t><![CDATA[when]]></t>
+                    <t><![CDATA[ ]]></t>
+                    <object>
+                      <literal>
+                        <literalValue>
+                          <alphanumericLiteral>
+                            <t><![CDATA['503']]></t>
+                          </alphanumericLiteral>
+                        </literalValue>
+                      </literal>
+                    </object>
+                    <t><![CDATA[
+]]></t>
+                    <t><![CDATA[        ]]></t>
+                    <nestedStatements>
+                      <statement>
+                        <moveStatement>
+                          <t><![CDATA[move]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <literal>
+                            <literalValue>
+                              <alphanumericLiteral>
+                                <t><![CDATA['Service Unavailable']]></t>
+                              </alphanumericLiteral>
+                            </literalValue>
+                          </literal>
+                          <t><![CDATA[ ]]></t>
+                          <t><![CDATA[to]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <identifier>
+                            <identifier_format2>
+                              <qualifiedDataName>
+                                <dataName>
+                                  <cobolWord>
+                                    <t><![CDATA[status-message]]></t>
+                                  </cobolWord>
+                                </dataName>
+                              </qualifiedDataName>
+                            </identifier_format2>
+                          </identifier>
+                          <unknown />
+                        </moveStatement>
+                      </statement>
+                    </nestedStatements>
+                  </when>
+                  <t><![CDATA[
+]]></t>
+                  <t><![CDATA[    ]]></t>
+                  <when>
+                    <t><![CDATA[when]]></t>
+                    <t><![CDATA[ ]]></t>
+                    <object>
+                      <literal>
+                        <literalValue>
+                          <alphanumericLiteral>
+                            <t><![CDATA['504']]></t>
+                          </alphanumericLiteral>
+                        </literalValue>
+                      </literal>
+                    </object>
+                    <t><![CDATA[
+]]></t>
+                    <t><![CDATA[        ]]></t>
+                    <nestedStatements>
+                      <statement>
+                        <moveStatement>
+                          <t><![CDATA[move]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <literal>
+                            <literalValue>
+                              <alphanumericLiteral>
+                                <t><![CDATA['Gateway Timeout']]></t>
+                              </alphanumericLiteral>
+                            </literalValue>
+                          </literal>
+                          <t><![CDATA[ ]]></t>
+                          <t><![CDATA[to]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <identifier>
+                            <identifier_format2>
+                              <qualifiedDataName>
+                                <dataName>
+                                  <cobolWord>
+                                    <t><![CDATA[status-message]]></t>
+                                  </cobolWord>
+                                </dataName>
+                              </qualifiedDataName>
+                            </identifier_format2>
+                          </identifier>
+                          <unknown />
+                        </moveStatement>
+                      </statement>
+                    </nestedStatements>
+                  </when>
+                  <t><![CDATA[
+]]></t>
+                  <t><![CDATA[    ]]></t>
+                  <when>
+                    <t><![CDATA[when]]></t>
+                    <t><![CDATA[ ]]></t>
+                    <object>
+                      <literal>
+                        <literalValue>
+                          <alphanumericLiteral>
+                            <t><![CDATA['505']]></t>
+                          </alphanumericLiteral>
+                        </literalValue>
+                      </literal>
+                    </object>
+                    <t><![CDATA[
+]]></t>
+                    <t><![CDATA[        ]]></t>
+                    <nestedStatements>
+                      <statement>
+                        <moveStatement>
+                          <t><![CDATA[move]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <literal>
+                            <literalValue>
+                              <alphanumericLiteral>
+                                <t><![CDATA['HTTP Version Not Supported']]></t>
+                              </alphanumericLiteral>
+                            </literalValue>
+                          </literal>
+                          <t><![CDATA[ ]]></t>
+                          <t><![CDATA[to]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <identifier>
+                            <identifier_format2>
+                              <qualifiedDataName>
+                                <dataName>
+                                  <cobolWord>
+                                    <t><![CDATA[status-message]]></t>
+                                  </cobolWord>
+                                </dataName>
+                              </qualifiedDataName>
+                            </identifier_format2>
+                          </identifier>
+                          <unknown />
+                        </moveStatement>
+                      </statement>
+                    </nestedStatements>
+                  </when>
+                  <t><![CDATA[
+]]></t>
+                  <t><![CDATA[    ]]></t>
+                  <whenOther>
+                    <t><![CDATA[when]]></t>
+                    <t><![CDATA[ ]]></t>
+                    <t><![CDATA[other]]></t>
+                    <t><![CDATA[
+]]></t>
+                    <t><![CDATA[        ]]></t>
+                    <nestedStatements>
+                      <statement>
+                        <moveStatement>
+                          <t><![CDATA[move]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <literal>
+                            <literalValue>
+                              <alphanumericLiteral>
+                                <t><![CDATA['unknown status']]></t>
+                              </alphanumericLiteral>
+                            </literalValue>
+                          </literal>
+                          <t><![CDATA[ ]]></t>
+                          <t><![CDATA[to]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <identifier>
+                            <identifier_format2>
+                              <qualifiedDataName>
+                                <dataName>
+                                  <cobolWord>
+                                    <t><![CDATA[status-message]]></t>
+                                  </cobolWord>
+                                </dataName>
+                              </qualifiedDataName>
+                            </identifier_format2>
+                          </identifier>
+                          <unknown />
+                        </moveStatement>
+                      </statement>
+                    </nestedStatements>
+                  </whenOther>
+                  <t><![CDATA[
+]]></t>
+                  <t><![CDATA[    ]]></t>
+                  <t><![CDATA[end-evaluate]]></t>
+                </evaluateStatement>
+              </statement>
+              <t><![CDATA[
+]]></t>
+              <t><![CDATA[    ]]></t>
+              <statement>
+                <gobackStatement>
+                  <t><![CDATA[goback]]></t>
+                </gobackStatement>
+              </statement>
+              <t><![CDATA[
+]]></t>
+              <t><![CDATA[    ]]></t>
+              <t><![CDATA[.]]></t>
+            </sentence>
+          </paragraph>
+        </procedureDivision>
+        <t><![CDATA[
+]]></t>
+        <t><![CDATA[end]]></t>
+        <t><![CDATA[ ]]></t>
+        <t><![CDATA[program]]></t>
+        <t><![CDATA[ ]]></t>
+        <programName>
+          <alphanumeric>
+            <alphanumericConstant>
+              <cobolWord>
+                <t><![CDATA[httpstatus]]></t>
+              </cobolWord>
+            </alphanumericConstant>
+          </alphanumeric>
+        </programName>
+        <t><![CDATA[.]]></t>
+      </programDefinition>
+    </sourceUnit>
+    <t><![CDATA[
+]]></t>
+    <t><![CDATA[
+]]></t>
+  </compilationGroup>
+</koopa>

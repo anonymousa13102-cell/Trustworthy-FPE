@@ -1,0 +1,121 @@
+{
+  "program_name": "FIBBASE",
+  "variable_roles": {
+    "LS-NUM": "BUSINESS_ENTITY",
+    "LS-ATU": "BUSINESS_ENTITY",
+    "LS-PRX": "BUSINESS_ENTITY",
+    "LK-NUM": "BUSINESS_ENTITY",
+    "LK-ANT": "BUSINESS_ENTITY",
+    "LK-ATU": "BUSINESS_ENTITY",
+    "LK-FIB": "BUSINESS_ENTITY"
+  },
+  "business_rules": [
+    {
+      "id": "BR1",
+      "sbvr_class": "NECESSITY",
+      "verb_concept": "derive Fibonacci value",
+      "rule": "If ((LK-NUM = 0)), then LK-FIB is calculated as LK-ANT.",
+      "natural_language_rule": "If the number (LK-NUM) equals 0, then the Fibonacci value (LK-FIB) is calculated as the prior value (LK-ANT).",
+      "source_variables": [
+        "LK-NUM",
+        "LK-FIB",
+        "LK-ANT"
+      ],
+      "source_block": "PROG-PRINCIPAL-PARA"
+    },
+    {
+      "id": "BR2",
+      "sbvr_class": "NECESSITY",
+      "verb_concept": "derive Fibonacci value",
+      "rule": "If (NOT ((LK-NUM = 0))) AND ((LK-NUM = 1)), then LK-FIB is calculated as LK-ATU.",
+      "natural_language_rule": "If the number (LK-NUM) is not 0 and the number equals 1, then the Fibonacci value (LK-FIB) is calculated as the current value (LK-ATU).",
+      "source_variables": [
+        "LK-NUM",
+        "LK-FIB",
+        "LK-ATU"
+      ],
+      "source_block": "PROG-PRINCIPAL-PARA"
+    },
+    {
+      "id": "BR3",
+      "sbvr_class": "NECESSITY",
+      "verb_concept": "derive next value",
+      "rule": "If (NOT ((LK-NUM = 0))) AND (NOT ((LK-NUM = 1))) AND ((LK-NUM = 2)), then LS-PRX is calculated as LK-ANT + LK-ATU.",
+      "natural_language_rule": "If the number (LK-NUM) is not 0 and the number is not 1 and the number equals 2, then the next value (LS-PRX) is calculated as the prior value (LK-ANT) plus the current value (LK-ATU).",
+      "source_variables": [
+        "LK-NUM",
+        "LS-PRX",
+        "LK-ANT",
+        "LK-ATU"
+      ],
+      "source_block": "PROG-PRINCIPAL-PARA"
+    },
+    {
+      "id": "BR4",
+      "sbvr_class": "NECESSITY",
+      "verb_concept": "derive Fibonacci value",
+      "rule": "If (NOT ((LK-NUM = 0))) AND (NOT ((LK-NUM = 1))) AND ((LK-NUM = 2)), then LK-FIB is calculated as LS-PRX.",
+      "natural_language_rule": "If the number (LK-NUM) is not 0 and the number is not 1 and the number equals 2, then the Fibonacci value (LK-FIB) is calculated as the next value (LS-PRX).",
+      "source_variables": [
+        "LK-NUM",
+        "LK-FIB",
+        "LS-PRX"
+      ],
+      "source_block": "PROG-PRINCIPAL-PARA"
+    },
+    {
+      "id": "BR5",
+      "sbvr_class": "OBLIGATION",
+      "verb_concept": "assign current value to local current value",
+      "rule": "If TRUE, then no action is performed.",
+      "natural_language_rule": "If the number (LK-NUM) is not 0 and the number is not 1 and the number is not 2, then the local current value (LS-ATU) is set to the current value (LK-ATU).",
+      "source_variables": [
+        "LK-NUM",
+        "LS-ATU",
+        "LK-ATU"
+      ],
+      "source_block": "PROG-PRINCIPAL-PARA"
+    },
+    {
+      "id": "BR6",
+      "sbvr_class": "NECESSITY",
+      "verb_concept": "derive decremented number",
+      "rule": "If LK-NUM is not equal to 0 and LK-NUM is not equal to 1 and LK-NUM is not equal to 2, then LS-NUM is calculated as LK-NUM - 1.",
+      "natural_language_rule": "If the number (LK-NUM) is not 0 and the number is not 1 and the number is not 2, then the local number (LS-NUM) is calculated as the number minus 1.",
+      "source_variables": [
+        "LK-NUM",
+        "LS-NUM"
+      ],
+      "source_block": "PROG-PRINCIPAL-PARA"
+    },
+    {
+      "id": "BR7",
+      "sbvr_class": "NECESSITY",
+      "verb_concept": "derive next value",
+      "rule": "If NOT ((LK-NUM = 0)) AND NOT ((LK-NUM = 1)) AND NOT ((LK-NUM = 2)), then LS-PRX is calculated as LK-ANT + LK-ATU.",
+      "natural_language_rule": "If the number (LK-NUM) is not 0 and the number is not 1 and the number is not 2, then the next value (LS-PRX) is calculated as the prior value (LK-ANT) plus the current value (LK-ATU).",
+      "source_variables": [
+        "LK-NUM",
+        "LS-PRX",
+        "LK-ANT",
+        "LK-ATU"
+      ],
+      "source_block": "PROG-PRINCIPAL-PARA"
+    },
+    {
+      "id": "BR8",
+      "sbvr_class": "NECESSITY",
+      "verb_concept": "derive Fibonacci value using function result",
+      "rule": "It is necessary that LK-FIB is calculated as NUMVAL ( FIBBASE ( LK-NUM , LK-ATU , LK-ANT ) ).",
+      "natural_language_rule": "If the number (LK-NUM) is not 0 and the number is not 1 and the number is not 2, then the Fibonacci value (LK-FIB) is calculated as NUMVAL ( FIBBASE ( the local number (LS-NUM) , the local current value (LS-ATU) , the next value (LS-PRX) ) ).",
+      "source_variables": [
+        "LK-NUM",
+        "LK-FIB",
+        "LS-NUM",
+        "LS-ATU",
+        "LS-PRX"
+      ],
+      "source_block": "PROG-PRINCIPAL-PARA"
+    }
+  ]
+}

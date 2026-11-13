@@ -1,0 +1,77 @@
+{
+  "program_name": "FIBBASE",
+  "math_specs": [
+    {
+      "id": "MS1",
+      "source_br_ids": [
+        "BR1"
+      ],
+      "kind": "transition",
+      "description": "When LK-NUM equals 0, LK-FIB is calculated as LK-ANT.",
+      "expression": "((LK-NUM-OLD = 0)) IMPLIES (LK-FIB-NEW = LK-ANT-OLD)"
+    },
+    {
+      "id": "MS2",
+      "source_br_ids": [
+        "BR2"
+      ],
+      "kind": "transition",
+      "description": "When LK-NUM is not 0 and LK-NUM equals 1, LK-FIB is calculated as LK-ATU.",
+      "expression": "(NOT ((LK-NUM-OLD = 0))) AND ((LK-NUM-OLD = 1)) IMPLIES (LK-FIB-NEW = LK-ATU-OLD)"
+    },
+    {
+      "id": "MS3",
+      "source_br_ids": [
+        "BR3"
+      ],
+      "kind": "transition",
+      "description": "When LK-NUM is not 0, not 1, and equals 2, LS-PRX is calculated as LK-ANT + LK-ATU.",
+      "expression": "(NOT ((LK-NUM-OLD = 0))) AND (NOT ((LK-NUM-OLD = 1))) AND ((LK-NUM-OLD = 2)) IMPLIES (LS-PRX-NEW = LK-ANT-OLD + LK-ATU-OLD)"
+    },
+    {
+      "id": "MS4",
+      "source_br_ids": [
+        "BR4"
+      ],
+      "kind": "transition",
+      "description": "When LK-NUM is not 0, not 1, and equals 2, LK-FIB is calculated as LS-PRX.",
+      "expression": "(NOT ((LK-NUM-OLD = 0))) AND (NOT ((LK-NUM-OLD = 1))) AND ((LK-NUM-OLD = 2)) IMPLIES (LK-FIB-NEW = LS-PRX-OLD)"
+    },
+    {
+      "id": "MS5",
+      "source_br_ids": [
+        "BR5"
+      ],
+      "kind": "transition",
+      "description": "When LK-NUM is not 0, not 1, and not 2, MOVE LK-ATU TO LS-ATU.",
+      "expression": "(NOT ((LK-NUM-OLD = 0))) AND (NOT ((LK-NUM-OLD = 1))) AND (NOT ((LK-NUM-OLD = 2))) IMPLIES (LS-ATU-NEW = LK-ATU-OLD)"
+    },
+    {
+      "id": "MS6",
+      "source_br_ids": [
+        "BR6"
+      ],
+      "kind": "transition",
+      "description": "When LK-NUM is not 0, not 1, and not 2, LS-NUM is calculated as LK-NUM - 1.",
+      "expression": "(NOT (LK-NUM-OLD = 0)) AND (NOT (LK-NUM-OLD = 1)) AND (NOT (LK-NUM-OLD = 2)) IMPLIES (LS-NUM-NEW = LK-NUM-OLD - 1)"
+    },
+    {
+      "id": "MS7",
+      "source_br_ids": [
+        "BR7"
+      ],
+      "kind": "transition",
+      "description": "When LK-NUM is not 0, not 1, and not 2, LS-PRX is calculated as LK-ANT + LK-ATU.",
+      "expression": "(NOT (LK-NUM-OLD = 0) AND NOT (LK-NUM-OLD = 1) AND NOT (LK-NUM-OLD = 2)) IMPLIES (LS-PRX-NEW = LK-ANT-OLD + LK-ATU-OLD)"
+    },
+    {
+      "id": "MS8",
+      "source_br_ids": [
+        "BR8"
+      ],
+      "kind": "transition",
+      "description": "When LK-NUM is not 0, not 1, and not 2, LK-FIB is calculated as NUMVAL ( FIBBASE ( LS-NUM , LS-ATU , LS-PRX ) ).",
+      "expression": "(NOT ((LK-NUM-OLD = 0))) AND (NOT ((LK-NUM-OLD = 1))) AND (NOT ((LK-NUM-OLD = 2))) IMPLIES (LK-FIB-NEW = NUMVAL ( FIBBASE ( LS-NUM-OLD , LS-ATU-OLD , LS-PRX-OLD ) ))"
+    }
+  ]
+}

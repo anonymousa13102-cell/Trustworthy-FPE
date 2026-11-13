@@ -1,0 +1,8 @@
+assert(end-of-file-flag-NEW == "F");
+assert(pg-row-NEW(row-counter-OLD) == initial-condx-record-OLD);
+assert(next-generation-NEW == previous-generation-OLD);
+assert(previous-generation-NEW == next-generation-OLD);
+assert((!(((neighbor-counter-OLD == 2) || (neighbor-counter-OLD == 3)))) || (ng-column-NEW(row-counter-OLD, column-counter-OLD) == living-cell-OLD));
+assert((((neighbor-counter-OLD == 2) || (neighbor-counter-OLD == 3))) || (ng-column-NEW(row-counter-OLD, column-counter-OLD) == dead-cell-OLD));
+assert((!(neighbor-counter-OLD == 3)) || (ng-column-NEW(row-counter-OLD, column-counter-OLD) == living-cell-OLD));
+assert(ng-column-NEW(row-counter-OLD, column-counter-OLD) == dead-cell-OLD);

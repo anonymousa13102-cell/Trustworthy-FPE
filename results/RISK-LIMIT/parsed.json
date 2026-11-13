@@ -1,0 +1,90 @@
+{
+  "programs": [
+    {
+      "name": "RISK-LIMIT",
+      "data_division": {
+        "sections": {
+          "Working Storage Section": {
+            "variables": [
+              {
+                "level": "01",
+                "name": "RISK-CD",
+                "declaration": "01 RISK-CD PIC 99 VALUE 01.",
+                "usage": "DISPLAY",
+                "picture": "99",
+                "type": "numeric",
+                "signed": false,
+                "digits": 2,
+                "integer_digits": 2,
+                "decimal_digits": 0
+              },
+              {
+                "level": "88",
+                "name": "RISK-LOW",
+                "declaration": "88 RISK-LOW VALUE 1 THRU 3.",
+                "usage": "DISPLAY",
+                "type": "condition-name",
+                "parent_name": "RISK-CD",
+                "parent_level": "01"
+              },
+              {
+                "level": "88",
+                "name": "RISK-HIGH",
+                "declaration": "88 RISK-HIGH VALUE 5 7 THRU 9.",
+                "usage": "DISPLAY",
+                "type": "condition-name",
+                "parent_name": "RISK-CD",
+                "parent_level": "01"
+              },
+              {
+                "level": "01",
+                "name": "LIMIT-AMT",
+                "declaration": "01 LIMIT-AMT PIC 9 ( 7) VALUE 0.",
+                "usage": "DISPLAY",
+                "picture": "9(7)",
+                "type": "numeric",
+                "signed": false,
+                "digits": 7,
+                "integer_digits": 7,
+                "decimal_digits": 0
+              }
+            ]
+          }
+        }
+      },
+      "procedure_division": {
+        "functions": {
+          "MAIN-PROCEDURE": {
+            "kind": "paragraph",
+            "blocks": [
+              {
+                "If-block": {
+                  "condition": "RISK-LOW",
+                  "then": [
+                    {
+                      "Move Statement": "MOVE 500000 TO LIMIT-AMT"
+                    }
+                  ],
+                  "else-if": [
+                    {
+                      "condition": "RISK-HIGH",
+                      "then": [
+                        {
+                          "Move Statement": "MOVE 50000 TO LIMIT-AMT"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              {
+                "Stop Statement": "STOP RUN"
+              }
+            ]
+          }
+        },
+        "blocks": []
+      }
+    }
+  ]
+}

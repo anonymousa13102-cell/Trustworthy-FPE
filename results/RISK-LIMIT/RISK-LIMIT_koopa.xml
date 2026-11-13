@@ -1,0 +1,494 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<koopa>
+  <compilationGroup>
+    <t><![CDATA[      ]]></t>
+    <t><![CDATA[ ]]></t>
+    <sourceUnit>
+      <programDefinition>
+        <identificationDivision>
+          <header>
+            <t><![CDATA[IDENTIFICATION]]></t>
+            <t><![CDATA[ ]]></t>
+            <t><![CDATA[DIVISION]]></t>
+            <t><![CDATA[.]]></t>
+          </header>
+          <t><![CDATA[
+]]></t>
+          <t><![CDATA[      ]]></t>
+          <t><![CDATA[ ]]></t>
+          <programIdParagraph>
+            <t><![CDATA[PROGRAM-ID]]></t>
+            <t><![CDATA[.]]></t>
+            <t><![CDATA[ ]]></t>
+            <programName>
+              <alphanumeric>
+                <alphanumericConstant>
+                  <cobolWord>
+                    <t><![CDATA[RISK-LIMIT]]></t>
+                  </cobolWord>
+                </alphanumericConstant>
+              </alphanumeric>
+            </programName>
+            <t><![CDATA[.]]></t>
+          </programIdParagraph>
+        </identificationDivision>
+        <t><![CDATA[
+]]></t>
+        <t><![CDATA[
+]]></t>
+        <t><![CDATA[      ]]></t>
+        <t><![CDATA[ ]]></t>
+        <environmentDivision>
+          <header>
+            <t><![CDATA[ENVIRONMENT]]></t>
+            <t><![CDATA[ ]]></t>
+            <t><![CDATA[DIVISION]]></t>
+            <t><![CDATA[.]]></t>
+          </header>
+        </environmentDivision>
+        <t><![CDATA[
+]]></t>
+        <t><![CDATA[
+]]></t>
+        <t><![CDATA[      ]]></t>
+        <t><![CDATA[ ]]></t>
+        <dataDivision>
+          <header>
+            <t><![CDATA[DATA]]></t>
+            <t><![CDATA[ ]]></t>
+            <t><![CDATA[DIVISION]]></t>
+            <t><![CDATA[.]]></t>
+          </header>
+          <t><![CDATA[
+]]></t>
+          <t><![CDATA[      ]]></t>
+          <t><![CDATA[ ]]></t>
+          <workingStorageSection>
+            <header>
+              <t><![CDATA[WORKING-STORAGE]]></t>
+              <t><![CDATA[ ]]></t>
+              <t><![CDATA[SECTION]]></t>
+              <t><![CDATA[.]]></t>
+            </header>
+            <t><![CDATA[
+]]></t>
+            <t><![CDATA[
+]]></t>
+            <t><![CDATA[      ]]></t>
+            <t><![CDATA[ ]]></t>
+            <recordDescriptionEntry>
+              <dataDescriptionEntry>
+                <levelNumber>
+                  <t><![CDATA[01]]></t>
+                </levelNumber>
+                <t><![CDATA[  ]]></t>
+                <entryName>
+                  <dataName>
+                    <cobolWord>
+                      <t><![CDATA[RISK-CD]]></t>
+                    </cobolWord>
+                  </dataName>
+                </entryName>
+                <t><![CDATA[                 ]]></t>
+                <pictureClause>
+                  <t><![CDATA[PIC]]></t>
+                  <t><![CDATA[ ]]></t>
+                  <pictureString>
+                    <t><![CDATA[99]]></t>
+                  </pictureString>
+                </pictureClause>
+                <t><![CDATA[ ]]></t>
+                <valueClause>
+                  <t><![CDATA[VALUE]]></t>
+                  <t><![CDATA[ ]]></t>
+                  <literal>
+                    <literalValue>
+                      <numericLiteral>
+                        <integerLiteral>
+                          <t><![CDATA[01]]></t>
+                        </integerLiteral>
+                      </numericLiteral>
+                    </literalValue>
+                  </literal>
+                </valueClause>
+                <unknown />
+                <t><![CDATA[.]]></t>
+              </dataDescriptionEntry>
+            </recordDescriptionEntry>
+            <t><![CDATA[
+]]></t>
+            <t><![CDATA[      ]]></t>
+            <t><![CDATA[ ]]></t>
+            <t><![CDATA[    ]]></t>
+            <recordDescriptionEntry>
+              <dataDescriptionEntry>
+                <levelNumber>
+                  <t><![CDATA[88]]></t>
+                </levelNumber>
+                <t><![CDATA[  ]]></t>
+                <entryName>
+                  <conditionName>
+                    <identifier>
+                      <identifier_format2>
+                        <qualifiedDataName>
+                          <dataName>
+                            <cobolWord>
+                              <t><![CDATA[RISK-LOW]]></t>
+                            </cobolWord>
+                          </dataName>
+                        </qualifiedDataName>
+                      </identifier_format2>
+                    </identifier>
+                  </conditionName>
+                </entryName>
+                <t><![CDATA[            ]]></t>
+                <valueClause>
+                  <t><![CDATA[VALUE]]></t>
+                  <t><![CDATA[ ]]></t>
+                  <literal>
+                    <literalValue>
+                      <numericLiteral>
+                        <integerLiteral>
+                          <t><![CDATA[1]]></t>
+                        </integerLiteral>
+                      </numericLiteral>
+                    </literalValue>
+                  </literal>
+                  <t><![CDATA[ ]]></t>
+                  <t><![CDATA[THRU]]></t>
+                  <t><![CDATA[ ]]></t>
+                  <literal>
+                    <literalValue>
+                      <numericLiteral>
+                        <integerLiteral>
+                          <t><![CDATA[3]]></t>
+                        </integerLiteral>
+                      </numericLiteral>
+                    </literalValue>
+                  </literal>
+                </valueClause>
+                <t><![CDATA[.]]></t>
+              </dataDescriptionEntry>
+            </recordDescriptionEntry>
+            <t><![CDATA[
+]]></t>
+            <t><![CDATA[      ]]></t>
+            <t><![CDATA[ ]]></t>
+            <t><![CDATA[    ]]></t>
+            <recordDescriptionEntry>
+              <dataDescriptionEntry>
+                <levelNumber>
+                  <t><![CDATA[88]]></t>
+                </levelNumber>
+                <t><![CDATA[  ]]></t>
+                <entryName>
+                  <conditionName>
+                    <identifier>
+                      <identifier_format2>
+                        <qualifiedDataName>
+                          <dataName>
+                            <cobolWord>
+                              <t><![CDATA[RISK-HIGH]]></t>
+                            </cobolWord>
+                          </dataName>
+                        </qualifiedDataName>
+                      </identifier_format2>
+                    </identifier>
+                  </conditionName>
+                </entryName>
+                <t><![CDATA[           ]]></t>
+                <valueClause>
+                  <t><![CDATA[VALUE]]></t>
+                  <t><![CDATA[ ]]></t>
+                  <literal>
+                    <literalValue>
+                      <numericLiteral>
+                        <integerLiteral>
+                          <t><![CDATA[5]]></t>
+                        </integerLiteral>
+                      </numericLiteral>
+                    </literalValue>
+                  </literal>
+                  <t><![CDATA[ ]]></t>
+                  <literal>
+                    <literalValue>
+                      <numericLiteral>
+                        <integerLiteral>
+                          <t><![CDATA[7]]></t>
+                        </integerLiteral>
+                      </numericLiteral>
+                    </literalValue>
+                  </literal>
+                  <t><![CDATA[ ]]></t>
+                  <t><![CDATA[THRU]]></t>
+                  <t><![CDATA[ ]]></t>
+                  <literal>
+                    <literalValue>
+                      <numericLiteral>
+                        <integerLiteral>
+                          <t><![CDATA[9]]></t>
+                        </integerLiteral>
+                      </numericLiteral>
+                    </literalValue>
+                  </literal>
+                </valueClause>
+                <t><![CDATA[.]]></t>
+              </dataDescriptionEntry>
+            </recordDescriptionEntry>
+            <t><![CDATA[
+]]></t>
+            <t><![CDATA[
+]]></t>
+            <t><![CDATA[      ]]></t>
+            <t><![CDATA[ ]]></t>
+            <recordDescriptionEntry>
+              <dataDescriptionEntry>
+                <levelNumber>
+                  <t><![CDATA[01]]></t>
+                </levelNumber>
+                <t><![CDATA[  ]]></t>
+                <entryName>
+                  <dataName>
+                    <cobolWord>
+                      <t><![CDATA[LIMIT-AMT]]></t>
+                    </cobolWord>
+                  </dataName>
+                </entryName>
+                <t><![CDATA[               ]]></t>
+                <pictureClause>
+                  <t><![CDATA[PIC]]></t>
+                  <t><![CDATA[ ]]></t>
+                  <pictureString>
+                    <t><![CDATA[9]]></t>
+                    <t><![CDATA[(]]></t>
+                    <t><![CDATA[7]]></t>
+                    <t><![CDATA[)]]></t>
+                  </pictureString>
+                </pictureClause>
+                <t><![CDATA[ ]]></t>
+                <valueClause>
+                  <t><![CDATA[VALUE]]></t>
+                  <t><![CDATA[ ]]></t>
+                  <literal>
+                    <literalValue>
+                      <numericLiteral>
+                        <integerLiteral>
+                          <t><![CDATA[0]]></t>
+                        </integerLiteral>
+                      </numericLiteral>
+                    </literalValue>
+                  </literal>
+                </valueClause>
+                <unknown />
+                <t><![CDATA[.]]></t>
+              </dataDescriptionEntry>
+            </recordDescriptionEntry>
+          </workingStorageSection>
+        </dataDivision>
+        <t><![CDATA[
+]]></t>
+        <t><![CDATA[
+]]></t>
+        <t><![CDATA[      ]]></t>
+        <t><![CDATA[ ]]></t>
+        <procedureDivision>
+          <header>
+            <t><![CDATA[PROCEDURE]]></t>
+            <t><![CDATA[ ]]></t>
+            <t><![CDATA[DIVISION]]></t>
+            <t><![CDATA[.]]></t>
+          </header>
+          <t><![CDATA[
+]]></t>
+          <t><![CDATA[      ]]></t>
+          <t><![CDATA[ ]]></t>
+          <paragraph>
+            <paragraphName>
+              <name>
+                <cobolWord>
+                  <t><![CDATA[MAIN-PROCEDURE]]></t>
+                </cobolWord>
+              </name>
+            </paragraphName>
+            <t><![CDATA[.]]></t>
+            <t><![CDATA[
+]]></t>
+            <t><![CDATA[      ]]></t>
+            <t><![CDATA[ ]]></t>
+            <t><![CDATA[    ]]></t>
+            <sentence>
+              <statement>
+                <ifStatement>
+                  <t><![CDATA[IF]]></t>
+                  <t><![CDATA[ ]]></t>
+                  <condition>
+                    <conditionNameCondition>
+                      <conditionName>
+                        <identifier>
+                          <identifier_format2>
+                            <qualifiedDataName>
+                              <dataName>
+                                <cobolWord>
+                                  <t><![CDATA[RISK-LOW]]></t>
+                                </cobolWord>
+                              </dataName>
+                            </qualifiedDataName>
+                          </identifier_format2>
+                        </identifier>
+                      </conditionName>
+                    </conditionNameCondition>
+                  </condition>
+                  <t><![CDATA[
+]]></t>
+                  <t><![CDATA[      ]]></t>
+                  <t><![CDATA[ ]]></t>
+                  <t><![CDATA[        ]]></t>
+                  <thenBranch>
+                    <nestedStatements>
+                      <statement>
+                        <moveStatement>
+                          <t><![CDATA[MOVE]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <literal>
+                            <literalValue>
+                              <numericLiteral>
+                                <integerLiteral>
+                                  <t><![CDATA[500000]]></t>
+                                </integerLiteral>
+                              </numericLiteral>
+                            </literalValue>
+                          </literal>
+                          <t><![CDATA[ ]]></t>
+                          <t><![CDATA[TO]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <identifier>
+                            <identifier_format2>
+                              <qualifiedDataName>
+                                <dataName>
+                                  <cobolWord>
+                                    <t><![CDATA[LIMIT-AMT]]></t>
+                                  </cobolWord>
+                                </dataName>
+                              </qualifiedDataName>
+                            </identifier_format2>
+                          </identifier>
+                          <unknown />
+                        </moveStatement>
+                      </statement>
+                    </nestedStatements>
+                  </thenBranch>
+                  <t><![CDATA[
+]]></t>
+                  <t><![CDATA[      ]]></t>
+                  <t><![CDATA[ ]]></t>
+                  <t><![CDATA[    ]]></t>
+                  <elseBranch>
+                    <t><![CDATA[ELSE]]></t>
+                    <t><![CDATA[
+]]></t>
+                    <t><![CDATA[      ]]></t>
+                    <t><![CDATA[ ]]></t>
+                    <t><![CDATA[        ]]></t>
+                    <nestedStatements>
+                      <statement>
+                        <ifStatement>
+                          <t><![CDATA[IF]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <condition>
+                            <conditionNameCondition>
+                              <conditionName>
+                                <identifier>
+                                  <identifier_format2>
+                                    <qualifiedDataName>
+                                      <dataName>
+                                        <cobolWord>
+                                          <t><![CDATA[RISK-HIGH]]></t>
+                                        </cobolWord>
+                                      </dataName>
+                                    </qualifiedDataName>
+                                  </identifier_format2>
+                                </identifier>
+                              </conditionName>
+                            </conditionNameCondition>
+                          </condition>
+                          <t><![CDATA[
+]]></t>
+                          <t><![CDATA[      ]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <t><![CDATA[            ]]></t>
+                          <thenBranch>
+                            <nestedStatements>
+                              <statement>
+                                <moveStatement>
+                                  <t><![CDATA[MOVE]]></t>
+                                  <t><![CDATA[ ]]></t>
+                                  <literal>
+                                    <literalValue>
+                                      <numericLiteral>
+                                        <integerLiteral>
+                                          <t><![CDATA[50000]]></t>
+                                        </integerLiteral>
+                                      </numericLiteral>
+                                    </literalValue>
+                                  </literal>
+                                  <t><![CDATA[ ]]></t>
+                                  <t><![CDATA[TO]]></t>
+                                  <t><![CDATA[ ]]></t>
+                                  <identifier>
+                                    <identifier_format2>
+                                      <qualifiedDataName>
+                                        <dataName>
+                                          <cobolWord>
+                                            <t><![CDATA[LIMIT-AMT]]></t>
+                                          </cobolWord>
+                                        </dataName>
+                                      </qualifiedDataName>
+                                    </identifier_format2>
+                                  </identifier>
+                                  <unknown />
+                                </moveStatement>
+                              </statement>
+                            </nestedStatements>
+                          </thenBranch>
+                          <t><![CDATA[
+]]></t>
+                          <t><![CDATA[      ]]></t>
+                          <t><![CDATA[ ]]></t>
+                          <t><![CDATA[        ]]></t>
+                          <t><![CDATA[END-IF]]></t>
+                        </ifStatement>
+                      </statement>
+                    </nestedStatements>
+                  </elseBranch>
+                  <t><![CDATA[
+]]></t>
+                  <t><![CDATA[      ]]></t>
+                  <t><![CDATA[ ]]></t>
+                  <t><![CDATA[    ]]></t>
+                  <t><![CDATA[END-IF]]></t>
+                </ifStatement>
+              </statement>
+              <t><![CDATA[
+]]></t>
+              <t><![CDATA[
+]]></t>
+              <t><![CDATA[      ]]></t>
+              <t><![CDATA[ ]]></t>
+              <t><![CDATA[    ]]></t>
+              <statement>
+                <stopStatement>
+                  <t><![CDATA[STOP]]></t>
+                  <t><![CDATA[ ]]></t>
+                  <endpoint>
+                    <t><![CDATA[RUN]]></t>
+                  </endpoint>
+                </stopStatement>
+              </statement>
+              <t><![CDATA[.]]></t>
+            </sentence>
+          </paragraph>
+        </procedureDivision>
+      </programDefinition>
+    </sourceUnit>
+  </compilationGroup>
+</koopa>

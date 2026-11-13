@@ -1,0 +1,216 @@
+{
+  "program_name": "PRTRPT1",
+  "variable_roles": {
+    "PrintLine": "BUSINESS_ENTITY",
+    "MemberRec": "BUSINESS_ENTITY",
+    "MemberId": "BUSINESS_ENTITY",
+    "MemberName": "BUSINESS_ENTITY",
+    "MemberType": "BUSINESS_ENTITY",
+    "MemberGender": "IO_BUFFER",
+    "WS-File-Status": "BUSINESS_ENTITY",
+    "PageHeading": "BUSINESS_ENTITY",
+    "FILLER": "BUSINESS_ENTITY",
+    "PageFooting": "BUSINESS_ENTITY",
+    "PrnPageNum": "BUSINESS_ENTITY",
+    "ColumnHeadings": "BUSINESS_ENTITY",
+    "MemberDetailLine": "BUSINESS_ENTITY",
+    "PrnMemberId": "BUSINESS_ENTITY",
+    "PrnMemberName": "BUSINESS_ENTITY",
+    "PrnMemberType": "IO_BUFFER",
+    "PrnMemberGender": "IO_BUFFER",
+    "ReportFooting": "BUSINESS_ENTITY",
+    "Abnormal-Line": "BUSINESS_ENTITY",
+    "Abn-Paragraph": "BUSINESS_ENTITY",
+    "Abn-Code": "BUSINESS_ENTITY",
+    "LineCount": "CONTROL_FLAG",
+    "PageCount": "BUSINESS_ENTITY"
+  },
+  "business_rules": [
+    {
+      "id": "BR1",
+      "sbvr_class": "OBLIGATION",
+      "verb_concept": "record abnormal paragraph identifier for report open failure",
+      "rule": "If (NOT ((WS-Report-Good))), then Abn-Paragraph is set to \"1010\".",
+      "natural_language_rule": "If not WS report good (WS-Report-Good), then the abnormal paragraph (Abn-Paragraph) is set to \"1010\".",
+      "source_variables": [
+        "Abn-Paragraph"
+      ],
+      "source_block": "1010-Open-Report"
+    },
+    {
+      "id": "BR2",
+      "sbvr_class": "OBLIGATION",
+      "verb_concept": "record abnormal status code for report open failure",
+      "rule": "If (NOT ((WS-Report-Good))), then Abn-Code is set to WS-Report-Status.",
+      "natural_language_rule": "If not WS report good (WS-Report-Good), then the abnormal code (Abn-Code) is set to WS report status (WS-Report-Status).",
+      "source_variables": [
+        "Abn-Code"
+      ],
+      "source_block": "1010-Open-Report"
+    },
+    {
+      "id": "BR3",
+      "sbvr_class": "OBLIGATION",
+      "verb_concept": "record abnormal paragraph identifier for member file open failure",
+      "rule": "If (NOT ((WS-Member-Good))), then Abn-Paragraph is set to \"1020\".",
+      "natural_language_rule": "If not WS member good (WS-Member-Good), then the abnormal paragraph (Abn-Paragraph) is set to \"1020\".",
+      "source_variables": [
+        "Abn-Paragraph"
+      ],
+      "source_block": "1020-Open-Member-File"
+    },
+    {
+      "id": "BR4",
+      "sbvr_class": "OBLIGATION",
+      "verb_concept": "record abnormal status code for member file open failure",
+      "rule": "If (NOT ((WS-Member-Good))), then Abn-Code is set to WS-Member-Status.",
+      "natural_language_rule": "If not WS member good (WS-Member-Good), then the abnormal code (Abn-Code) is set to WS member status (WS-Member-Status).",
+      "source_variables": [
+        "Abn-Code"
+      ],
+      "source_block": "1020-Open-Member-File"
+    },
+    {
+      "id": "BR5",
+      "sbvr_class": "OBLIGATION",
+      "verb_concept": "set line count for page headings",
+      "rule": "LineCount is set to 3.",
+      "natural_language_rule": "The line count (LineCount) is set to 3.",
+      "source_variables": [
+        "LineCount"
+      ],
+      "source_block": "6100-Print-Page-Headings"
+    },
+    {
+      "id": "BR6",
+      "sbvr_class": "OBLIGATION",
+      "verb_concept": "increment page count when printing page headings",
+      "rule": "PageCount is increased by 1.",
+      "natural_language_rule": "The page count (PageCount) is increased by 1.",
+      "source_variables": [
+        "PageCount"
+      ],
+      "source_block": "6100-Print-Page-Headings"
+    },
+    {
+      "id": "BR7",
+      "sbvr_class": "OBLIGATION",
+      "verb_concept": "record abnormal paragraph identifier for member file read failure",
+      "rule": "If (TRUE), then Abn-Paragraph is set to \"5000\".",
+      "natural_language_rule": "The abnormal paragraph identifier is always set to \"5000\".",
+      "source_variables": [
+        "WS-Member-Okay",
+        "Abn-Paragraph"
+      ],
+      "source_block": "5000-Read-Member-File"
+    },
+    {
+      "id": "BR8",
+      "sbvr_class": "OBLIGATION",
+      "verb_concept": "record abnormal status code for member file read failure",
+      "rule": "If (TRUE), then Abn-Code is set to WS-Member-Status.",
+      "natural_language_rule": "The abnormal code is always set to the member-file status.",
+      "source_variables": [
+        "WS-Member-Okay",
+        "Abn-Code",
+        "WS-Member-Status"
+      ],
+      "source_block": "5000-Read-Member-File"
+    },
+    {
+      "id": "BR9",
+      "sbvr_class": "OBLIGATION",
+      "verb_concept": "set printed page number when a new page is required",
+      "rule": "If (LineCount is at least 40 AND LineCount is at most 99), then PrnPageNum is set to PageCount.",
+      "natural_language_rule": "If the line count (LineCount) is between 40 and 99 (inclusive), then the printed page number (PrnPageNum) is set to the page count (PageCount).",
+      "source_variables": [
+        "LineCount",
+        "PrnPageNum",
+        "PageCount"
+      ],
+      "source_block": "6200-Print-Report-Body"
+    },
+    {
+      "id": "BR10",
+      "sbvr_class": "OBLIGATION",
+      "verb_concept": "reset line count for a new page when a new page is required",
+      "rule": "If (LineCount is at least 40 AND LineCount is at most 99), then LineCount is set to 3.",
+      "natural_language_rule": "If the line count (LineCount) is between 40 and 99 (inclusive), then the line count is set to 3.",
+      "source_variables": [
+        "LineCount"
+      ],
+      "source_block": "6100-Print-Page-Headings"
+    },
+    {
+      "id": "BR11",
+      "sbvr_class": "OBLIGATION",
+      "verb_concept": "increment page count for a new page when a new page is required",
+      "rule": "If (LineCount is at least 40 AND LineCount is at most 99), then PageCount is increased by 1.",
+      "natural_language_rule": "If the line count (LineCount) is between 40 and 99 (inclusive), then the page count (PageCount) is increased by 1.",
+      "source_variables": [
+        "LineCount",
+        "PageCount"
+      ],
+      "source_block": "6100-Print-Page-Headings"
+    },
+    {
+      "id": "BR12",
+      "sbvr_class": "OBLIGATION",
+      "verb_concept": "set printed member identifier for report detail",
+      "rule": "PrnMemberId is set to MemberId.",
+      "natural_language_rule": "The printed member identifier (PrnMemberId) is set to the member identifier (MemberId).",
+      "source_variables": [
+        "PrnMemberId",
+        "MemberId"
+      ],
+      "source_block": "6200-Print-Report-Body"
+    },
+    {
+      "id": "BR13",
+      "sbvr_class": "OBLIGATION",
+      "verb_concept": "set printed member name for report detail",
+      "rule": "PrnMemberName is set to MemberName.",
+      "natural_language_rule": "The printed member name (PrnMemberName) is set to the member name (MemberName).",
+      "source_variables": [
+        "PrnMemberName",
+        "MemberName"
+      ],
+      "source_block": "6200-Print-Report-Body"
+    },
+    {
+      "id": "BR14",
+      "sbvr_class": "OBLIGATION",
+      "verb_concept": "set printed member type for report detail",
+      "rule": "PrnMemberType is set to MemberType.",
+      "natural_language_rule": "The printed member type (PrnMemberType) is set to the member type (MemberType).",
+      "source_variables": [
+        "PrnMemberType",
+        "MemberType"
+      ],
+      "source_block": "6200-Print-Report-Body"
+    },
+    {
+      "id": "BR15",
+      "sbvr_class": "OBLIGATION",
+      "verb_concept": "set printed member gender for report detail",
+      "rule": "PrnMemberGender is set to MemberGender.",
+      "natural_language_rule": "The printed member gender (PrnMemberGender) is set to the member gender (MemberGender).",
+      "source_variables": [
+        "PrnMemberGender",
+        "MemberGender"
+      ],
+      "source_block": "6200-Print-Report-Body"
+    },
+    {
+      "id": "BR16",
+      "sbvr_class": "OBLIGATION",
+      "verb_concept": "increment line count after printing a member detail line",
+      "rule": "LineCount is increased by 1.",
+      "natural_language_rule": "The line count (LineCount) is increased by 1.",
+      "source_variables": [
+        "LineCount"
+      ],
+      "source_block": "6200-Print-Report-Body"
+    }
+  ]
+}
